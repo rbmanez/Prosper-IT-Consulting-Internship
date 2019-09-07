@@ -33,7 +33,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 ### User Story: Refactor Airports App
 
-![user story image](pyLiveProjectImg/story1.png)
+![user story image](pyLiveProjectImg/story1.0.png)
 
 The objective of this user story was to refactor the Airports App from the TravelScrape main project so that it has a module that is easy to import and call and performs the basic functions of the app. Then I had to implement this module in its views page so there is no repeated code. The functionality of the Airports App takes a user's input of a city name and returns the airport names available for that city.
 
@@ -59,7 +59,15 @@ def make_api_call(search):
         return error.code
 ```
 
+##### Airports App Input
+![airports app input image](pyLiveProjectImg/story1.1.png)
+
+##### Airports App Output
+![airports app output image](pyLiveProjectImg/story1.2.png)
+
 ### User Story: Front End Calendar App
+
+![user story image](pyLiveProjectImg/story2.0.png)
 
 The objective of this user story was to utilize the global styles of the TravelScrapes main project so that the Calendar App will appear uniform with the rest of the site and apps. I also needed to refactor the vague CSS selectors associated with the styles meant only for the Calendar App since they were overriding elements from other apps.
 
@@ -116,7 +124,12 @@ I succeeded with the user story by incorporating the global class styles from th
 }
 ```
 
+##### Calendar App Interface
+![calendar app interface image](pyLiveProjectImg/story2.1.png)
+
 ### User Story: Organize the Navbar
+
+![user story image](pyLiveProjectImg/story3.0.png)
 
 The objective of this user story was to organize the side navbar to display all of the apps in alphabetical order and move the home button from the bottom to the top.
 
@@ -145,6 +158,9 @@ The objective of this user story was to organize the side navbar to display all 
 <br>
 <a class="nav-link" href="/logout">Logout</a>
 ```
+
+##### Navbar Image
+![navbar image](pyLiveProjectImg/story3.1.png)
 
 ## Conclusion
 
