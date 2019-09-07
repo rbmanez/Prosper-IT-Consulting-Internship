@@ -29,7 +29,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 The objective of this user story was to refactor the Airports App from the TravelScrape main project so that it has a module that is easy to import and call and performs the basic functions of the app. Then I had to implement this module in its views page so there is no repeated code. The functionality of the Airports App takes a user's input of a city name and returns the airport names available for that city.
 
-The previous developer wrote the API logic inside of the views. I succeeded with the user story by creating a module that takes care of the API call and returns the data.
+I succeeded with the user story by creating a module that takes care of the API call and returns the data.
 
 ##### Code snippet of the module:
 ```python
@@ -53,11 +53,11 @@ def make_api_call(search):
 
 ### User Story: Front End Calendar App
 
-The objective of this user story was to utilize the global styling of the TravelScrapes main project with the Calendar App to appear uniform with the rest of the site and apps. I also needed to refactor the vague class names associated with the styling meant only for the Calendar App since they were overriding elements from other apps.
+The objective of this user story was to utilize the global styles of the TravelScrapes main project so that the Calendar App will appear uniform with the rest of the site and apps. I also needed to refactor the vague CSS selectors associated with the styles meant only for the Calendar App since they were overriding elements from other apps.
 
-I succeeded with the user story by incorporating the global class styling from the static/css file with the appropriate html tags. I also changed the vague class names that are supposed to be responsible for only the Calendar App's style to something more specific for that app.
+I succeeded with the user story by incorporating the global class styles from the static/css file with the appropriate html tags. I also changed the vague CSS selectors to unique class names that are responsible for and specific only to the Calendar App.
 
-##### Code snippet of the global styling used for the TravelScrapes main project and all of its apps:
+##### Code snippet for the global styles used for the TravelScrapes main project and all of its apps:
 ```css
 /* use this for all form containers */
 .appContainer{
@@ -85,7 +85,7 @@ I succeeded with the user story by incorporating the global class styling from t
 }
 ```
 
-##### Code snippet of the classes and styling specific to only the Calendar App:
+##### Code snippet of the classes and styles specific to only the Calendar App:
 ```css
 .calendar {
     width: 98%;
@@ -110,7 +110,7 @@ I succeeded with the user story by incorporating the global class styling from t
 
 ### User Story: Organize the Navbar
 
-The objective of this user story was to organize the side navbar to display the apps in alphabetical order and move the home button from the bottom to the top.
+The objective of this user story was to organize the side navbar to display all of the apps in alphabetical order and move the home button from the bottom to the top.
 
 ##### Code snippet of the solution:
 ```html
