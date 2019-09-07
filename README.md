@@ -33,6 +33,8 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 ### User Story: Refactor Airports App
 
+![user story image](pyLiveProjectImg/story1.png)
+
 The objective of this user story was to refactor the Airports App from the TravelScrape main project so that it has a module that is easy to import and call and performs the basic functions of the app. Then I had to implement this module in its views page so there is no repeated code. The functionality of the Airports App takes a user's input of a city name and returns the airport names available for that city.
 
 I succeeded with the user story by creating a module that takes care of the API call and returns the data.
