@@ -1,6 +1,12 @@
 # Live Pojects
 
-The Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team. The four live projects are composed of a Python Live Project, C# Live Project, Front End Live Project, and Back End Live Project.
+The Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team.
+
+#### Live Projects
+- Python Live Project
+- C# Live Project
+- Front End Live Project
+- Back End Live Project.
 
 #### General Process
 
@@ -55,9 +61,9 @@ def make_api_call(search):
 
 The objective of this user story was to utilize the global styles of the TravelScrapes main project so that the Calendar App will appear uniform with the rest of the site and apps. I also needed to refactor the vague CSS selectors associated with the styles meant only for the Calendar App since they were overriding elements from other apps.
 
-I succeeded with the user story by incorporating the global class styles from the static/css file with the appropriate html tags. I also changed the vague CSS selectors to unique class names that are responsible for and specific only to the Calendar App.
+I succeeded with the user story by incorporating the global class styles from the static/css file with the appropriate html tags. I also changed the vague CSS selectors to unique class names that are only responsible for the Calendar App.
 
-##### Code snippet for the global styles used for the TravelScrapes main project and all of its apps:
+##### Code snippet of some global styles used for the TravelScrapes main project and all of its apps:
 ```css
 /* use this for all form containers */
 .appContainer{
@@ -85,7 +91,7 @@ I succeeded with the user story by incorporating the global class styles from th
 }
 ```
 
-##### Code snippet of the classes and styles specific to only the Calendar App:
+##### Code snippet of some classes and styles specific to only the Calendar App:
 ```css
 .calendar {
     width: 98%;
@@ -137,3 +143,7 @@ The objective of this user story was to organize the side navbar to display all 
 <br>
 <a class="nav-link" href="/logout">Logout</a>
 ```
+
+## Conclusion
+
+I aquired an abundance of practical knowledge from the Live Projects, and I am grateful for my experience. I gained the confidence to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
