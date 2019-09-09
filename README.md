@@ -2,12 +2,6 @@
 
 The Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team.
 
-##### Live Projects
-- <a href="#python">Python Live Project</a>
-- C# Live Project
-- Front End Live Project
-- Back End Live Project
-
 ##### General Process
 
 Each Monday is dedicated to onboarding and sprint planning. We define user stories, divide them into tasks, and set goals for what will be accomplished by the end of the week.
@@ -15,6 +9,12 @@ Each Monday is dedicated to onboarding and sprint planning. We define user stori
 We have daily stand up meetings from Monday through Friday. Each developer discusses what they did the day before, what they will be working on for the current day, and any roadblocks they are running into.
 
 Each Friday we have Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings are meant to improve communication and coordination within the team, including the project manager.
+
+##### Live Projects
+- <a href="#python">Python Live Project</a>
+- C# Live Project
+- Front End Live Project
+- Back End Live Project
 
  ## Python Live Project <span id="python"></span>
 
@@ -31,7 +31,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - Slack (Team Communication)
 - Google Hangout (Team Meetings)
 
-### User Story: Refactor Airports App
+### 1) User Story: Refactor Airports App
 
 ![user story image](pyLiveProjectImg/story1.0.png)
 
@@ -65,7 +65,7 @@ def make_api_call(search):
 ##### Airports App Output:
 ![airports app output image](pyLiveProjectImg/story1.2.png)
 
-### User Story: Front End Calendar App
+### 2) User Story: Front End Calendar App
 
 ![user story image](pyLiveProjectImg/story2.0.png)
 
@@ -127,7 +127,7 @@ I succeeded with the user story by incorporating the global class styles from th
 ##### Calendar App Interface:
 ![calendar app interface image](pyLiveProjectImg/story2.1.png)
 
-### User Story: Organize the Navbar
+### 3) User Story: Organize the Navbar
 
 ![user story image](pyLiveProjectImg/story3.0.png)
 
