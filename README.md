@@ -3,7 +3,7 @@
 The Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team.
 
 ##### Live Projects
-- Python Live Project
+- [Python Live Project](python)
 - C# Live Project
 - Front End Live Project
 - Back End Live Project
@@ -16,7 +16,7 @@ We have daily stand up meetings from Monday through Friday. Each developer discu
 
 Each Friday we have Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings are meant to improve communication and coordination within the team, including the project manager.
 
-## Python Live Project
+<span id="python"></span>
 
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application will gather data from the web that is relevant to the user who will be traveling. It will include weather, flights info, events, restaurants, etc.
 
