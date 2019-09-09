@@ -164,4 +164,4 @@ The objective of this user story was to organize the side navbar to display all 
 
 ## Conclusion
 
-I aquired an abundance of practical knowledge from the Live Projects, and I am grateful for my experience. I gained the confidence to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
+I aquired an abundance of practical knowledge from the Live Projects through my personal experiences and break throughs and by learning from others' successes and setbacks. I gained the confidence to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
