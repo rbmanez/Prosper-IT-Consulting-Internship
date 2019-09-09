@@ -2,13 +2,13 @@
 
 The Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team.
 
-#### Live Projects
+##### Live Projects
 - Python Live Project
 - C# Live Project
 - Front End Live Project
-- Back End Live Project.
+- Back End Live Project
 
-#### General Process
+##### General Process
 
 Each Monday is dedicated to onboarding and sprint planning. We define user stories, divide them into tasks, and set goals for what will be accomplished by the end of the week.
 
@@ -59,10 +59,10 @@ def make_api_call(search):
         return error.code
 ```
 
-##### Airports App Input
+##### Airports App Input:
 ![airports app input image](pyLiveProjectImg/story1.1.png)
 
-##### Airports App Output
+##### Airports App Output:
 ![airports app output image](pyLiveProjectImg/story1.2.png)
 
 ### User Story: Front End Calendar App
@@ -124,7 +124,7 @@ I succeeded with the user story by incorporating the global class styles from th
 }
 ```
 
-##### Calendar App Interface
+##### Calendar App Interface:
 ![calendar app interface image](pyLiveProjectImg/story2.1.png)
 
 ### User Story: Organize the Navbar
@@ -159,7 +159,7 @@ The objective of this user story was to organize the side navbar to display all 
 <a class="nav-link" href="/logout">Logout</a>
 ```
 
-##### Navbar Image
+##### Navbar Image:
 ![navbar image](pyLiveProjectImg/story3.1.png)
 
 ## Conclusion
