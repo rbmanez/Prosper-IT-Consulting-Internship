@@ -1,6 +1,6 @@
 # Live Poject Sprints
 
-The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations that focus on specific tasks and technologies. We did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together. I gained the confidence that I can do the job. The Live Project covers:
+The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations, with each sprint iteration focusing on specific tasks and technologies. We did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together. I gained the confidence that I can do the job. The Live Project covers:
 
 - Working with a team
 - Daily stand-ups
@@ -24,4 +24,4 @@ Each Friday we have Sprint Retrospective, which is a quick discussion during the
 
 ## Conclusion
 
-The Live Project Sprints provided me with an abundance of practical knowledge and skills, as well as a boost in confidence. It made me more comfortable being uncomofrtable with not knowing something. Working with a team supplied me the opportunity to learn from others' advice, successes, and setbacks. I gained the courage to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
+The Live Project Sprints provided me with confidence and an abundance of practical knowledge and skills to be a software developer. It made me more comfortable being uncomofrtable with not knowing something and working towards a solution. Working with a team supplied me the opportunity to improve myself by learning from others' advice, successes, and setbacks. I gained the courage to arrive in the middle of a large pre-existing project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of constant learning and improvement and effective communication.
