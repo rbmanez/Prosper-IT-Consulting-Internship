@@ -1,21 +1,27 @@
-# Live Pojects
+# Live Poject Sprints
 
-The Tech Academy's Live Projects are made up of four sprints that lasts 2 weeks each. We get to work with a team of fellow developers to enhance an active software project. This allows us to apply the programming skills we learned on practical assignments that mirror actual software development projects while gaining experience working on a software development team.
+The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations that focus on specific tasks and technologies. We did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together. I gained the confidence that I can do the job. The Live Project covers:
 
-##### General Process
+- Working with a team
+- Daily stand-ups
+- Retrospective and sprint review
+- Working in Team Foundation Server
+- Checking in and pushing code daily
+
+### General Process
 
 Each Monday is dedicated to onboarding and sprint planning. We define user stories, divide them into tasks, and set goals for what will be accomplished by the end of the week.
 
-We have daily stand up meetings from Monday through Friday. Each developer discuss what they did the day before, what they will be working on for the current day, and any roadblocks they are running into.
+We have daily stand up meetings from Monday through Friday. Each developer discuss what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing.
 
 Each Friday we have Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings are meant to improve communication and coordination within the team, including the project manager.
 
-##### Live Projects
+## Live Project Sprints:
 - <a href="#python">Python Live Project</a>
-- C# Live Project
-- Front End Live Project
-- Back End Live Project
+- C# Live Project Sprint
+- Front End Live Project Sprint
+- Back End Live Project Sprint
 
 ## Conclusion
 
-The Live Projects provided me with an abundance of practical knowledge through my personal experiences and break throughs. Working with a team supplied me the opportunity to learn from others' advice, successes, and setbacks. I gained the confidence to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
+The Live Project Sprints provided me with an abundance of practical knowledge and skills, as well as a boost in confidence. It made me more comfortable being uncomofrtable with not knowing something. Working with a team supplied me the opportunity to learn from others' advice, successes, and setbacks. I gained the courage to arrive in the middle of large pre-existing projects and collaborate with a team to accomplish our objectives. I grew a deeper understanding for the development and team process and the significance of effective communication.
