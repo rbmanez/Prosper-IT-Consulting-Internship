@@ -15,7 +15,7 @@ We have daily stand up meetings from Monday through Friday. Each developer discu
 
 Each Friday we have Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings are meant to improve communication and coordination within the team, including the project manager.
 
-## Live Project Sprints:
+## Live Project Sprints
 - [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint.md)
 - [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint.md)
 - C# Live Project Sprint 3
