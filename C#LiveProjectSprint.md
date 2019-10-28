@@ -46,7 +46,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
 });
 ```
 ###### Part of setLeafletMap() responsible for populating the start and end destinations
-```python
+```javascript
 var control = L.Routing.control({
                 waypoints: [
                     L.latLng(currentLat, currentLong),
@@ -114,7 +114,7 @@ The delete function for unregistered users was not deleting them from the databa
 I went to CreateUserRequestController.cs and found the DeleteConfirmed method responsible for deleting unregistered users. The reason the function did not work properly is because all it did was redirect to the Index view.
 
 ###### Code snippet
-```python
+```c#
 [HttpPost, ActionName("Delete")]
 [ValidateAntiForgeryToken]
 public ActionResult DeleteConfirmed(Guid id)
@@ -127,7 +127,7 @@ public ActionResult DeleteConfirmed(Guid id)
 I used LINQ to search the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
 
 ###### Code snippet
-```
+```c#
 [HttpPost, ActionName("Delete")]
 [ValidateAntiForgeryToken]
 public ActionResult DeleteConfirmed(Guid id)
@@ -175,7 +175,7 @@ This user story required adding a list of job titles to the JobSites/Details vie
 In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling), I found the #jobSiteMap ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
 
 ###### JobSites/Details.cshtml code snippet
-```python
+```cshtml
 <div class="col-md-4">
     <h4>Associated Jobs</h4>
     @foreach (var item in Model.Jobs)
@@ -217,7 +217,7 @@ This user story had an issue with the pagination feature for Suspended Users tab
 After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers partial view was using the same paging and sorting variables used for the _UserList partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering only for Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
 
 ###### UserController.cs code snippet used for _UserList and _SuspendedUsers method to query database
-```
+```c#
 var users = from s in db.Users
             select s;
 ```
@@ -229,16 +229,16 @@ var users = from s in db.Users
 In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, using LINQ I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
 
 ###### _SuspendedUsers.cshtml code snippet
-```python
+```cshtml
 @Html.ActionLink("User Name", "Index", new { sortOrder2 = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
 ```
-```python
+```cshtml
 @Html.PagedListPager(Model, page2 => Url.Action("Index",
   new { page2, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 ```
 
 ###### UserController/_UserList method code snippet
-```
+```c#
 //grabs all non-suspended users from database
 var users = from s in db.Users
             where s.Suspended == false
@@ -246,7 +246,7 @@ var users = from s in db.Users
 ```
 
 ###### UserController/_SuspendedUsers method code snippet
-```
+```c#
 //grabs all suspended users from database
 var users = from s in db.Users
             where s.Suspended == true
@@ -273,13 +273,13 @@ This user story had an issue where if we use the sort, filter, or pagination fea
 Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
 
 ###### Code snippet
-```python
+```cshtml
 @using (Html.BeginForm("Index", "Users", FormMethod.Get))
 ```
-```python
+```cshtml
 @Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
 ```
-```python
+```cshtml
 @Html.PagedListPager(Model, page => Url.Action("Index",
   new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 ```
@@ -288,19 +288,19 @@ Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers
 I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
 
 ###### Code snippet
-```python
+```cshtml
 @using(
   Html.BeginForm(HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
   HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
   FormMethod.Get))
 ```
-```python
+```cshtml
 @Html.ActionLink("User Name",
   HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
   HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
   new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter }, null)
 ```
-```python
+```cshtml
 @Html.PagedListPager(Model, page => Url.Action(
   HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
   HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
@@ -340,7 +340,7 @@ I went to Content/site.css (responsible for the global CSS styling), located the
 ```
 
 ###### JobSites/Index.cshtml code snippet
-```html
+```cshtml
 <h2>Job Sites</h2>
 <div class="defaultContainer">
 ```
@@ -349,7 +349,7 @@ I went to Content/site.css (responsible for the global CSS styling), located the
 Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer class to inside of it. Then inside Content/site.css I changed the .defaultContainer class to minimize the top margin.
 
 ###### JobSites/Index.cshtml code snippet
-```html
+```cshtml
 <div class="defaultContainer">
     <h2>Job Sites</h2>
 ```
