@@ -320,13 +320,13 @@ The result is a dynamic User List table that when used to sort, filter, or pagin
 ![pic of user story](pics/pic29.png)
 
 #### What is the issue?
-This user story had an issue with the top margin for the global CSS class inside all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside.
+This user story had an issue with the top margin for the global CSS class inside of all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside of it.
 
 ###### App before fix
 ![App before fix](pics/pic30.png)
 
 #### Why is this an issue?
-I went to Content/site.css (responsible for the global styling), located the .defaultContainer class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
+I went to Content/site.css (responsible for the global CSS styling), located the .defaultContainer CSS class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
 
 ###### Content/site.css code snippet
 ```css
@@ -366,7 +366,7 @@ Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer c
 ```
 
 #### What is the end result?
-The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is inside of its container.
+The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is now inside of its container.
 
 ###### App after fix
 ![App after fix](pics/pic31.png)
