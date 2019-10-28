@@ -1,11 +1,11 @@
- # <span id="python">Python Live Project</span>
-
+ # Python Live Project
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
-### List of Technologies Used:
-- Django Web Framework
+#### List of Technologies Used:
+- Python & Django Web Framework, HTML, CSS, JavaScript
 - Selenium (Python Library)
 - BeautifulSoup (Python Library)
+- Amadeus API (used for Airports App)
 - Virtualenv (Python Library)
 - DevOps (Project Management)
 - Git (Source Control)
@@ -13,17 +13,19 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - Google Hangout (Team Meetings)
 - VS Code (Code Editor)
 
-## 1) User Story 5075: Refactor Airports App
 
+
+
+## 1) User Story 5075: Refactor Airports App
 ![user story image](pyLiveProjectImg/story1.0.png)
 
-### What is the issue?
+#### What is the issue?
 The objective of this user story was to refactor the Airports App from the TravelScrape main project so that it has a module that is easy to import and call by other apps. 
 
-### How is the issue resolved?
+#### How is the issue resolved?
 I succeeded with the user story by creating a module that takes care of the API call and returns the data. Then I implemented this module in its views page so there is no repeated code.
 
-#### Code snippet of the module:
+###### Code snippet of the module:
 ```python
 def make_api_call(search):
     # Athentication for the Amadeus API
@@ -43,26 +45,28 @@ def make_api_call(search):
         return error.code
 ```
 
-### What is the end result?
+#### What is the end result?
 The functionality of the Airports App takes a user's input. If a user inputs a city name, the app retrieves the associated airport codes. If a user inputs an airport code, the app retrieves the associated city name.
 
-#### Airports App Input:
+###### Airports App Input:
 ![airports app input image](pyLiveProjectImg/story1.1.png)
 
-#### Airports App Output:
+###### Airports App Output:
 ![airports app output image](pyLiveProjectImg/story1.2.png)
 
-## 2) User Story 5080: Front End Calendar App
 
+
+
+## 2) User Story 5080: Front End Calendar App
 ![user story image](pyLiveProjectImg/story2.0.png)
 
-### What is the issue?
+#### What is the issue?
 The objective of this user story was to utilize the global styles of the TravelScrapes main project so that the Calendar App will appear uniform with the rest of the site. Also, some CSS styling that is supposed to be specific to only the Calendar App were overriding the styles in other apps.
 
-### How is the issue resolved?
+#### How is the issue resolved?
 I succeeded with the user story by incorporating the global CSS classes from the static/css file with the appropriate HTML tags. I also changed the vague CSS selectors that are supposed to be responsible for only the Calendar App to unique CSS class names.
 
-#### Code snippet of global styling for the TravelScrapes main project:
+###### Code snippet of global styling for the TravelScrapes main project:
 ```css
 /* use this for all form containers */
 .appContainer{
@@ -90,7 +94,7 @@ I succeeded with the user story by incorporating the global CSS classes from the
 }
 ```
 
-#### Code snippet of CSS classes specific to only the Calendar App:
+###### Code snippet of CSS classes specific to only the Calendar App:
 ```css
 .calendar {
     width: 98%;
@@ -112,24 +116,25 @@ I succeeded with the user story by incorporating the global CSS classes from the
     width: 39%;
 }
 ```
-### What is the end result?
+#### What is the end result?
 In the end, the Calendar App looked uniform with the rest of the site and the CSS classes specific to it are no longer overriding the styles of the other apps.
 
-#### Calendar App Interface:
+###### Calendar App Interface:
 ![calendar app interface image](pyLiveProjectImg/story2.1.png)
 
 
-## 3) User Story 5083: Organize the Navbar
 
+
+## 3) User Story 5083: Organize the Navbar
 ![user story image](pyLiveProjectImg/story3.0.png)
 
-### What is the issue?
+#### What is the issue?
 The objective of this user story was to organize the side navbar to display all of the apps in alphabetical order. I also needed to move the home button from the bottom of the navbar to the top of it.
 
-### How is the issue resolved?
+#### How is the issue resolved?
 I reorganized the placement of each anchor tag to be in alphabetical order, with the "Home" anchor tag at the very top.
 
-#### Code snippet of the solution:
+###### Code snippet of the solution:
 ```html
 <a class="dropdown-item" href="/">Home</a>
 <br>
@@ -155,8 +160,8 @@ I reorganized the placement of each anchor tag to be in alphabetical order, with
 <a class="nav-link" href="/logout">Logout</a>
 ```
 
-### What is the end result?
+#### What is the end result?
 In the end, the navbar became easier to operate and navigate.
 
-#### Navbar Image:
+###### Navbar Image:
 ![navbar image](pyLiveProjectImg/story3.1.png)
