@@ -6,10 +6,10 @@ The primary components of this project include the creation of registered users,
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
 #### List of Technologies Used:
+- C# ASP.Net MVC, HTML, CSS, JavaScript
 - Azure DevOps
 - Visual Studio 2017
 - Git and Team Foundation Server
-- C# ASP.Net MVC
 - Entity Framework 6
 - PagedList.Mvc
 - Leafletjs
@@ -21,13 +21,13 @@ The secondary components include a Chat feature (for all users to have a single 
 
 
 ## User Story 5327: Show Directions on Map Load
-![user story image](pics/pic1.png)
+![user story image](sprint2pics/pic1.png)
 
 #### What is the issue?
 This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
 
 ###### App before fix
-![App before fix](pics/pic2.png)
+![App before fix](sprint2pics/pic2.png)
 
 #### How is the issue resolved?
 The current project map was created using JavaScript and leafletjs for the map and leaflet routing machine for map routing. I researched leafletjs and leaflet routing machine to understand the previous developer's implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
@@ -60,52 +60,52 @@ var control = L.Routing.control({
 ```
 
 ###### JobSites database table
-![JobSites database table](pics/pic3.png)
+![JobSites database table](sprint2pics/pic3.png)
 
 #### What is the end result?
 The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the job site's location, the written directions, and a red polyline connecting the 2 locations.
 
 ###### App after fix
-![App after fix](pics/pic4.png)
-![App after fix](pics/pic5.png)
+![App after fix](sprint2pics/pic4.png)
+![App after fix](sprint2pics/pic5.png)
 
 
 
 
 ## User Story 5277: Sorting, Filtering, & Paging ChatMessages Index
-![pic of user story](pics/pic6.png)
+![pic of user story](sprint2pics/pic6.png)
 
 #### What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
 ###### App before fix
-![App before fix](pics/pic7.png)
+![App before fix](sprint2pics/pic7.png)
 
 #### How is the issue resolved?
 First, I researched and used Microsoft's documentation as a resource. Then, looking inside ChatMessagesController.cs and it's Index method, all it did was return a list of data from the ChatMessages database table. I replaced it and added the sorting and filtering logic and used a NuGet package called PagedList.Mvc for the paging functionalitites. In the Index view, I added column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination.
 
 ###### ChatMessagesController.cs/Index method code
-![ChatMessagesController.cs/Index method code](pics/pic9.png)
-![ChatMessagesController.cs/Index method code](pics/pic10.png)
+![ChatMessagesController.cs/Index method code](sprint2pics/pic9.png)
+![ChatMessagesController.cs/Index method code](sprint2pics/pic10.png)
 
 ###### ChatMessages database table
-![ChatMessages database table](pics/pic8.png)
+![ChatMessages database table](sprint2pics/pic8.png)
 
 ###### ChatMessages/Index.cshtml view
-![ChatMessages/Index.cshtml view](pics/pic11.png)
-![ChatMessages/Index.cshtml view](pics/pic12.png)
+![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
+![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### What is the end result?
 The end result is an interactive table for chat messages that has pages and can be sorted and filtered for ease of use.
 
 ###### App after fix
-![App after fix](pics/pic13.png)
+![App after fix](sprint2pics/pic13.png)
 
 
 
 
 ## User Story 5244: Delete Unregistered Users
-![pic of user story](pics/pic16.png)
+![pic of user story](sprint2pics/pic16.png)
 
 #### What is the issue?
 The delete function for unregistered users was not deleting them from the database. Instead, when you try to confirm and delete an unregistered user it goes back to the Index view and the unregistered user is still there.
@@ -144,32 +144,32 @@ public ActionResult DeleteConfirmed(Guid id)
 ```
 
 ###### CreateUserRequests database table
-![CreateUserRequests database table](pics/pic17.png)
+![CreateUserRequests database table](sprint2pics/pic17.png)
 
 
 #### What is the end result?
 The result is a properly operating delete button that deletes unregistered users.
 
 ###### Delete user
-![Delete user](pics/pic18.png)
+![Delete user](sprint2pics/pic18.png)
 
 ###### Delete user confirmation
-![Delete user confirmation](pics/pic19.png)
+![Delete user confirmation](sprint2pics/pic19.png)
 
 ##### User deleted
-![User deleted](pics/pic20.png)
+![User deleted](sprint2pics/pic20.png)
 
 
 
 
 ## User Story 5322: List of Jobs to JobSite Details
-![pic of user story](pics/pic21.png)
+![pic of user story](sprint2pics/pic21.png)
 
 #### What is the issue?
 This user story required adding a list of job titles to the JobSites/Details view that are associated with that job site. It needed to be on the right side taking up 1/3 of the container.
 
 ###### App before fix
-![App before fix](pics/pic22.png)
+![App before fix](sprint2pics/pic22.png)
 
 #### How is the issue resolved?
 In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling), I found the #jobSiteMap ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
@@ -196,19 +196,19 @@ In JobSites/Details.cshtml I added a third column and adjusted the current boots
 ```
 
 ###### Jobs database table
-![Jobs database table](pics/pic23.png)
+![Jobs database table](sprint2pics/pic23.png)
 
 #### What is the result?
 The result is when a user goes to the job site's details page, it'll display the jobs associated with that job site.
 
 ###### App after fix
-![App after fix](pics/pic24.png)
+![App after fix](sprint2pics/pic24.png)
 
 
 
 
 ## User Story 5242: Users List Pagination Issue
-![pic of user story](pics/pic25.png)
+![pic of user story](sprint2pics/pic25.png)
 
 #### What is the issue?
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
@@ -223,7 +223,7 @@ var users = from s in db.Users
 ```
 
 ###### AspNetUsers database table (for active and suspended users)
-![AspNetUsers database table](pics/pic26.png)
+![AspNetUsers database table](sprint2pics/pic26.png)
 
 #### How is the issue resolved?
 In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, using LINQ I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
@@ -257,14 +257,14 @@ var users = from s in db.Users
 The result were tables with properly operating pagination and sorting features for active and suspended users.
 
 ###### App after fix
-![App after fix](pics/pic27.png)
-![App after fix](pics/pic28.png)
+![App after fix](sprint2pics/pic27.png)
+![App after fix](sprint2pics/pic28.png)
 
 
 
 
 ## User Story 5286: Prevent Page Refresh
-![pic of user story](pics/pic14.png)
+![pic of user story](sprint2pics/pic14.png)
 
 #### What is the issue?
 This user story had an issue where if we use the sort, filter, or pagination feature on the User List table (a table that renders 3 sub tables and partial views for Active Users, Suspended Users, and Unregistered Users) from the Home/Dashboard view, it would refresh the page to the User/Index view. Instead, it should refresh on the current page where the features were applied.
@@ -311,19 +311,19 @@ I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url
 The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
 
 ###### App after fix
-![App after fix](pics/pic15.png)
+![App after fix](sprint2pics/pic15.png)
 
 
 
 
 ## User Story 5264: Front-End Margin Tweak
-![pic of user story](pics/pic29.png)
+![pic of user story](sprint2pics/pic29.png)
 
 #### What is the issue?
 This user story had an issue with the top margin for the global CSS class inside of all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside of it.
 
 ###### App before fix
-![App before fix](pics/pic30.png)
+![App before fix](sprint2pics/pic30.png)
 
 #### Why is this an issue?
 I went to Content/site.css (responsible for the global CSS styling), located the .defaultContainer CSS class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
@@ -369,4 +369,4 @@ Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer c
 The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is now inside of its container.
 
 ###### App after fix
-![App after fix](pics/pic31.png)
+![App after fix](sprint2pics/pic31.png)
