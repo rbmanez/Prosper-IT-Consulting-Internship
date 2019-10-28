@@ -71,6 +71,9 @@ The result is that when a user goes to the job site's details page, they will se
 
 ###### App after fix
 
+
+
+
 ## User Story 5277: Sorting, Filtering, & Paging ChatMessages Index
 
 ###### pic of user story
@@ -100,6 +103,9 @@ In the Index view, I added column heading hyperlinks for sorting, a search box f
 The end result is an interactive table for chat messages that has pages and can be sorted and filtered for ease of use.
 
 ###### App after fix
+
+
+
 
 ## User Story 5286: Prevent Page Refresh
 
@@ -156,6 +162,9 @@ I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url
 The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
 
 ###### App after fix
+
+
+
 
 ## User Story 5244: Delete Unregistered Users
 
@@ -222,6 +231,9 @@ The result is a properly operating delete button that deletes unregistered users
 
 
 
+
+
+
 ## User Story 5322: List of Jobs to JobSite Details
 
 ###### pic of user story
@@ -230,19 +242,49 @@ The result is a properly operating delete button that deletes unregistered users
 
 This user story required adding a list of job titles to the JobSites/Details view that are associated with that job site. It needed to be on the right side taking up 1/3 of the container.
 
-###### pic of app before
+###### App before fix
+
+
 
 ### How is the issue resolved?
 
-In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling) I found the #jobSiteMap ID associated with the map in the middle column, and I resized it to prevent it from overlapping into the new "Associated Jobs" column.
+In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling) I found the #jobSiteMap ID associated with the map in the middle column, and I resized it to prevent it from overlapping into the new "Associated Jobs" column.
 
-###### pic of code before and after and db
+###### JobSites/Details.cshtml code snippet
+```python
+<div class="col-md-4">
+    <h4>Associated Jobs</h4>
+    @foreach (var item in Model.Jobs)
+    {
+        <p>
+            @item.JobTitle
+        </p>
+    }
+</div>
+```
+
+###### Content/site.css code snippet
+```css
+#jobSiteMap {
+    height: 100%;
+    width: 100%;
+}
+```
+
+###### Jobs database table
+
+
 
 ### What is the result?
 
 The result is when a user goes to the job site's details page, it'll display the jobs associated with that job site.
 
-###### pic of app after
+###### App after fix
+
+
+
+
+
 
 ## User Story 5242: Users List Pagination Issue
 
@@ -252,25 +294,56 @@ The result is when a user goes to the job site's details page, it'll display the
 
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
 
-###### pic of app before
-
 ### Why is this an issue?
 
 After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers view was using the same paging and sorting variables used for the _UserList view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering for only Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
 
-###### pic of code before and db
+###### LINQ query to AspNetUsers database table (for active and suspended users)
+```
+var users = from s in db.Users
+            select s;
+```
+
+###### AspNetUsers database table (for active and suspended users)
+
 
 ### How is the issue resolved?
 
 In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, using LINQ I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
 
-###### pic of code after
+###### _SuspendedUsers.cshtml code snippet
+```python
+@Html.ActionLink("User Name", "Index", new { sortOrder2 = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
+```
+```python
+@Html.PagedListPager(Model, page2 => Url.Action("Index",
+  new { page2, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+```
+
+###### UserController/_UserList method code snippet
+```python
+//grabs all non-suspended users from database
+var users = from s in db.Users
+            where s.Suspended == false
+            select s;
+```
+
+###### UserController/_SuspendedUsers method code snippet
+```python
+//grabs all suspended users from database
+var users = from s in db.Users
+            where s.Suspended == true
+            select s;
+```
 
 ### What is the end result?
 
 The result were tables with properly operating pagination and sorting features for active and suspended users.
 
-###### pic of app after
+###### App after fix
+
+
+
 
 ## User Story 5264: Front-End Margin Tweak
 
@@ -280,22 +353,52 @@ The result were tables with properly operating pagination and sorting features f
 
 This user story had an issue with the top margin for the global CSS class inside all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside.
 
-###### pic of app before
+###### App before fix
 
 ### Why is this an issue?
 
 I went to Content/site.css (responsible for the global styling), located the .defaultContainer class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
 
-###### pic of code before
+###### Content/site.css code snippet
+```css
+.defaultContainer {
+    background-color: rgba(255, 255, 255,0.8);
+    padding: 40px;
+    width: auto;
+    border-radius: 20px;
+    margin: 10%;
+}
+```
+
+###### JobSites/Index.cshtml code snippet
+```html
+<h2>Job Sites</h2>
+<div class="defaultContainer">
+```
 
 ### How is the issue resolved?
 
 Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer class to inside of it. Then inside Content/site.css I changed the .defaultContainer class to minimize the top margin.
 
-###### pic of code after
+###### JobSites/Index.cshtml code snippet
+```html
+<div class="defaultContainer">
+    <h2>Job Sites</h2>
+```
+
+###### Content/site.css code snippet
+```css
+.defaultContainer {
+    background-color: rgba(255, 255, 255,0.8);
+    padding: 40px;
+    width: auto;
+    border-radius: 20px;
+    margin: 0% 10% 10% 10%;
+}
+```
 
 ### What is the end result?
 
 The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is inside of its container.
 
-###### pic of app after
+###### App after fix
