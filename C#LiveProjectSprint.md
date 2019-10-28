@@ -180,7 +180,7 @@ public ActionResult DeleteConfirmed(Guid id)
 I used LINQ to search the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
 
 ###### Code snippet
-```python
+```
 [HttpPost, ActionName("Delete")]
 [ValidateAntiForgeryToken]
 public ActionResult DeleteConfirmed(Guid id)
