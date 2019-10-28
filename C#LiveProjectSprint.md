@@ -30,7 +30,7 @@ This user story required auto populating the project's current map with a start 
 ![App before fix](pics/pic2.png)
 
 #### How is the issue resolved?
-The current project map was created using JavaScript, leftletjs, and leaflet routing machine. I researched them to understand their implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
+The current project map was created using JavaScript, leafletjs, and leaflet routing machine. I researched them to understand their implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
 
 ###### setLeafletMap() function is for creating the map
 ```javascript
