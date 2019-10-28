@@ -225,7 +225,7 @@ This user story required adding a list of job titles to the JobSites/Details vie
 ![App before fix](pics/pic22.png)
 
 #### How is the issue resolved?
-In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling) I found the #jobSiteMap ID associated with the map in the middle column, and I resized it to prevent it from overlapping into the new "Associated Jobs" column.
+In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling), I found the #jobSiteMap ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
 
 ###### JobSites/Details.cshtml code snippet
 ```python
