@@ -27,21 +27,49 @@ The secondary components include a Chat feature (for all users to have a single 
 
 ### What is the issue?
 
-This user story required auto populating the project's current map with a start location using the user's current location and an end location with the job site's location immediately after page load.
+This user story required auto populating the project's current map with a start location using the user's current location and an end location with the job site's location and a polypath connecting the start and end destinations immediately after page load.
 
-###### pic of app before
+###### App before fix
 
 ### How is the issue resolved?
 
-The current project map was created using leftletjs and leaflet routing machine. I researched them to understand their implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
+The current project map was created using JavaScript, leftletjs, and leaflet routing machine. I researched them to understand their implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
 
-###### pic of code before, database, code after
+###### setLeafletMap() function is for creating the map
+```javascript
+function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
+```
+
+###### Instantiates the map passing the CSS ID for the map container, job site latitude, job site longitude, user's current latitude, user's current longitude, and job site's address
+```javascript
+navigator.geolocation.getCurrentPosition(function (location) {
+  var currentLat = location.coords.latitude
+  var currentLong = location.coors.longitude
+  setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
+});
+```
+###### Part of setLeafletMap() function responsible for populating the start and end destinations
+```python
+var control = L.Routing.control({
+                waypoints: [
+                    L.latLng(currentLat, currentLong),
+                    L.latLng(jobSiteLat, jobSiteLong)
+                ],
+                routeWhileDragging: true,
+                show: true,
+                geocoder: L.Control.Geocoder.nominatim(),
+                autoRoute: true
+            }).addTo(leafletMap);
+```
+
+###### JobSites database table
+
 
 ### What is the end result?
 
-The result is that when a user goes to the job site's detail page, they will see a map with the starting and ending location auto populated with the user's current location and the job site's location, the written directions, and a red polyline connecting the 2 locations.
+The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the job site's location, the written directions, and a red polyline connecting the 2 locations.
 
-###### pic of app after
+###### App after fix
 
 ## User Story 5277: Sorting, Filtering, & Paging ChatMessages Index
 
@@ -51,7 +79,7 @@ The result is that when a user goes to the job site's detail page, they will see
 
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
-###### pic of app
+###### App before fix
 
 ### How is the issue resolved?
 
@@ -71,7 +99,7 @@ In the Index view, I added column heading hyperlinks for sorting, a search box f
 
 The end result is an interactive table for chat messages that has pages and can be sorted and filtered for ease of use.
 
-###### pic of app after
+###### App after fix
 
 ## User Story 5286: Prevent Page Refresh
 
@@ -87,19 +115,47 @@ This user story had an issue where if we use the sort, filter, or pagination fea
 
 Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
 
-###### pic of code before
+###### Code snippet
+```python
+@using (Html.BeginForm("Index", "Users", FormMethod.Get))
+```
+```python
+@Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
+```
+```python
+@Html.PagedListPager(Model, page => Url.Action("Index",
+  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+```
 
 ### How is the issue resolved?
 
 I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
 
-###### pic of code after
+###### Code snippet
+```python
+@using(
+  Html.BeginForm(HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  FormMethod.Get))
+```
+```python
+@Html.ActionLink("User Name",
+  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter }, null)
+```
+```python
+@Html.PagedListPager(Model, page => Url.Action(
+  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+```
 
 ### What is the end result?
 
 The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
 
-###### pic of app after
+###### App after fix
 
 ## User Story 5244: Delete Unregistered Users
 
@@ -109,25 +165,62 @@ The result is a dynamic User List table that when used to sort, filter, or pagin
 
 The delete function for unregistered users was not deleting them from the database. Instead, when you try to confirm and delete an unregistered user it goes back to the Index view and the unregistered user is still there.
 
-###### pic of app before
-
 ### Why is this an issue?
 
 I went to CreateUserRequestController.cs and found the DeleteConfirmed method responsible for deleting unregistered users. The reason the function did not work properly is because all it did was redirect to the Index view.
 
-###### pic of code before
+###### Code snippet
+
+```python
+[HttpPost, ActionName("Delete")]
+[ValidateAntiForgeryToken]
+public ActionResult DeleteConfirmed(Guid id)
+{
+    return RedirectToAction("Index");
+}
+```
 
 ### How is the issue resolved?
 
 I used LINQ to search the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
 
-###### pic of code after and db
+###### Code snippet
+
+```python
+[HttpPost, ActionName("Delete")]
+[ValidateAntiForgeryToken]
+public ActionResult DeleteConfirmed(Guid id)
+{
+    //finds object with associated id from database and assigns it as createUserRequest
+    CreateUserRequest createUserRequest = db.CreateUserRequests.Find(id);
+    //removes createUserRequest from database
+    db.CreateUserRequests.Remove(createUserRequest);
+    //saves database changes
+    db.SaveChanges();
+    //redirects to "Index" view
+    return RedirectToAction("Index");
+}
+```
+
+###### CreateUserRequests database table
+
+
 
 ### What is the end result?
 
 The result is a properly operating delete button that deletes unregistered users.
 
-###### pic of app after
+###### Delete user
+
+
+
+###### Delete user confirmation
+
+
+
+##### User deleted
+
+
 
 ## User Story 5322: List of Jobs to JobSite Details
 
