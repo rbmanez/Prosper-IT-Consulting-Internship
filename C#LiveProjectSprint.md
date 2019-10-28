@@ -24,7 +24,7 @@ The secondary components include a Chat feature (for all users to have a single 
 ![user story image](pics/pic1.png)
 
 #### What is the issue?
-This user story required auto populating the project's current map with a start location using the user's current location and an end location with the job site's location and a polypath connecting the start and end destinations immediately after page load.
+This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
 
 ###### App before fix
 ![App before fix](pics/pic2.png)
