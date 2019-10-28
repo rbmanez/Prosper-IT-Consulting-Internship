@@ -104,59 +104,6 @@ The end result is an interactive table for chat messages that has pages and can 
 
 
 
-## User Story 5286: Prevent Page Refresh
-![pic of user story](pics/pic14.png)
-
-#### What is the issue?
-This user story had an issue where if we use the sort, filter, or pagination feature on the User List table (a table that renders 3 sub tables and partial views for Active Users, Suspended Users, and Unregistered Users) from the Home/Dashboard view, it would refresh the page to the User/Index view. Instead, it should refresh on the current page where the features were applied.
-
-#### Why is this an issue?
-Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
-
-###### Code snippet
-```python
-@using (Html.BeginForm("Index", "Users", FormMethod.Get))
-```
-```python
-@Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
-```
-```python
-@Html.PagedListPager(Model, page => Url.Action("Index",
-  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-```
-
-#### How is the issue resolved?
-I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
-
-###### Code snippet
-```python
-@using(
-  Html.BeginForm(HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  FormMethod.Get))
-```
-```python
-@Html.ActionLink("User Name",
-  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter }, null)
-```
-```python
-@Html.PagedListPager(Model, page => Url.Action(
-  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-```
-
-#### What is the end result?
-The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
-
-###### App after fix
-![App after fix](pics/pic15.png)
-
-
-
-
 ## User Story 5244: Delete Unregistered Users
 ![pic of user story](pics/pic16.png)
 
@@ -267,9 +214,9 @@ The result is when a user goes to the job site's details page, it'll display the
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
 
 #### Why is this an issue?
-After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers view was using the same paging and sorting variables used for the _UserList view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering for only Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
+After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers partial view was using the same paging and sorting variables used for the _UserList partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering only for Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
 
-###### LINQ query to AspNetUsers database table (for active and suspended users)
+###### UserController.cs code snippet used for _UserList and _SuspendedUsers method to query database
 ```
 var users = from s in db.Users
             select s;
@@ -291,7 +238,7 @@ In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortO
 ```
 
 ###### UserController/_UserList method code snippet
-```python
+```
 //grabs all non-suspended users from database
 var users = from s in db.Users
             where s.Suspended == false
@@ -299,7 +246,7 @@ var users = from s in db.Users
 ```
 
 ###### UserController/_SuspendedUsers method code snippet
-```python
+```
 //grabs all suspended users from database
 var users = from s in db.Users
             where s.Suspended == true
@@ -312,6 +259,59 @@ The result were tables with properly operating pagination and sorting features f
 ###### App after fix
 ![App after fix](pics/pic27.png)
 ![App after fix](pics/pic28.png)
+
+
+
+
+## User Story 5286: Prevent Page Refresh
+![pic of user story](pics/pic14.png)
+
+#### What is the issue?
+This user story had an issue where if we use the sort, filter, or pagination feature on the User List table (a table that renders 3 sub tables and partial views for Active Users, Suspended Users, and Unregistered Users) from the Home/Dashboard view, it would refresh the page to the User/Index view. Instead, it should refresh on the current page where the features were applied.
+
+#### Why is this an issue?
+Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
+
+###### Code snippet
+```python
+@using (Html.BeginForm("Index", "Users", FormMethod.Get))
+```
+```python
+@Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
+```
+```python
+@Html.PagedListPager(Model, page => Url.Action("Index",
+  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+```
+
+#### How is the issue resolved?
+I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
+
+###### Code snippet
+```python
+@using(
+  Html.BeginForm(HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  FormMethod.Get))
+```
+```python
+@Html.ActionLink("User Name",
+  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter }, null)
+```
+```python
+@Html.PagedListPager(Model, page => Url.Action(
+  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
+  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
+  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+```
+
+#### What is the end result?
+The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
+
+###### App after fix
+![App after fix](pics/pic15.png)
 
 
 
