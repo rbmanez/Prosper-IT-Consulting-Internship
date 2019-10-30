@@ -6,7 +6,8 @@ The primary components of this project include the creation of registered users,
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
 #### List of Technologies Used:
-- C# ASP.Net MVC, HTML, CSS, JavaScript
+- C# ASP.Net MVC
+- HTML, CSS, JavaScript
 - Azure DevOps
 - Visual Studio 2017
 - Git and Team Foundation Server
@@ -124,7 +125,7 @@ public ActionResult DeleteConfirmed(Guid id)
 ```
 
 #### How is the issue resolved?
-I used LINQ to search the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
+I searched the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
 
 ###### Code snippet
 ```c#
@@ -226,7 +227,7 @@ var users = from s in db.Users
 ![AspNetUsers database table](sprint2pics/pic26.png)
 
 #### How is the issue resolved?
-In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, using LINQ I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
+In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
 
 ###### _SuspendedUsers.cshtml code snippet
 ```cshtml
