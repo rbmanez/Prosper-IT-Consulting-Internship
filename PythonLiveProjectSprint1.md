@@ -2,7 +2,8 @@
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
 #### List of Technologies Used:
-- Python & Django Web Framework, HTML, CSS, JavaScript
+- Python & Django Web Framework
+- HTML, CSS, JavaScript
 - Amadeus API (used for Airports App)
 - Virtualenv (Python Library)
 - DevOps (Project Management)
