@@ -1,6 +1,6 @@
 # Live Poject Sprints
 
-## Table of Contents:
+## Table of Contents
 - [General Information](#general-information)
 - [Live Project Sprints](#live-project-sprints)
 - [Conclusion](#conclusion)
