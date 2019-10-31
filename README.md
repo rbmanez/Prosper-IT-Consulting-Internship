@@ -6,7 +6,7 @@
 - [Conclusion](#conclusion)
 
 ## General Information
-The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations, with each sprint iteration focusing on specific tasks and technologies. We did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together.
+The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations, adding up to a total of 8 weeks. Each sprint iteration focuses on specific tasks and technologies. For 8 weeks, we solely did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together.
 
 #### The Live Project Sprints cover:
 - Working with a team
@@ -18,7 +18,7 @@ The Tech Academy's Live Project Sprints ensure students have real-world developm
 #### General Process
 Each Monday is dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
 
-We had daily stand up meetings from Monday through Friday. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing.
+We had daily stand up meetings from Monday through Friday through Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack and email.
 
 Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
