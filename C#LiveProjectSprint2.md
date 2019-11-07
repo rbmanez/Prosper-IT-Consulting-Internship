@@ -1,6 +1,6 @@
 # C# Live Project Sprint 2
 ## Table of Contents
-- [C# Live Project Sprint 2 General Information](#c#-live-project-sprint-2-general-information)
+- [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
 
 ## C# Live Project Sprint 2 General Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
