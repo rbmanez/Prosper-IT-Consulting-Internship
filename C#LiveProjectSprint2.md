@@ -2,7 +2,7 @@
 ## Table of Contents
 - [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
 - [User Story 1: Show Directions on Map Load](#user-story-1-show-directions-on-map-load)
-- [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting-filtering-paging-chatmessages-index)
+- [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting-filtering--paging-chatmessages-index)
 - []()
 - []()
 - []()
