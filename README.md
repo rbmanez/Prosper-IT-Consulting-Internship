@@ -21,7 +21,7 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 ## The Four Live Project Sprints
 Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
 
-- ### [Python Live Project: Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
+### [Python Live Project: Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### List of Technologies Used
   - Python & Django Web Framework
   - HTML, CSS, JavaScript
@@ -33,7 +33,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Google Hangout (Team Meetings)
   - VS Code (Code Editor)
   
-- ### [C# Live Project: Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
+### [C# Live Project: Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
 #### List of Technologies Used
   - C# ASP.Net MVC
   - HTML, CSS, JavaScript
@@ -48,7 +48,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Bootstrap 4
   - Slack and Google Meet for communications
   
-- ### C# Live Project: Sprint 3
+### C# Live Project: Sprint 3
 #### List of Technologies Used
   - C# ASP.Net MVC
   - HTML, CSS, JavaScript
@@ -59,7 +59,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Bootstrap 4
   - Slack and Google Meet for communications
   
-- ### Python Live Project: Sprint 4
+### Python Live Project: Sprint 4
 #### List of Technologies Used
   - 
 
