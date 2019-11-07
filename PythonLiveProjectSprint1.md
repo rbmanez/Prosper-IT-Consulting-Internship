@@ -1,9 +1,9 @@
  # Python Live Project Sprint 1
  ## Table of Contents
  - [Python Live Project Sprint 1 General Information](#python-live-project-sprint-1-general-information)
- - [User Story 1 - Refactor Airports App](#user-story-1---refactor-airports-app)
- - [User Story 2 - Front End Calendar App](#user-story-2---front-end-calendar-app)
- - [User Story 3 - Organize the Navbar](#user-story-3---organize-the-navbar)
+ - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
+ - [User Story 2: Front End Calendar App](#user-story-2-front-end-calendar-app)
+ - [User Story 3: Organize the Navbar](#user-story-3-organize-the-navbar)
  
  
  
@@ -25,7 +25,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 
 
-## User Story 1 - Refactor Airports App
+## User Story 1: Refactor Airports App
 ![user story image](pyLiveProjectImg/story1.0.png)
 
 #### What is the issue?
@@ -66,7 +66,7 @@ The functionality of the Airports App takes a user's input. If a user inputs a c
 
 
 
-## User Story 2 - Front End Calendar App
+## User Story 2: Front End Calendar App
 ![user story image](pyLiveProjectImg/story2.0.png)
 
 #### What is the issue?
@@ -135,7 +135,7 @@ In the end, the Calendar App looked uniform with the rest of the site and the CS
 
 
 
-## User Story 3 - Organize the Navbar
+## User Story 3: Organize the Navbar
 ![user story image](pyLiveProjectImg/story3.0.png)
 
 #### What is the issue?
