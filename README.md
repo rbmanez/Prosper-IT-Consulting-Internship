@@ -5,6 +5,9 @@
 - [Featured User Stories](#featured-user-stories)
 - [Conclusion](#conclusion)
 
+
+
+
 ## Live Project Sprint General Information
 The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations, adding up to a total of 8 weeks. Each sprint iteration focuses on specific tasks and technologies.
 
@@ -16,6 +19,9 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 - We had daily stand up meetings from Monday through Friday through Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack and email.
 
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
+
+
+
 
 ## The Four Live Project Sprints
 Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
@@ -62,6 +68,9 @@ Click the headings below to see the completed user stories for those sprints. Th
 #### List of Technologies Used
   - 
 
+
+
+
 ## Featured User Stories
 Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see. To see all of the user stories I completed, please see the links above from [The Four Live Project Sprints](#the-four-live-project-sprints).
 
@@ -76,6 +85,9 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 - ### User Story 5
 
 - ### User Story 6
+
+
+
 
 ## Conclusion
 In the course of the 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
