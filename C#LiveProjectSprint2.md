@@ -1,6 +1,13 @@
 # C# Live Project Sprint 2
 ## Table of Contents
 - [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
+- [User Story 1: Show Directions on Map Load](#user-story-1-show-directions-on-map-load)
+- [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting,-filtering,-paging,-chatmessages-index)
+- []()
+- []()
+- []()
+- []()
+- []()
 
 ## C# Live Project Sprint 2 General Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
@@ -25,7 +32,7 @@ The secondary components include a Chat feature (for all users to have a single 
   
 
 
-## User Story 5327: Show Directions on Map Load
+## User Story 1: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
 
 #### What is the issue?
@@ -77,7 +84,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 
 
-## User Story 5277: Sorting, Filtering, & Paging ChatMessages Index
+## User Story 2: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
 
 #### What is the issue?
