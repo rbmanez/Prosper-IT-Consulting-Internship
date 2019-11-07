@@ -1,4 +1,14 @@
- # Python Live Project: Sprint 1
+ # Python Live Project Sprint 1
+ ## Table of Contents
+ - [Python Live Project Sprint 1 General Information](#python-live-project-sprint-1-general-information)
+ - [User Story 1 - Refactor Airports App](#user-story-1---refactor-airports-app)
+ - [User Story 2 - Front End Calendar App](#user-story-2---front-end-calendar-app)
+ - [User Story 3 - Organize the Navbar](#user-story-3---organize-the-navbar)
+ 
+ 
+ 
+ 
+ ## Python Live Project Sprint 1 General Information
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
 #### List of Technologies Used:
@@ -15,7 +25,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 
 
-## 1) User Story 5075: Refactor Airports App
+## User Story 1 - Refactor Airports App
 ![user story image](pyLiveProjectImg/story1.0.png)
 
 #### What is the issue?
@@ -56,7 +66,7 @@ The functionality of the Airports App takes a user's input. If a user inputs a c
 
 
 
-## 2) User Story 5080: Front End Calendar App
+## User Story 2 - Front End Calendar App
 ![user story image](pyLiveProjectImg/story2.0.png)
 
 #### What is the issue?
@@ -115,6 +125,7 @@ I succeeded with the user story by incorporating the global CSS classes from the
     width: 39%;
 }
 ```
+
 #### What is the end result?
 In the end, the Calendar App looked uniform with the rest of the site and the CSS classes specific to it are no longer overriding the styles of the other apps.
 
@@ -124,7 +135,7 @@ In the end, the Calendar App looked uniform with the rest of the site and the CS
 
 
 
-## 3) User Story 5083: Organize the Navbar
+## User Story 3 - Organize the Navbar
 ![user story image](pyLiveProjectImg/story3.0.png)
 
 #### What is the issue?
