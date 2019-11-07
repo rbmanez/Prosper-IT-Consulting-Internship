@@ -20,7 +20,7 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 ## The Four Live Project Sprints
 Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
 
-### [Python Live Project: Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
+### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### List of Technologies Used
   - Python & Django Web Framework
   - HTML, CSS, JavaScript
@@ -32,7 +32,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Google Hangout (Team Meetings)
   - VS Code (Code Editor)
   
-### [C# Live Project: Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
+### [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
 #### List of Technologies Used
   - C# ASP.Net MVC
   - HTML, CSS, JavaScript
@@ -47,7 +47,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Bootstrap 4
   - Slack and Google Meet for communications
   
-### C# Live Project: Sprint 3
+### C# Live Project Sprint 3
 #### List of Technologies Used
   - C# ASP.Net MVC
   - HTML, CSS, JavaScript
@@ -58,7 +58,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Bootstrap 4
   - Slack and Google Meet for communications
   
-### Python Live Project: Sprint 4
+### Python Live Project Sprint 4
 #### List of Technologies Used
   - 
 
@@ -84,8 +84,8 @@ The Live Project Sprints provided me with an abundance of practical knowledge an
 - Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards a solution.
 - Before even coding, make sure I know exactly what the user story is asking. Look around the app and code base. Clarify any doubts. Do some initial research if necessary.
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
-- Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - Always think in terms of what the end goal is, what the sub goal is, what I'm trying to accomplish and why, and what my code is actually doing.
+- Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - When in doubt, communicate and clarify. Don't be stuck on a problem for too long. Know when to ask for help.
 - Empathy and compassion are keys to effective relationships and communication, whether it's at work or outside of work.
 - Continually learn and improve in terms of work and personal development. It's about progress, not perfection. Enjoy the journey!
