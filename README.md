@@ -1,5 +1,4 @@
 # Live Poject Sprints
-
 ## Table of Contents
 - [Live Project Sprint General Information](#live-project-sprint-general-information)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
@@ -64,7 +63,6 @@ Click the headings below to see the completed user stories for those sprints. Th
   - 
 
 ## Featured User Stories
-
 Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see. To see all of the user stories I completed, please see the links above from [The Four Live Project Sprints](#the-four-live-project-sprints).
 
 - ### User Story 1
@@ -80,13 +78,14 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 - ### User Story 6
 
 ## Conclusion
-The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I've become more comfortable with not knowing something, breaking down a task into smaller and manageable steps, and working towards a solution. Working with a team supplied me the opportunity to learn from others' advice, successes, and setbacks. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process and the significance of constant learning and improvement and effective communication.
+The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. Working with a team supplied me the opportunity to learn from others' advice, successes, and setbacks. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process and the significance of constant learning and improvement and effective communication.
+
 #### My Take Away Lessons:
-- Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward.
+- Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards the solution.
 - Before even coding, make sure I know exactly what the user story is asking. Look around the app and code base. Clarify any doubts. Do some initial research if necessary.
-- Break down user stories into manageable steps. Figure out exactly what needs to be (or should be) done in each step so that I can work, research, and ask more effectively.
+- Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
 - Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - Always think in terms of what the end goal is, what the sub goal is, what am I trying to accomplish and why, and what is my code actually doing.
 - When in doubt, communicate and clarify. Don't be stuck on a problem for too long. Know when to ask for help.
 - Empathy and compassion are keys to effective relationships, whether it's at work or outside of work.
-- Continually learn and improve, in terms of work and personal development. It's about progress, not perfection.
+- Continually learn and improve in terms of work and personal development. It's about progress, not perfection.
