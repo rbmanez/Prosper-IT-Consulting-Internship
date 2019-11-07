@@ -3,11 +3,11 @@
 - [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
 - [User Story 1: Show Directions on Map Load](#user-story-1-show-directions-on-map-load)
 - [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting-filtering--paging-chatmessages-index)
-- []()
-- []()
-- []()
-- []()
-- []()
+- [User Story 3: Delete Unregistered Users](#user-story-3-delete-unregistered-users)
+- [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobSite-details)
+- [User Story 5: Users List Pagination Issue](#user-story-5-users-list-pagination-issue)
+- [User Story 6: Prevent Page Refresh](#user-story-6-prevent-page-refresh)
+- [User Story 7: Prevent Page Refresh](#user-story-7-prevent-page-refresh)
 
 ## C# Live Project Sprint 2 General Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
@@ -116,7 +116,7 @@ The end result is an interactive table for chat messages that has pages and can 
 
 
 
-## User Story 5244: Delete Unregistered Users
+## User Story 3: Delete Unregistered Users
 ![pic of user story](sprint2pics/pic16.png)
 
 #### What is the issue?
@@ -174,7 +174,7 @@ The result is a properly operating delete button that deletes unregistered users
 
 
 
-## User Story 5322: List of Jobs to JobSite Details
+## User Story 4: List of Jobs to JobSite Details
 ![pic of user story](sprint2pics/pic21.png)
 
 #### What is the issue?
@@ -219,7 +219,7 @@ The result is when a user goes to the job site's details page, it'll display the
 
 
 
-## User Story 5242: Users List Pagination Issue
+## User Story 5: Users List Pagination Issue
 ![pic of user story](sprint2pics/pic25.png)
 
 #### What is the issue?
@@ -275,7 +275,7 @@ The result were tables with properly operating pagination and sorting features f
 
 
 
-## User Story 5286: Prevent Page Refresh
+## User Story 7: Prevent Page Refresh
 ![pic of user story](sprint2pics/pic14.png)
 
 #### What is the issue?
