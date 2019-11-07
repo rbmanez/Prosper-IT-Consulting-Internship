@@ -7,7 +7,7 @@
 - [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobSite-details)
 - [User Story 5: Users List Pagination Issue](#user-story-5-users-list-pagination-issue)
 - [User Story 6: Prevent Page Refresh](#user-story-6-prevent-page-refresh)
-- [User Story 7: Prevent Page Refresh](#user-story-7-prevent-page-refresh)
+- [User Story 7: Front End Margin Tweak](#user-story-7-front-end-margin-tweak)
 
 ## C# Live Project Sprint 2 General Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
@@ -275,7 +275,7 @@ The result were tables with properly operating pagination and sorting features f
 
 
 
-## User Story 7: Prevent Page Refresh
+## User Story 6: Prevent Page Refresh
 ![pic of user story](sprint2pics/pic14.png)
 
 #### What is the issue?
@@ -328,7 +328,7 @@ The result is a dynamic User List table that when used to sort, filter, or pagin
 
 
 
-## User Story 5264: Front-End Margin Tweak
+## User Story 7: Front End Margin Tweak
 ![pic of user story](sprint2pics/pic29.png)
 
 #### What is the issue?
