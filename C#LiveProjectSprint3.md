@@ -2,7 +2,7 @@
 ## Table of Contents
 - [C# Live Project Sprint 3 General Information](#c-live-project-sprint-3-general-information)
 - [User Story 1: Personal Photo Refator](#user-story-1-personal-photo-refator)
-- []()
+- [User Story 2: New Class Vacation Time](#user-story-2-new-class-vacation-time)
 - []()
 - []()
 
@@ -46,7 +46,7 @@ public byte[] ProfilePicture { get; set; }
 I took the logic for uploading a profile picture from the ManageController and transfered it to PersonalProfilesController and made some adjustments to make it work for the views that needed access to it.
 
 ###### Code snippet of PersonalProfilesController dealing with profile picture and CRUD
-()[]
+[]()
 
 I updated all the view files that dealt with the profile picture since PersonalProfilesController was now in charge of that logic.
 
@@ -90,3 +90,56 @@ The result is a fully functioning CRUD feature for profile pictures that is now 
 []()
 
 ###### PersonalProfiles/DeleteProfilePicture view for delete confirmation
+[]()
+
+
+
+
+## User Story 2: New Class Vacation Time
+[]()
+
+#### What is the issue?
+This user story needed a new Vacation model to be created so that we can track Users' vacation time.
+
+#### How is the issue resolved?
+I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it.
+	
+###### New Vacation class model
+```c#
+public class Vacation
+{
+	public int VacationID { get; set; }
+
+	[DataType(DataType.Date)]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+	public DateTime StartDate { get; set; }
+
+	[DataType(DataType.Date)]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+	public DateTime EndDate { get; set; }
+
+	public VacationType VacationType { get; set; }
+
+	public virtual ApplicationUser User { get; set; }
+}
+```
+	
+###### Enum for vacation type
+```c#
+public enum VacationType
+{
+	PTO,
+	Injury,
+	FamilyLeave,
+	SickTime,
+	Other
+}
+```
+	
+###### New Vacation property in User model
+```c#
+public virtual ICollection<Vacation> Vacation { get; set; }
+```
+
+#### What is the end result?
+The result is that there is now a Vacation model to help keep track of Users' vacation time.
