@@ -82,10 +82,6 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 
 - ### User Story 4
 
-- ### User Story 5
-
-- ### User Story 6
-
 
 
 
