@@ -53,7 +53,7 @@ Click the headings below to see the completed user stories for those sprints. Th
   - Bootstrap 4
   - Slack and Google Meet for communications
   
-### C# Live Project Sprint 3
+### [C# Live Project Sprint 3](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
 #### List of Technologies Used
   - C# ASP.Net MVC
   - HTML, CSS, JavaScript
