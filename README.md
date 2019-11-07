@@ -19,7 +19,7 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 ## The Four Live Project Sprints
-Click the headings below to see the completed user stories for those sprints.
+Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
 
 - ### [Python Live Project: Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### List of Technologies Used
@@ -87,6 +87,6 @@ The Live Project Sprints provided me with an abundance of practical knowledge an
 - Break down user stories into manageable steps. Figure out exactly what needs to be (or should be) done in each step so that I can work, research, and ask more effectively.
 - Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - Always think in terms of what the end goal is, what the sub goal is, what am I trying to accomplish and why, and what is my code actually doing.
-- When in doubt, communicate and clarify.
+- When in doubt, communicate and clarify. Don't be stuck on a problem for too long. Know when to ask for help.
 - Empathy and compassion are keys to effective relationships, whether it's at work or outside of work.
-- Constantly learn and improve, in terms of work and personal development.
+- Continually learn and improve, in terms of work and personal development. It's about progress, not perfection.
