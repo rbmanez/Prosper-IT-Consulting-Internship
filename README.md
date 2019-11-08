@@ -34,7 +34,7 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 
 
 ## The Four Live Project Sprints
-Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
+Click the headings below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the next section below.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Information
@@ -101,7 +101,7 @@ The secondary components include a Chat feature (for all users to have a single 
 
 
 ## Featured User Stories
-Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see. To see all of the user stories I completed, please see the links above from [The Four Live Project Sprints](#the-four-live-project-sprints).
+Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see here. To see all of the user stories I completed please see the section above, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading links.
 
 - ### User Story 1
 
@@ -115,14 +115,14 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 
 
 ## Conclusion
-In the course of the 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
+In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
 
 #### My Take Away Lessons
 - Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards a solution.
-- Before even coding make sure I know exactly what the user story is asking. Look around the app and code base. Clarify any doubts. Do some initial research if necessary.
+- Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
-- Always think in terms of what the end goal is, what the sub goal is, what I'm trying to accomplish and why, and what my code is actually doing.
+- Always think in terms of what the end goal is, what the sub goal is, what I'm currently trying to accomplish and why, and what my code is actually doing.
 - Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
-- When in doubt, communicate and clarify. Don't be stuck on a problem for too long. Know when to ask for help.
+- When in doubt, communicate and clarify. Don't be stuck on a problem for too long and ask for help.
 - Empathy and compassion are keys to effective relationships and communication, whether it's at work or outside of work.
 - Continually learn and improve in terms of work and personal development. It's about progress, not perfection. Enjoy the journey!
