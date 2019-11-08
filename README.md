@@ -1,6 +1,7 @@
 # Live Poject Sprints
 ## Table of Contents
 - [Live Project Sprint General Information](#live-project-sprint-general-information)
+  - [Live Project Sprint Overview](#live-project-sprint-overview)
   - [Live Project Sprint Weekly Process](#live-project-sprint-weekly-process)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
   - [Python Live Project Sprint 1](#python-live-project-sprint-1)
@@ -19,6 +20,7 @@
 
 
 ## Live Project Sprint General Information
+#### Live Project Sprint Overview
 The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects are 2-week sprints with 4 iterations, adding up to a total of 8 weeks. Each sprint iteration focuses on specific tasks and technologies.
 
 For 8 weeks, we solely did actual development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job. It prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together.
