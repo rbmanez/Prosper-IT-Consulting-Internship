@@ -1,6 +1,9 @@
 # C# Live Project Sprint 3
 ## Table of Contents
 - [C# Live Project Sprint 3 General Information](#c-live-project-sprint-3-general-information)
+  - [Project Information](#project-information)
+  - [List of Technologies Used](#list-of-technologies-used)
+  - [User Stories](#user-stories)
 - [User Story 1: Personal Photo Refator](#user-story-1-personal-photo-refator)
 - [User Story 2: New Class Vacation Time](#user-story-2-new-class-vacation-time)
 - [User Story 3: Calendar Event Delete](#user-story-3-calendar-event-delete)
@@ -10,13 +13,14 @@
 
 
 ## C# Live Project Sprint 3 General Information
+#### Project Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
-#### List of Technologies Used:
+#### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
 - Azure DevOps
@@ -25,6 +29,13 @@ The secondary components include a Chat feature (for all users to have a single 
 - Entity Framework 6
 - Bootstrap 4
 - Slack and Google Meet for communications
+
+#### User Stories
+For each user story, I answer the following questions:
+1. What is the issue?
+2. Why is this an issue? (If applicable)
+3. How is the issue resolved?
+4. What is the end result?
 
 
 
