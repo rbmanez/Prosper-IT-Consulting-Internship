@@ -1,9 +1,19 @@
 # Live Poject Sprints
 ## Table of Contents
 - [Live Project Sprint General Information](#live-project-sprint-general-information)
+  - [Live Project Sprint Weekly Process](#live-project-sprint-weekly-process)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
+  - [Python Live Project Sprint 1](#python-live-project-sprint-1)
+  - [C# Live Project Sprint 2](#c-live-project-sprint-2)
+  - [C# Live Project Sprint 3](#c-live-project-sprint-3)
+  - Python Live Project Sprint 4
 - [Featured User Stories](#featured-user-stories)
+  - [User Story 1](#user-story-1)
+  - [User Story 2](#user-story-2)
+  - [User Story 3](#user-story-3)
+  - [User Story 4](#user-story-4)
 - [Conclusion](#conclusion)
+  - [My Take Away Lessons](#my-take-away-lessons)
 
 
 
@@ -88,7 +98,7 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 ## Conclusion
 In the course of the 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
 
-#### My Take Away Lessons:
+#### My Take Away Lessons
 - Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards a solution.
 - Before even coding make sure I know exactly what the user story is asking. Look around the app and code base. Clarify any doubts. Do some initial research if necessary.
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
