@@ -1,22 +1,26 @@
 # C# Live Project Sprint 2
 ## Table of Contents
 - [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
+  - [Project Information](#project-information)
+  - [List of Technologies Used](#list-of-technologies-used)
+  - [User Stories](#user-stories)
 - [User Story 1: Show Directions on Map Load](#user-story-1-show-directions-on-map-load)
 - [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting-filtering--paging-chatmessages-index)
 - [User Story 3: Delete Unregistered Users](#user-story-3-delete-unregistered-users)
-- [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobSite-details)
+- [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobsite-details)
 - [User Story 5: Users List Pagination Issue](#user-story-5-users-list-pagination-issue)
 - [User Story 6: Prevent Page Refresh](#user-story-6-prevent-page-refresh)
 - [User Story 7: Front End Margin Tweak](#user-story-7-front-end-margin-tweak)
 
 ## C# Live Project Sprint 2 General Information
+#### Project Information
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
-#### List of Technologies Used:
+#### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
 - Azure DevOps
@@ -29,6 +33,13 @@ The secondary components include a Chat feature (for all users to have a single 
 - Geolocation API
 - Bootstrap 4
 - Slack and Google Meet for communications
+
+#### User Stories
+For each user story, I answer the following questions:
+1. What is the issue?
+2. Why is this an issue? (If applicable)
+3. How is the issue resolved?
+4. What is the end result?
   
 
 
