@@ -1,7 +1,7 @@
 # C# Live Project Sprint 3
 ## Table of Contents
 - [C# Live Project Sprint 3 General Information](#c-live-project-sprint-3-general-information)
-  - [Project Information](#project-information)
+  - [Project Overview](#project-overview)
   - [List of Technologies Used](#list-of-technologies-used)
   - [User Stories](#user-stories)
 - [User Story 1: Personal Photo Refator](#user-story-1-personal-photo-refator)
@@ -13,7 +13,7 @@
 
 
 ## C# Live Project Sprint 3 General Information
-#### Project Information
+#### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
