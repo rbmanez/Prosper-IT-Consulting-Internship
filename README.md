@@ -115,7 +115,7 @@ Below are some featured user stories I completed during the entire 8 week, 4 spr
 
 
 ## Conclusion
-In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. I gained the courage to arrive in the middle of a large project and to collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
+In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. This is where all the tools we’ve learned came together. I gained the courage to arrive in the middle of a large project and collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
 
 #### My Take Away Lessons
 - Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards a solution.
