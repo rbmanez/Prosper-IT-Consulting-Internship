@@ -1,6 +1,9 @@
  # Python Live Project Sprint 1
  ## Table of Contents
  - [Python Live Project Sprint 1 General Information](#python-live-project-sprint-1-general-information)
+   - [Project Information](#project-information)
+   - [List of Technologies Used](#list-of-technologies-used)
+   - [User Stories](#user-stories)
  - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
  - [User Story 2: Front End Calendar App](#user-story-2-front-end-calendar-app)
  - [User Story 3: Organize the Navbar](#user-story-3-organize-the-navbar)
@@ -8,10 +11,11 @@
  
  
  
- ## Python Live Project Sprint 1 General Information
+## Python Live Project Sprint 1 General Information
+#### Project Information
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
-#### List of Technologies Used:
+#### List of Technologies Used
 - Python & Django Web Framework
 - HTML, CSS, JavaScript
 - Amadeus API (used for Airports App)
@@ -21,6 +25,13 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - Slack (Team Communication)
 - Google Hangout (Team Meetings)
 - VS Code (Code Editor)
+
+#### User Stories
+For each user story, I answer the following questions:
+1. What is the issue?
+2. Why is this an issue? (If applicable)
+3. How is the issue resolved?
+4. What is the end result?
 
 
 
