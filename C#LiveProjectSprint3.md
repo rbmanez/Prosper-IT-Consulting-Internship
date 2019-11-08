@@ -114,7 +114,7 @@ The result is a fully functioning CRUD feature for profile pictures that is now 
 This user story needed a new Vacation model to be created so that we can track Users' vacation time.
 
 #### How is the issue resolved?
-I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it.
+I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it. This established a 1 to many relationship between User and Vacation.
 	
 ###### New Vacation class model
 ```c#
@@ -163,7 +163,7 @@ The result is that there is now a Vacation model to help keep track of Users' va
 ![user story 3](sprint3pics/pic12.png)
 
 #### What is the issue?
-This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event remains on the calendar even after the associated schedule is deleted.
+This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
 
 ###### Deleting schedule
 ![delete schedule](sprint3pics/pic13.png)
@@ -172,7 +172,7 @@ This user story had an issue with deleting calendar events from the calendar. Wh
 ![calendar event persists](sprint3pics/pic14.png)
 
 #### Why is this an issue?
-After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting calendar events.
+After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting the schedule's associated calendar event.
 
 ###### Code snippet of SchedulesController.DeleteConfirmed method
 ![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
@@ -196,7 +196,7 @@ The result is that when a schedule is deleted, it's associated calendar event on
 ![Deleting schedule](sprint3pics/pic19.png)
 
 ###### Calendar event deleted due to schedule being deleted
-![Calendar event deleted due to schedule being deleted](sprint3pics/pic20png)
+![Calendar event deleted due to schedule being deleted](sprint3pics/pic20.png)
 
 
 
