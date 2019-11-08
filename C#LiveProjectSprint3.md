@@ -208,9 +208,9 @@ The result is that when a schedule is deleted, it's associated calendar event on
 This user story had an issue with Job's ShiftTimes CRUD functionality. The Edit and Details view were throwing errors, and the Create view already had a basic layout but it did not have a working create functionality. The Create view also required a drop down list and moving the Default element to the top of the page.
 
 #### Why is this an issue?
-The Edit view was throwing an error because in the ShiftTimes controller's Edit method via GET, the id parameter that was being passed was of the wrong data type. The ShiftTime model used in the Edit view uses an integer data type for its id. So the method was expecting an integer but instead the parameter was declared as a Guid. As a result, id always had a value of null and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
+The Edit view was throwing an error because in the ShiftTimes controller's Edit GET method, the id parameter that was being passed was of the wrong data type. The ShiftTime model used in the Edit view uses an integer data type for its id. So the method was expecting an integer but instead the parameter was declared as a Guid. As a result, id always had a value of null and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
-###### Code snippet of ShiftTimes controller's Edit method via GET
+###### Code snippet of ShiftTimes controller's Edit GET method
 ```c#
 public ActionResult Edit(Guid? id)
 {
@@ -242,8 +242,8 @@ The Details view was throwing an error due to a line of code from inside of the 
 
 The Create view lacked the create functionality because:
 1. the view did not have an option to select an existing Job. And since Job and ShiftTime had a 1 to 0..1 (zero or one) relationship, in order to create a ShiftTime there must first be an existing Job to select and attach it to.
-2. the controller's Create method via GET didn't do much besides simply returning the view.
-3. the controller's Create method via POST had the entire method commented out with code that was implementing a Guid data type for the ShiftTimeId (when in fact, based on the ShiftTime model it should be an integer) and a partial view of "_shiftTimeModal" that was created for Jobs controller and view.
+2. the controller's Create GET method didn't do much besides simply returning the view.
+3. the controller's Create POST method had the entire method commented out with code that was implementing a Guid data type for the ShiftTimeId (when in fact, based on the ShiftTime model it should be an integer) and a partial view of "_shiftTimeModal" that was created for Jobs controller and view.
 
 ###### ShiftTime Create view before fix
 ![ShiftTime Create view before fix](sprint3pics/pic24.png)
@@ -303,9 +303,9 @@ public ActionResult Create()
 #### How is the issue resolved?
 I fixed the Edit view by changing the parameter data type from Guid to int. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific ShiftTimes associated Job's JobTitle by using Html.DisplayFor.
 	
-###### Code snippet of ShiftTimes controller's Edit method via GET
+###### Code snippet of ShiftTimes controller's Edit GET method
 ```c#
-public ActionResult Edit(Guid? id)
+public ActionResult Edit(int id)
 {
 	if (id == null)
 	{
@@ -320,7 +320,7 @@ public ActionResult Edit(Guid? id)
 }
 ```
 
-###### Dynamic heading grabbing the specific ShiftTimes associated Job's JobTitle
+###### Dynamic heading
 ```cshtml
 <h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
 ```
@@ -329,19 +329,20 @@ I fixed the Details view by completely eliminating the line of code that was cau
 1. this was the Details view and not the Edit view.
 2. the user story only required for the Details view to simply show.
 3. there was already a functional Edit button from the Index view.
+
 I also added a dynamic heading that used the ShiftTimes associated Job's JobTitle using Html.DisplayFor. Previously there was no heading.
 
-######
+###### Dynamic heading
 ```cshtml
 <h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
 ```
 
 I fixed the Create view by:
 1. moving the Default element to the top of the page.
-2. setting up Html.BeginForm for the POST request.
-3. setting up Html.DropDownList for the drop down and using Html.LabelFor for a dynamic heading for the drop down.
+2. setting up Html.BeginForm.
+3. setting up Html.DropDownList for the drop down list and using Html.LabelFor for a dynamic heading for the drop down list.
 4. setting up ShiftTimes controller's Create GET method to pass to the view a list of Jobs from the Job database that did not have its WeeklyShift property assigned yet.
-5. setting up ShiftTimes controller's Create POST method to find the selected Job from the Job database and assigning it the created shiftTime. Then adding the new shiftTime object to the ShiftTime database.
+5. setting up ShiftTimes controller's Create POST method to find the selected Job from the Job database and assigning its WeeklyShift property to the newly created shiftTime. Then I added the new shiftTime object to the ShiftTime database.
 
 ###### Html.BeginForm
 ```cshtml
@@ -395,12 +396,12 @@ public ActionResult Create([Bind(Include = "ShiftTimeId,Monday,Tuesday,Wednesday
 ```
 
 #### What is the end result?
-The result is a functional CRUD feature for ShiftTimes. A manager can now go into ShiftTimes and to see, create, edit, or delete a ShiftTime associated to a Job.
+The result is a functional CRUD feature for ShiftTimes. A manager can now go into ShiftTimes and see, create, edit, or delete a ShiftTime associated to a Job.
 
 ###### Create view after fix
 ![Create view after fix](sprint3pics/pic25.png)
 
-###### Index view
+###### Index view showing created ShiftTime for Job named "Yellowstone"
 ![Index view](sprint3pics/pic26.png)
 
 ###### Edit view after fix
