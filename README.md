@@ -14,7 +14,7 @@
     - [List of Technologies Used](#list-of-technologies-used-2)
   - [Python Live Project Sprint 4](#python-live-project-sprint-4)
     - [Project Information](#project-information-3)
-    - [List of Technologies Used](#list-of-technologies-used-4)
+    - [List of Technologies Used](#list-of-technologies-used-3)
 - [Featured User Stories](#featured-user-stories)
   - [User Story 1](#user-story-1)
   - [User Story 2](#user-story-2)
