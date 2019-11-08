@@ -37,7 +37,7 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 Click the headings below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the next section below.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
-#### Project Information
+#### Project Overview
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
 #### List of Technologies Used
@@ -52,7 +52,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - VS Code (Code Editor)
   
 ### [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
-#### Project Information
+#### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
@@ -74,7 +74,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - Slack and Google Meet for communications
 
 ### [C# Live Project Sprint 3](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
-#### Project Information
+#### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
@@ -92,7 +92,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - Slack and Google Meet for communications
   
 ### Python Live Project Sprint 4
-#### Project Information
+#### Project Overview
 
 #### List of Technologies Used
 - 
