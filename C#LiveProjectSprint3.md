@@ -100,7 +100,7 @@ I updated all the view files that dealt with the profile picture since PersonalP
 @using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
 ```
 
-#### What is the result?
+#### What is the end result?
 The result is a fully functioning CRUD feature for profile pictures that is now being handled by PersonalProfilesController and its views.
 
 ###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
