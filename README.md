@@ -6,7 +6,7 @@
   - [Python Live Project Sprint 1](#python-live-project-sprint-1)
   - [C# Live Project Sprint 2](#c-live-project-sprint-2)
   - [C# Live Project Sprint 3](#c-live-project-sprint-3)
-  - Python Live Project Sprint 4
+  - [Python Live Project Sprint 4](#python-live-project-sprint-4)
 - [Featured User Stories](#featured-user-stories)
   - [User Story 1](#user-story-1)
   - [User Story 2](#user-story-2)
@@ -37,46 +37,65 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 Click the headings below to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) below.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
+#### Project Information
+TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
+
 #### List of Technologies Used
-  - Python & Django Web Framework
-  - HTML, CSS, JavaScript
-  - Amadeus API (used for Airports App)
-  - Virtualenv (Python Library)
-  - DevOps (Project Management)
-  - Git (Source Control)
-  - Slack (Team Communication)
-  - Google Hangout (Team Meetings)
-  - VS Code (Code Editor)
+- Python & Django Web Framework
+- HTML, CSS, JavaScript
+- Amadeus API (used for Airports App)
+- Virtualenv (Python Library)
+- DevOps (Project Management)
+- Git (Source Control)
+- Slack (Team Communication)
+- Google Hangout (Team Meetings)
+- VS Code (Code Editor)
   
 ### [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
+#### Project Information
+The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
+
+The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
+
+The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
+
 #### List of Technologies Used
-  - C# ASP.Net MVC
-  - HTML, CSS, JavaScript
-  - Azure DevOps
-  - Visual Studio 2017
-  - Git and Team Foundation Server
-  - Entity Framework 6
-  - PagedList.Mvc
-  - Leafletjs
-  - Leafet Routing Machinge API
-  - Geolocation API
-  - Bootstrap 4
-  - Slack and Google Meet for communications
-  
+- C# ASP.Net MVC
+- HTML, CSS, JavaScript
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+- Entity Framework 6
+- PagedList.Mvc
+- Leafletjs
+- Leafet Routing Machinge API
+- Geolocation API
+- Bootstrap 4
+- Slack and Google Meet for communications
+
 ### [C# Live Project Sprint 3](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
+#### Project Information
+The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
+
+The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
+
+The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
+
 #### List of Technologies Used
-  - C# ASP.Net MVC
-  - HTML, CSS, JavaScript
-  - Azure DevOps
-  - Visual Studio 2017
-  - Git and Team Foundation Server
-  - Entity Framework 6
-  - Bootstrap 4
-  - Slack and Google Meet for communications
+- C# ASP.Net MVC
+- HTML, CSS, JavaScript
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+- Entity Framework 6
+- Bootstrap 4
+- Slack and Google Meet for communications
   
 ### Python Live Project Sprint 4
+#### Project Information
+
 #### List of Technologies Used
-  - 
+- 
 
 
 
