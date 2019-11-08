@@ -4,10 +4,10 @@
   - [Project Overview](#project-overview)
   - [List of Technologies Used](#list-of-technologies-used)
   - [User Stories](#user-stories)
-- [User Story 1: Personal Photo Refator](#user-story-1-personal-photo-refator)
-- [User Story 2: New Class Vacation Time](#user-story-2-new-class-vacation-time)
+- [User Story 1: Debug Shift Time CRUD](#user-story-1-debug-shift-time-crud)
+- [User Story 2: Personal Photo Refator](#user-story-2-personal-photo-refator)
 - [User Story 3: Calendar Event Delete](#user-story-3-calendar-event-delete)
-- [User Story 4: Debug Shift Time CRUD](#user-story-4-debug-shift-time-crud)
+- [User Story 4: New Class Vacation Time](#user-story-4-new-class-vacation-time)
 
 
 
@@ -40,180 +40,8 @@ For each user story, I answer the following questions:
 
 
 
-## User Story 1: Personal Photo Refator
-![user story 1](sprint3pics/pic1.png)
-
-#### What is the issue?
-This user story required making the PersonalProfilesController and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
-
-#### How is the issue resolved?
-The feature to upload profile pictures was previously handled by the ManageController and it was accessing the ProfilePicture property from the User model. I deleted the ProfilePicture property from the User model and added it to the PersonalProfile model instead. Inside PersonalProfilesController I added logic for CRUD functionality.
-
-###### ProfilePicture property inside PersonalProfile model
-```c#
-public byte[] ProfilePicture { get; set; }
-```
-
-I took the logic for uploading a profile picture from the ManageController and transfered it to PersonalProfilesController and made some adjustments to make it work for the views that needed access to it.
-
-###### PersonalProfilesController Photo method for profile picture
-![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
-
-###### PersonalProfilesController ProfilePicture GET method
-![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
-
-###### PersonalProfilesController ProfilePicture POST method
-![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
-
-###### PersonalProfilesController DeleteProfilePicture GET method
-![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
-
-###### PersonalProfilesController DeleteProfilePictureConfirmed POST method
-![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
-
-I updated all the view files that dealt with the profile picture since PersonalProfilesController was now in charge of that logic.
-
-###### Access to profile picture (or default picture for users without profile pictures)
-```cshtml
-<img id="ProfileImg" src="@Url.Action("Photo", "PersonalProfiles" , new { UserId=User.Identity.GetUserId() })" height="48" width="48" />
-```
-
-###### Link to upload profile picture
-```cshtml
-@Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
-```
-
-###### Links to update, see details, and delete for profile picture
-```cshtml
-@Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
-@Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
-@Html.ActionLink("Delete", "DeleteProfilePicture", new { id = Model.ProfileID })
-```
-
-###### Logic to upload profile picture via POST
-```cshtml
-@using (Html.BeginForm("ProfilePicture", "PersonalProfiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
-```
-	
-###### Logic for profile picture delete confirmation via POST
-```cshtml
-@using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
-```
-
-#### What is the end result?
-The result is a fully functioning CRUD feature for profile pictures that is now being handled by PersonalProfilesController and its views.
-
-###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
-![edit view](sprint3pics/pic7.png)
-	
-###### PersonalProfiles/ProfilePicture view for uploading profile picture
-![ProfilePicture view](sprint3pics/pic8.png)
-
-###### PersonalProfiles/Details view (I uploaded a new profile picture)
-![details view](sprint3pics/pic9.png)
-
-###### PersonalProfiles/DeleteProfilePicture view for delete confirmation
-![delete view](sprint3pics/pic10.png)
-
-
-
-
-## User Story 2: New Class Vacation Time
-![user story 2](sprint3pics/pic11.png)
-
-#### What is the issue?
-This user story needed a new Vacation model to be created so that we can track Users' vacation time.
-
-#### How is the issue resolved?
-I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it. This established a 1 to many relationship between User and Vacation.
-	
-###### New Vacation class model
-```c#
-public class Vacation
-{
-	public int VacationID { get; set; }
-
-	[DataType(DataType.Date)]
-	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-	public DateTime StartDate { get; set; }
-
-	[DataType(DataType.Date)]
-	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-	public DateTime EndDate { get; set; }
-
-	public VacationType VacationType { get; set; }
-
-	public virtual ApplicationUser User { get; set; }
-}
-```
-	
-###### Enum for vacation type
-```c#
-public enum VacationType
-{
-	PTO,
-	Injury,
-	FamilyLeave,
-	SickTime,
-	Other
-}
-```
-	
-###### New Vacation property in User model
-```c#
-public virtual ICollection<Vacation> Vacation { get; set; }
-```
-
-#### What is the end result?
-The result is that there is now a Vacation model to help keep track of Users' vacation time.
-
-
-
-
-## User Story 3: Calendar Event Delete
-![user story 3](sprint3pics/pic12.png)
-
-#### What is the issue?
-This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
-
-###### Deleting schedule
-![delete schedule](sprint3pics/pic13.png)
-
-###### Calendar event persists
-![calendar event persists](sprint3pics/pic14.png)
-
-#### Why is this an issue?
-After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting the schedule's associated calendar event.
-
-###### Code snippet of SchedulesController.DeleteConfirmed method
-![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
-
-#### How is the issue resolved?
-I accomplished the user story by adding the logic for deleting calendar events when the associated schedule is deleted.
-	
-###### Code snippet of solution from SchedulesController.DeleteConfirmed method
-![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
-
-#### What is the end result?
-The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
-
-###### Creating a new schedule
-![Creating a new schedule](sprint3pics/pic17.png)
-
-###### Calendar event created due to new schedule
-![Calendar event created due to new schedule](sprint3pics/pic18.png)
-
-###### Deleting schedule
-![Deleting schedule](sprint3pics/pic19.png)
-
-###### Calendar event deleted due to schedule being deleted
-![Calendar event deleted due to schedule being deleted](sprint3pics/pic20.png)
-
-
-
-
-## User Story 4: Debug Shift Time CRUD
-![user story 4](sprint3pics/pic21.png)
+## User Story 1: Debug Shift Time CRUD
+![user story 1](sprint3pics/pic21.png)
 
 #### What is the issue?
 This user story had an issue with Job's ShiftTimes CRUD functionality. The Edit and Details view were throwing errors, and the Create view already had a basic layout but it did not have a working create functionality. The Create view also required a drop down list and moving the Default element to the top of the page.
@@ -420,3 +248,175 @@ The result is a functional CRUD feature for ShiftTimes. A manager can now go int
 
 ###### Details view after fix
 ![Details view after fix](sprint3pics/pic28.png)
+
+
+
+
+## User Story 2: Personal Photo Refator
+![user story 2](sprint3pics/pic1.png)
+
+#### What is the issue?
+This user story required making the PersonalProfilesController and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
+
+#### How is the issue resolved?
+The feature to upload profile pictures was previously handled by the ManageController and it was accessing the ProfilePicture property from the User model. I deleted the ProfilePicture property from the User model and added it to the PersonalProfile model instead. Inside PersonalProfilesController I added logic for CRUD functionality.
+
+###### ProfilePicture property inside PersonalProfile model
+```c#
+public byte[] ProfilePicture { get; set; }
+```
+
+I took the logic for uploading a profile picture from the ManageController and transfered it to PersonalProfilesController and made some adjustments to make it work for the views that needed access to it.
+
+###### PersonalProfilesController Photo method for profile picture
+![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
+
+###### PersonalProfilesController ProfilePicture GET method
+![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
+
+###### PersonalProfilesController ProfilePicture POST method
+![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
+
+###### PersonalProfilesController DeleteProfilePicture GET method
+![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
+
+###### PersonalProfilesController DeleteProfilePictureConfirmed POST method
+![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
+
+I updated all the view files that dealt with the profile picture since PersonalProfilesController was now in charge of that logic.
+
+###### Access to profile picture (or default picture for users without profile pictures)
+```cshtml
+<img id="ProfileImg" src="@Url.Action("Photo", "PersonalProfiles" , new { UserId=User.Identity.GetUserId() })" height="48" width="48" />
+```
+
+###### Link to upload profile picture
+```cshtml
+@Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
+```
+
+###### Links to update, see details, and delete for profile picture
+```cshtml
+@Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
+@Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
+@Html.ActionLink("Delete", "DeleteProfilePicture", new { id = Model.ProfileID })
+```
+
+###### Logic to upload profile picture via POST
+```cshtml
+@using (Html.BeginForm("ProfilePicture", "PersonalProfiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+```
+	
+###### Logic for profile picture delete confirmation via POST
+```cshtml
+@using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
+```
+
+#### What is the end result?
+The result is a fully functioning CRUD feature for profile pictures that is now being handled by PersonalProfilesController and its views.
+
+###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
+![edit view](sprint3pics/pic7.png)
+	
+###### PersonalProfiles/ProfilePicture view for uploading profile picture
+![ProfilePicture view](sprint3pics/pic8.png)
+
+###### PersonalProfiles/Details view (I uploaded a new profile picture)
+![details view](sprint3pics/pic9.png)
+
+###### PersonalProfiles/DeleteProfilePicture view for delete confirmation
+![delete view](sprint3pics/pic10.png)
+
+
+
+
+## User Story 3: Calendar Event Delete
+![user story 3](sprint3pics/pic12.png)
+
+#### What is the issue?
+This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
+
+###### Deleting schedule
+![delete schedule](sprint3pics/pic13.png)
+
+###### Calendar event persists
+![calendar event persists](sprint3pics/pic14.png)
+
+#### Why is this an issue?
+After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting the schedule's associated calendar event.
+
+###### Code snippet of SchedulesController.DeleteConfirmed method
+![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
+
+#### How is the issue resolved?
+I accomplished the user story by adding the logic for deleting calendar events when the associated schedule is deleted.
+	
+###### Code snippet of solution from SchedulesController.DeleteConfirmed method
+![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
+
+#### What is the end result?
+The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
+
+###### Creating a new schedule
+![Creating a new schedule](sprint3pics/pic17.png)
+
+###### Calendar event created due to new schedule
+![Calendar event created due to new schedule](sprint3pics/pic18.png)
+
+###### Deleting schedule
+![Deleting schedule](sprint3pics/pic19.png)
+
+###### Calendar event deleted due to schedule being deleted
+![Calendar event deleted due to schedule being deleted](sprint3pics/pic20.png)
+
+
+
+
+## User Story 4: New Class Vacation Time
+![user story 4](sprint3pics/pic11.png)
+
+#### What is the issue?
+This user story needed a new Vacation model to be created so that we can track Users' vacation time.
+
+#### How is the issue resolved?
+I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it. This established a 1 to many relationship between User and Vacation.
+	
+###### New Vacation class model
+```c#
+public class Vacation
+{
+	public int VacationID { get; set; }
+
+	[DataType(DataType.Date)]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+	public DateTime StartDate { get; set; }
+
+	[DataType(DataType.Date)]
+	[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+	public DateTime EndDate { get; set; }
+
+	public VacationType VacationType { get; set; }
+
+	public virtual ApplicationUser User { get; set; }
+}
+```
+	
+###### Enum for vacation type
+```c#
+public enum VacationType
+{
+	PTO,
+	Injury,
+	FamilyLeave,
+	SickTime,
+	Other
+}
+```
+	
+###### New Vacation property in User model
+```c#
+public virtual ICollection<Vacation> Vacation { get; set; }
+```
+
+#### What is the end result?
+The result is that there is now a Vacation model to help keep track of Users' vacation time.
