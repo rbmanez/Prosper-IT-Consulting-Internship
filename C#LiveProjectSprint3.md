@@ -152,12 +152,6 @@ The result is that there is now a Vacation model to help keep track of Users' va
 
 #### What is the issue?
 This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event remains on the calendar even after the associated schedule is deleted.
-	
-###### Creating a new schedule
-[]()
-	
-###### Calendar event created due to new schedule
-[]()
 
 ###### Deleting schedule
 []()
@@ -167,12 +161,6 @@ This user story had an issue with deleting calendar events from the calendar. Wh
 
 #### Why is this an issue?
 After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting calendar events.
-	
-###### Schedule database
-[]()
-
-###### CalendarEvent database
-[]()
 
 ###### Code snippet of SchedulesController.DeleteConfirmed method
 []()
