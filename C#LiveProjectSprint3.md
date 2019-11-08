@@ -30,7 +30,7 @@ The secondary components include a Chat feature (for all users to have a single 
 
 
 ## User Story 1: Personal Photo Refator
-[]()
+![user story 1](sprint3pics/pic1.png)
 
 #### What is the issue?
 This user story required making the PersonalProfilesController and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
@@ -45,8 +45,20 @@ public byte[] ProfilePicture { get; set; }
 
 I took the logic for uploading a profile picture from the ManageController and transfered it to PersonalProfilesController and made some adjustments to make it work for the views that needed access to it.
 
-###### Code snippet of PersonalProfilesController dealing with profile picture and CRUD
-[]()
+###### PersonalProfilesController Photo method for profile picture
+![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
+
+###### PersonalProfilesController ProfilePicture GET method
+![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
+
+###### PersonalProfilesController ProfilePicture POST method
+![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
+
+###### PersonalProfilesController DeleteProfilePicture GET method
+![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
+
+###### PersonalProfilesController DeleteProfilePictureConfirmed POST method
+![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
 
 I updated all the view files that dealt with the profile picture since PersonalProfilesController was now in charge of that logic.
 
@@ -81,22 +93,22 @@ I updated all the view files that dealt with the profile picture since PersonalP
 The result is a fully functioning CRUD feature for profile pictures that is now being handled by PersonalProfilesController and its views.
 
 ###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
-[]()
+![edit view](sprint3pics/pic7.png)
 	
 ###### PersonalProfiles/ProfilePicture view for uploading profile picture
-[]()
+![ProfilePicture view](sprint3pics/pic8.png)
 
 ###### PersonalProfiles/Details view (I uploaded a new profile picture)
-[]()
+![details view](sprint3pics/pic9.png)
 
 ###### PersonalProfiles/DeleteProfilePicture view for delete confirmation
-[]()
+![delete view](sprint3pics/pic10.png)
 
 
 
 
 ## User Story 2: New Class Vacation Time
-[]()
+![user story 2](sprint3pics/pic11.png)
 
 #### What is the issue?
 This user story needed a new Vacation model to be created so that we can track Users' vacation time.
@@ -148,49 +160,49 @@ The result is that there is now a Vacation model to help keep track of Users' va
 
 
 ## User Story 3: Calendar Event Delete
-[]()
+![user story 3](sprint3pics/pic12.png)
 
 #### What is the issue?
 This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event remains on the calendar even after the associated schedule is deleted.
 
 ###### Deleting schedule
-[]()
+![delete schedule](sprint3pics/pic13.png)
 
 ###### Calendar event persists
-[]()
+![calendar event persists](sprint3pics/pic14.png)
 
 #### Why is this an issue?
 After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting calendar events.
 
 ###### Code snippet of SchedulesController.DeleteConfirmed method
-[]()
+![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
 
 #### How is the issue resolved?
 I accomplished the user story by adding the logic for deleting calendar events when the associated schedule is deleted.
 	
 ###### Code snippet of solution from SchedulesController.DeleteConfirmed method
-[]()
+![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
 
 #### What is the end result?
 The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
 
 ###### Creating a new schedule
-[]()
+![Creating a new schedule](sprint3pics/pic17.png)
 
 ###### Calendar event created due to new schedule
-[]()
+![Calendar event created due to new schedule](sprint3pics/pic18.png)
 
 ###### Deleting schedule
-[]()
+![Deleting schedule](sprint3pics/pic19.png)
 
 ###### Calendar event deleted due to schedule being deleted
-[]()
+![Calendar event deleted due to schedule being deleted](sprint3pics/pic20png)
 
 
 
 
 ## User Story 4: Debug Shift Time CRUD
-[]()
+![user story 4](sprint3pics/pic21.png)
 
 #### What is the issue?
 This user story had an issue with Job's ShiftTimes CRUD functionality. The Edit and Details view were throwing errors, and the Create view already had a basic layout but it did not have a working create functionality. The Create view also required a drop down list and moving the Default element to the top of the page.
@@ -216,7 +228,7 @@ public ActionResult Edit(Guid? id)
 ```
 
 ###### Error message when trying to access Edit view
-[]()
+![Error message when trying to access Edit view](sprint3pics/pic22.png)
 
 The Details view was throwing an error due to a line of code from inside of the view that was looking for a file that did not exist.
 
@@ -226,7 +238,7 @@ The Details view was throwing an error due to a line of code from inside of the 
 ```
 
 ###### Error message when trying to access Details view
-[]()
+![Error message when trying to access Details view](sprint3pics/pic23.png)
 
 The Create view lacked the create functionality because:
 1. the view did not have an option to select an existing Job. And since Job and ShiftTime had a 1 to 0..1 (zero or one) relationship, in order to create a ShiftTime there must first be an existing Job to select and attach it to.
@@ -234,7 +246,7 @@ The Create view lacked the create functionality because:
 3. the controller's Create method via POST had the entire method commented out with code that was implementing a Guid data type for the ShiftTimeId (when in fact, based on the ShiftTime model it should be an integer) and a partial view of "_shiftTimeModal" that was created for Jobs controller and view.
 
 ###### ShiftTime Create view before fix
-()[]
+![ShiftTime Create view before fix](sprint3pics/pic24.png)
 	
 ###### Code snippet of Job model
 ```c#
@@ -386,13 +398,13 @@ public ActionResult Create([Bind(Include = "ShiftTimeId,Monday,Tuesday,Wednesday
 The result is a functional CRUD feature for ShiftTimes. A manager can now go into ShiftTimes and to see, create, edit, or delete a ShiftTime associated to a Job.
 
 ###### Create view after fix
-[]()
+![Create view after fix](sprint3pics/pic25.png)
 
 ###### Index view
-[]()
+![Index view](sprint3pics/pic26.png)
 
 ###### Edit view after fix
-[]()
+![Edit view after fix](sprint3pics/pic27.png)
 
 ###### Details view after fix
-[]()
+![Details view after fix](sprint3pics/pic28.png)
