@@ -103,6 +103,12 @@ The secondary components include a Chat feature (for all users to have a single 
 ## Featured User Stories
 Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see here. To see all of the user stories I completed please see the section above, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading links.
 
+For each user story, I answer the following questions:
+1. What is the issue?
+2. Why is this an issue? (If applicable)
+3. How is the issue resolved?
+4. What is the end result?
+
 - ### User Story 1
 
 - ### User Story 2
