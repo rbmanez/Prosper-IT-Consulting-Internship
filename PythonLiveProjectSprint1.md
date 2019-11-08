@@ -23,7 +23,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - DevOps (Project Management)
 - Git (Source Control)
 - Slack (Team Communication)
-- Google Hangout (Team Meetings)
+- Google Meet (Team Meetings)
 - VS Code (Code Editor)
 
 #### User Stories
