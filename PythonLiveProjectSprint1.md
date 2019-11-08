@@ -1,7 +1,7 @@
  # Python Live Project Sprint 1
  ## Table of Contents
  - [Python Live Project Sprint 1 General Information](#python-live-project-sprint-1-general-information)
-   - [Project Information](#project-information)
+   - [Project Overview](#project-overview)
    - [List of Technologies Used](#list-of-technologies-used)
    - [User Stories](#user-stories)
  - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
@@ -12,7 +12,7 @@
  
  
 ## Python Live Project Sprint 1 General Information
-#### Project Information
+#### Project Overview
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
 #### List of Technologies Used
