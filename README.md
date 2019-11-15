@@ -131,6 +131,7 @@ In the course of 8 weeks, The Live Project Sprints provided me with an abundance
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
 - Always think in terms of what the end goal is, what the sub goal is, what I'm currently trying to accomplish and why, and what my code is actually doing.
 - Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
-- When in doubt, communicate and clarify. Don't be stuck on a problem for too long and ask for help.
+- When in doubt, communicate and clarify.
+- Don't be stuck on a problem for too long and ask for help.
 - Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
 - Continually learn and improve in terms of work and personal development. It's about progress, not perfection. Enjoy the journey!
