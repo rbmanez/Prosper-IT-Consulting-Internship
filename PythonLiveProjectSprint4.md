@@ -288,6 +288,18 @@ I accomplished the other optional requirement of including a map of the user's c
 </script>
 ```
 
+###### CSS styling for the map
+```css
+/* map */
+#location-data-map {
+  position: relative;
+  border: 5px solid white;
+  border-radius: 5px;
+  height: 300px;
+  width: 100%;
+}
+```
+
 #### What is the end result?
 The end result is a visually structured, appealing, and functional page for Location Data. The page looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
 
