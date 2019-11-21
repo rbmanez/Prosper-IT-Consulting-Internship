@@ -13,7 +13,7 @@
 
 ## Sprint 4 General Information
 #### Project Overview
-The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, and Selenium.
+The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
 
 #### List of Technologies Used
 - Python and Django Web Framework
@@ -187,9 +187,9 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 /* LOCATION DATA STYLE ENDS */
 ```
 
-As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the api key.
+As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the API key.
 
-Inside the views, there was already two functions (`User_Latitude` and `User_Longitude`) that used ip-api to return the user's location coordinates (used for the `RadiationExposure` function).
+Inside the views, there was already two functions (`User_Latitude` and `User_Longitude`) that used IP-API to return the user's location coordinates (used for the `RadiationExposure` function).
 
 I used those two functions to pass the user's latitude and longitude values into my `local_weather` function.
 
@@ -251,7 +251,7 @@ def kelvin_to_fahrenheit(k_temp):
 
 For some reason, the `User_Latitude` and `User_Longitude` functions (created by a previous developer) were producing user's location coordinates for West Chicago when it should've been for my location in Colorado Springs.
 
-I brought this to the project manager's attention and she said the issue may be the ip-api itself or the way the previous developer incorporated it. Either way, I was instructed to go ahead and continue to use those functions and she will create a new user story to handle that issue.
+I brought this to the project manager's attention and she said the issue may be the IP-API itself or the way the previous developer incorporated it. Either way, I was instructed to go ahead and continue to use those functions and she will create a new user story to handle that issue.
 
 I accomplished the other optional requirement of including a map of the user's current location by using Leafletjs and Openstreet API. I used the pre-existing `User_Latitude` and `User_Longitude` functions to get the user's coordinates for the map.
 
