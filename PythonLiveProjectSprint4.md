@@ -40,7 +40,7 @@ For each user story I answer the following questions:
 ## User Story 1: Location Data Redesign
 []()
 
-#### What is the issue?
+#### 1. What is the issue?
 The issue with this story was that the layout for the Location Data App was visually unorganized and. This story required clearly separating each section into their own container and adding their own image or graphic.
 
 This story had optional requirements to include a map of the user's current location and also to include an additional API source for local information.
@@ -51,7 +51,7 @@ This story had optional requirements to include a map of the user's current loca
 ###### App before fix (bottom half of the page)
 []()
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 The reason why the page was visually unorganized is because the previous developer used the home page's "cafe" section as a template and applied it here.
 
 The code's functionality did not trasfer over well to the Location Data template and required more adjustments to make it more visually effective.
@@ -95,7 +95,7 @@ The code's functionality did not trasfer over well to the Location Data template
 </section>
 ```
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 I fixed the layout by first removing all unnecessary Bootstrap and CSS styling. This removed the black background and revealed the main app's very appealing background that was underneath it, which extended from the main app's base.html.
 
 Then I replaced all of the div tags with semantic tags to give it more structure and meaning. I added an `h1` tag. I added images for each section.
@@ -282,7 +282,7 @@ I accomplished the other optional requirement of including a map of the user's c
   var map = new L.map('location-data-map', mapOptions);
   // Create Layer object
   var layer = new L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
   // Add layer to the map
   map.addLayer(layer);
   // Create marker and add it to map
@@ -302,7 +302,7 @@ I accomplished the other optional requirement of including a map of the user's c
 }
 ```
 
-#### What is the end result?
+#### 4. What is the end result?
 The end result is a visually structured, appealing, and functional page for Location Data. The page looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
 
 It now also includes the new features I added: user's local map location and weather data.
