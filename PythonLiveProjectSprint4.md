@@ -109,6 +109,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 <!-- LOCATION DATA PAGE -->
 <main class="container">
   <h1 id="location-data">Location Data</h1>
+	
   <!-- top row section -->
   <section class="row location-data-section">
   <!-- left side article of top row for sunrise/sunset -->
@@ -132,6 +133,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
     <img class="img-thumbnail" src="../static/images/radiation.jpg" alt="radiation">
   </article>
   </section>
+	
   <!-- bottom row section -->
   <section class="row location-data-section">
   <!-- left side article of bottom row for map -->
@@ -273,8 +275,8 @@ I accomplished the other optional requirement of including a map of the user's c
 <script>
   // Create map options
   var mapOptions = {
-  center: [parseFloat("{{ latitude_only }}"), parseFloat("{{ longitude_only }}")],
-  zoom: 10
+    center: [parseFloat("{{ latitude_only }}"), parseFloat("{{ longitude_only }}")],
+    zoom: 10
   }
   // Create map object
   var map = new L.map('location-data-map', mapOptions);
