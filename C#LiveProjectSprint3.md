@@ -47,7 +47,9 @@ For each user story, I answer the following questions:
 This user story had an issue with Job's ShiftTimes CRUD functionality. The Edit and Details view were throwing errors, and the Create view already had a basic layout but it did not have a working create functionality. The Create view also required a drop down list and moving the Default element to the top of the page.
 
 #### 2. Why is this an issue?
-The Edit view was throwing an error because in the ShiftTimes controller's Edit GET method, the id parameter that was being passed was of the wrong data type. The ShiftTime model used in the Edit view uses an integer data type for its id. So the method was expecting an integer but instead the parameter was declared as a Guid. As a result, id always had a value of null and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
+The Edit view was throwing an error because in the ShiftTimes controller's Edit GET method, the id parameter that was being passed was of the wrong data type. The ShiftTime model used in the Edit view uses an integer data type for its id. So the method was expecting an integer but instead the parameter was declared as a Guid.
+
+As a result, id always had a value of null and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
 ###### Code snippet of ShiftTimes controller's Edit GET method
 ```c#
@@ -259,7 +261,9 @@ The result is a functional CRUD feature for ShiftTimes. A manager can now go int
 This user story required making the PersonalProfilesController and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
 
 #### 2. How is the issue resolved?
-The feature to upload profile pictures was previously handled by the ManageController and it was accessing the ProfilePicture property from the User model. I deleted the ProfilePicture property from the User model and added it to the PersonalProfile model instead. Inside PersonalProfilesController I added logic for CRUD functionality.
+The feature to upload profile pictures was previously handled by the ManageController and it was accessing the ProfilePicture property from the User model.
+
+I deleted the ProfilePicture property from the User model and added it to the PersonalProfile model instead. Inside PersonalProfilesController I added logic for CRUD functionality.
 
 ###### ProfilePicture property inside PersonalProfile model
 ```c#
@@ -334,7 +338,9 @@ The result is a fully functioning CRUD feature for profile pictures that is now 
 ![user story 3](sprint3pics/pic12.png)
 
 #### 1. What is the issue?
-This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
+This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar.
+
+When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
 
 ###### Deleting schedule
 ![delete schedule](sprint3pics/pic13.png)
