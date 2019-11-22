@@ -3,7 +3,7 @@
 - [C# Live Project Sprint 3 General Information](#c-live-project-sprint-3-general-information)
   - [Project Overview](#project-overview)
   - [List of Technologies Used](#list-of-technologies-used)
-  - [User Stories](#user-stories)
+  - [User Story Overview](#user-story-overview)
 - [User Story 1: Debug Shift Time CRUD](#user-story-1-debug-shift-time-crud)
 - [User Story 2: Personal Photo Refator](#user-story-2-personal-photo-refator)
 - [User Story 3: Calendar Event Delete](#user-story-3-calendar-event-delete)
@@ -30,7 +30,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - Bootstrap 4
 - Slack and Google Meet for communications
 
-#### User Stories
+#### User Story Overview
 For each user story, I answer the following questions:
 1. What is the issue?
 2. Why is this an issue? (If applicable)
@@ -43,10 +43,10 @@ For each user story, I answer the following questions:
 ## User Story 1: Debug Shift Time CRUD
 ![user story 1](sprint3pics/pic21.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story had an issue with Job's ShiftTimes CRUD functionality. The Edit and Details view were throwing errors, and the Create view already had a basic layout but it did not have a working create functionality. The Create view also required a drop down list and moving the Default element to the top of the page.
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 The Edit view was throwing an error because in the ShiftTimes controller's Edit GET method, the id parameter that was being passed was of the wrong data type. The ShiftTime model used in the Edit view uses an integer data type for its id. So the method was expecting an integer but instead the parameter was declared as a Guid. As a result, id always had a value of null and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
 ###### Code snippet of ShiftTimes controller's Edit GET method
@@ -139,7 +139,7 @@ public ActionResult Create()
 //}
 ```
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 I fixed the Edit view by changing the parameter data type from Guid to int. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific ShiftTimes associated Job's JobTitle by using Html.DisplayFor.
 	
 ###### Code snippet of ShiftTimes controller's Edit GET method
@@ -234,7 +234,7 @@ public ActionResult Create([Bind(Include = "ShiftTimeId,Monday,Tuesday,Wednesday
 }
 ```
 
-#### What is the end result?
+#### 4. What is the end result?
 The result is a functional CRUD feature for ShiftTimes. A manager can now go into ShiftTimes and see, create, edit, or delete a ShiftTime associated to a Job.
 
 ###### Create view after fix
@@ -255,10 +255,10 @@ The result is a functional CRUD feature for ShiftTimes. A manager can now go int
 ## User Story 2: Personal Photo Refator
 ![user story 2](sprint3pics/pic1.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story required making the PersonalProfilesController and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 The feature to upload profile pictures was previously handled by the ManageController and it was accessing the ProfilePicture property from the User model. I deleted the ProfilePicture property from the User model and added it to the PersonalProfile model instead. Inside PersonalProfilesController I added logic for CRUD functionality.
 
 ###### ProfilePicture property inside PersonalProfile model
@@ -312,7 +312,7 @@ I updated all the view files that dealt with the profile picture since PersonalP
 @using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
 ```
 
-#### What is the end result?
+#### 3. What is the end result?
 The result is a fully functioning CRUD feature for profile pictures that is now being handled by PersonalProfilesController and its views.
 
 ###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
@@ -333,7 +333,7 @@ The result is a fully functioning CRUD feature for profile pictures that is now 
 ## User Story 3: Calendar Event Delete
 ![user story 3](sprint3pics/pic12.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar. When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule is deleted.
 
 ###### Deleting schedule
@@ -342,19 +342,19 @@ This user story had an issue with deleting calendar events from the calendar. Wh
 ###### Calendar event persists
 ![calendar event persists](sprint3pics/pic14.png)
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 After looking inside the SchedulesController, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting the schedule's associated calendar event.
 
 ###### Code snippet of SchedulesController.DeleteConfirmed method
 ![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 I accomplished the user story by adding the logic for deleting calendar events when the associated schedule is deleted.
 	
 ###### Code snippet of solution from SchedulesController.DeleteConfirmed method
 ![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
 
-#### What is the end result?
+#### 4. What is the end result?
 The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
 
 ###### Creating a new schedule
@@ -375,10 +375,10 @@ The result is that when a schedule is deleted, it's associated calendar event on
 ## User Story 4: New Class Vacation Time
 ![user story 4](sprint3pics/pic11.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story needed a new Vacation model to be created so that we can track Users' vacation time.
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 I accomplished the user story by creating a new Vacation model, creating an enum for vacation type, and updating the User model by adding a Vacation property to it. This established a 1 to many relationship between User and Vacation.
 	
 ###### New Vacation class model
@@ -418,5 +418,5 @@ public enum VacationType
 public virtual ICollection<Vacation> Vacation { get; set; }
 ```
 
-#### What is the end result?
+#### 3. What is the end result?
 The result is that there is now a Vacation model to help keep track of Users' vacation time.
