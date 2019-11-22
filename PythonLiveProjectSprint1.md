@@ -3,7 +3,7 @@
  - [Python Live Project Sprint 1 General Information](#python-live-project-sprint-1-general-information)
    - [Project Overview](#project-overview)
    - [List of Technologies Used](#list-of-technologies-used)
-   - [User Stories](#user-stories)
+   - [User Story Overview](#user-story-overview)
  - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
  - [User Story 2: Front End Calendar App](#user-story-2-front-end-calendar-app)
  - [User Story 3: Organize the Navbar](#user-story-3-organize-the-navbar)
@@ -26,7 +26,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - Google Meet (Team Meetings)
 - VS Code (Code Editor)
 
-#### User Stories
+#### User Story Overview
 For each user story, I answer the following questions:
 1. What is the issue?
 2. Why is this an issue? (If applicable)
@@ -39,10 +39,10 @@ For each user story, I answer the following questions:
 ## User Story 1: Refactor Airports App
 ![user story image](pyLiveProjectImg/story1.0.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 The objective of this user story was to refactor the Airports App from the TravelScrape main project so that it has a module that is easy to import and call by other apps. 
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 I succeeded with the user story by creating a module that takes care of the API call and returns the data. Then I implemented this module in its views page so there is no repeated code.
 
 ###### Code snippet of the module:
@@ -65,7 +65,7 @@ def make_api_call(search):
         return error.code
 ```
 
-#### What is the end result?
+#### 3. What is the end result?
 The functionality of the Airports App takes a user's input. If a user inputs a city name, the app retrieves the associated airport codes. If a user inputs an airport code, the app retrieves the associated city name.
 
 ###### Airports App Input:
@@ -80,10 +80,10 @@ The functionality of the Airports App takes a user's input. If a user inputs a c
 ## User Story 2: Front End Calendar App
 ![user story image](pyLiveProjectImg/story2.0.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 The objective of this user story was to utilize the global styles of the TravelScrapes main project so that the Calendar App will appear uniform with the rest of the site. Also, some CSS styling that is supposed to be specific to only the Calendar App were overriding the styles in other apps.
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 I succeeded with the user story by incorporating the global CSS classes from the static/css file with the appropriate HTML tags. I also changed the vague CSS selectors that are supposed to be responsible for only the Calendar App to unique CSS class names.
 
 ###### Code snippet of global styling for the TravelScrapes main project:
@@ -137,7 +137,7 @@ I succeeded with the user story by incorporating the global CSS classes from the
 }
 ```
 
-#### What is the end result?
+#### 3. What is the end result?
 In the end, the Calendar App looked uniform with the rest of the site and the CSS classes specific to it are no longer overriding the styles of the other apps.
 
 ###### Calendar App Interface:
@@ -149,10 +149,10 @@ In the end, the Calendar App looked uniform with the rest of the site and the CS
 ## User Story 3: Organize the Navbar
 ![user story image](pyLiveProjectImg/story3.0.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 The objective of this user story was to organize the side navbar to display all of the apps in alphabetical order. I also needed to move the home button from the bottom of the navbar to the top of it.
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 I reorganized the placement of each anchor tag to be in alphabetical order, with the "Home" anchor tag at the very top.
 
 ###### Code snippet of the solution:
@@ -181,7 +181,7 @@ I reorganized the placement of each anchor tag to be in alphabetical order, with
 <a class="nav-link" href="/logout">Logout</a>
 ```
 
-#### What is the end result?
+#### 3. What is the end result?
 In the end, the navbar became easier to operate and navigate.
 
 ###### Navbar Image:
