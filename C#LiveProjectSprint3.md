@@ -70,7 +70,7 @@ public ActionResult Edit(Guid? id)
 }
 ```
 
-###### Error message when trying to access `Edit` view due to parameter being passed to the `Edit` method having the wrong data type
+###### Error message when trying to access `Edit` view due to `Edit` method's `id` parameter being assigned the wrong data type
 ![Error message when trying to access Edit view](sprint3pics/pic22.png)
 
 The `Details` view was throwing an error due to a line of code from inside of the view that was looking for a file that did not exist.
