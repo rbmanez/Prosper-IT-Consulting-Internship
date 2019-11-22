@@ -853,3 +853,102 @@ are working and linking properly.
 
 ###### Cafe App's new Location page - bottom half of the page (cafe/cafe_iss.html)
 []()
+
+
+
+
+## User Story 3: Navbar Hover Upgrade
+[]()
+
+#### 1. What is the issue?
+This story required upgrading the UI experience by giving users the ability to see the children of the navbar sub-items when users hover over them. In this instance, the "Services" navbar item contain two sub-items, "Apis" and "Space Wiki", that contain more sub-items.
+
+###### Navbar Services sub-menu before fix
+[]()
+
+#### 2. How is the issue resolved?
+I resolved the issue by using Bootstrap 4 to create a sub-menu for the navbar sub-items "Apis" and "Space Wiki". I used custom CSS to create the hover effect that triggers the new sub-menus to appear. I used django template tags to set the href attributes for the new sub-items to link them to their appropriate templates.
+
+###### Code for "Services" sub-menu before fix (templates/navbar.html)
+```django
+<li class="nav-item dropdown">
+	<a class="nav-link dropdown-toggle js-scroll-trigger services" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Services
+	</a>
+	<div class="dropdown-menu dropdownItem" aria-labelledby="navbarDropdown">
+		<a class="dropdown-item" href="{% url 'apis' %}">Apis</a>
+		<a class="dropdown-item" href="{% url 'wiki' %}">Space Wiki</a>
+		<a class="dropdown-item" href="{% url 'spaceImages:pictures' %}">Pictures</a>
+		<a class="dropdown-item" href="{% url 'LocationData' %}">My Location Data</a>
+		<a class="dropdown-item" href="{% url 'news' %}">Space News</a>
+	</div>
+</li>
+```
+
+###### Code for "Services" sub-menu after fix (templates/navbar.html)
+```django
+<li class="nav-item dropdown">
+	<a class="nav-link dropdown-toggle js-scroll-trigger services" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	  Services
+	</a>
+	<div class="dropdown-menu dropdownItem" aria-labelledby="navbarDropdown">
+	
+	  <!-- show sub-menu for "Apis" on hover -->
+	  <div class="dd dropright">
+		<a class="dropdown-item dropdown-toggle" href="{% url 'apis' %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  Apis
+		</a>
+		<div class="dd-content dropdown-menu">
+		  <a class="dropdown-item" href="{% url 'weather_app' %}">Mars Weather</a>
+		  <a class="dropdown-item" href="{% url 'LocationData' %}">Location Data</a>
+		  <a class="dropdown-item" href="{% url 'objectFinder' %}">Object Finder</a>
+		  <a class="dropdown-item" href="{% url 'iss' %}">Int. Space Station</a>
+		  <a class="dropdown-item" href="{% url 'entertainment' %}">Entertainment</a>
+		  <a class="dropdown-item" href="{% url 'spaceX' %}">Space X</a>
+		</div>
+	  </div>
+	  
+	  <!-- show sub-menu for "Space Wiki" on hover -->
+	  <div class="dd dropright">
+		<a class="dropdown-item dropdown-toggle" href="{% url 'wiki' %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  Space Wiki
+		</a>
+		<div class="dd-content dropdown-menu">
+		  <a class="dropdown-item" href="{% url 'miningWiki' %}">Asteroid Mining Wiki</a>
+		  <a class="dropdown-item" href="{% url 'glossary' %}">Space Terms Glossary</a>
+		  <a class="dropdown-item" href="{% url 'planets' %}">Planet Information</a>
+		  <a class="dropdown-item" href="{% url 'explore' %}">Space Exploration</a>
+		  <a class="dropdown-item" href="{% url 'objects' %}">Astronomical Objects</a>
+		  <a class="dropdown-item" href="{% url 'discover' %}">Space Discovery</a>
+		</div>
+	  </div>
+	  
+	  <a class="dropdown-item" href="{% url 'spaceImages:pictures' %}">Pictures</a>
+	  <a class="dropdown-item" href="{% url 'LocationData' %}">My Location Data</a>
+	  <a class="dropdown-item" href="{% url 'news' %}">Space News</a>
+	</div>
+ </li>
+```
+
+###### Custom CSS for hover effect (static/css/styles.css)
+```css
+/* show sub-menu for "Apis" and "Space Wiki" navbar sub-items on hover */
+.dd:hover .dd-content {
+  display: block;
+}
+```
+
+
+
+
+## What is the end result?
+The end result is a better UI experience by showing navbar item's sub-menus on hover.
+
+###### Navbar "Services" sub-menu after fix
+[]()
+
+###### Navbar "Apis" sub-menu on hover after fix
+[]()
+
+###### Navbar "Space Wiki" sub-menu on hover after fix
+[]()
