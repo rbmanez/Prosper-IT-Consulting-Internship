@@ -407,7 +407,7 @@ This user story needed a new `Vacation` model to be created so that we can track
 #### 2. How is the issue resolved?
 I accomplished the user story by creating an `enum` for `VacationType`, creating a new `Vacation` model with properties for `VacationType` and `User` object, and updating the `User` model by adding a `Vacation` object property to it. This established a 1 to many relationship between `User` and `Vacation` objects.
 	
-###### `enum` for `VacationType` property
+###### I created an `enum` for `VacationType` property
 ```c#
 public enum VacationType
 {
@@ -419,7 +419,7 @@ public enum VacationType
 }
 ```
 	
-###### New `Vacation` model with `VacationType` property and `User` object property
+###### I created a new `Vacation` model with `VacationType` property and `User` object property
 ```c#
 public class Vacation
 {
@@ -439,7 +439,7 @@ public class Vacation
 }
 ```
 	
-###### New `Vacation` object property in `User` model
+###### I added a new `Vacation` object property inside `User` model
 ```c#
 public virtual ICollection<Vacation> Vacation { get; set; }
 ```
