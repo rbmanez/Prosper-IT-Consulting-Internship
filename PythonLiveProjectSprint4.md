@@ -1,12 +1,12 @@
 # Python Live Project Sprint 4
 ## Table of Contents
-- Sprint 4 General Information
-  - Project Overview
-  - List of Technologies Used
-  - User Story Overview
-- User Story 1: Location Data Redesign
-- User Story 2: Restaurant Redesign
-- User Story 3: Navbar Hover Upgrade
+- [Sprint 4 General Information](#sprint-4-general-information)
+  - [Project Overview](#project-overview)
+  - [List of Technologies Used](#list-of-technologies-used)
+  - [User Story Overview](#user-story-overview)
+- [User Story 1: Location Data Redesign](#user-story-1-location-data-redesign)
+- [User Story 2: Restaurant Redesign](#user-story-2-restaurant-redesign)
+- [User Story 3: Navbar Hover Upgrade](#user-story-3-navbar-hover-upgrade)
 
 
 
@@ -46,10 +46,10 @@ The issue with this story was that the layout for the Location Data App was visu
 This story had optional requirements to include a map of the user's current location and also to include an additional API source for local information.
 
 ###### App before fix (top half of the page)
-![App before fix](spint4pics/pic2.png)
+![App before fix](sprint4pics/pic2.png)
 	
 ###### App before fix (bottom half of the page)
-![App before fix](spint4pics/pic3.png)
+![App before fix](sprint4pics/pic3.png)
 
 #### 2. Why is this an issue?
 The reason why the page was visually unorganized is because the previous developer used the home page's "cafe" section as a template and applied it here.
@@ -308,19 +308,19 @@ The end result is a visually structured, appealing, and functional page for Loca
 It now also includes the new features I added: user's local map location and weather data.
 
 ###### App after fix (top third of the page)
-![App after fix](spint4pics/pic4.png)
+![App after fix](sprint4pics/pic4.png)
 
 ###### App after fix (middle third of the page)
-![App after fix](spint4pics/pic5.png)
+![App after fix](sprint4pics/pic5.png)
 
 ###### App after fix (bottom third of the page)
-![App after fix](spint4pics/pic6.png)
+![App after fix](sprint4pics/pic6.png)
 
 
 
 
 ## User Story 2: Restaurant Redesign
-![user story](spint4pics/pic7.png)
+![user story](sprint4pics/pic7.png)
 
 #### 1. What is the issue?
 The issue with this story is that neither the Cafe App and it's associated pages nor the Menu App home page are appropriately styled to match the theme of the site. These two apps function together to create the information needed for our hypothetical restaurant.
@@ -332,25 +332,25 @@ The page content from the Cafe and Menu Apps are also blocked by the side navbar
 This user story had optional add-ons of creating an Hours page that included information about Cafe hours in Zulu time and creating an International Space Station page with ISS location information and a link that connects to the ISS App home page.
 
 ###### Cafe App's home page before fix (cafe/index.html)
-![]()
+![Cafe App's home page before fix](sprint4pics/pic8.png)
 
 ###### Menu App's home page before fix (menu/menu_index.html)
-![]()
+![Menu App's home page before fix](sprint4pics/pic9.png)
 
 ###### Menu App's create page before fix - top half (menu/menu_create.html)
-![]()
+![Menu App's create page before fix](sprint4pics/pic10.png)
 
 ###### Menu App's create page before fix - bottom half (menu/menu_create.html)
-![]()
+![Menu App's create page before fix](sprint4pics/pic11.png)
 
 ###### Menu App's details page before fix (menu/menu_details.html)
-![]()
+![Menu App's details page before fix](sprint4pics/pic12.png)
 
 ###### Menu App's inspiration page before fix (menu/menu_inspiration.html)
-![]()
+![Menu App's inspiration page before fix](sprint4pics/pic13.png)
 
 ###### Side navbar blocking content when page width is resized smaller
-![]()
+![Side navbar blocking content when page width is resized smaller](sprint4pics/pic14.png)
 
 #### 2. Why is this an issue?
 The Cafe and Menu Apps were not styled appropriately because the django template tags (`{% extends %}` and `{% include %}`) and CSS styling were not implemented well. The side navbar was blocking page content when the page width was resized because there was no proper margin in place.
@@ -804,67 +804,67 @@ The Cafe content from the main app's home page has been transferred to Cafe App'
 are working and linking properly.
 
 ###### The main app's home page with the Cafe button moved up to just below the Services button
-![]()
+![The main app's home page with the Cafe button moved up to just below the Services button](sprint4pics/pic15.png)
 
 ###### Cafe App's home page after fix - top 1/3 of the page (cafe/index.html)
-![]()
+![Cafe App's home page after fix](sprint4pics/pic16.png)
 
 ###### Cafe App's home page after fix - mid 1/3 of the page (cafe/index.html)
-![]()
+![Cafe App's home page after fix](sprint4pics/pic17.png)
 
 ###### Cafe App's home page after fix - bottom 1/3 of the page (cafe/index.html)
-![]()
+![Cafe App's home page after fix](sprint4pics/pic18.png)
 
 ###### Menu App's home page after fix - top half of the page (menu/menu_index.html)
-![]()
+![Menu App's home page after fix](sprint4pics/pic19.png)
 
 ###### Menu App's home page after fix - bottom half of the page (menu/menu_index.html)
-![]()
+![Menu App's home page after fix](sprint4pics/pic20.png)
 
 ###### Menu App's create page after fix - top half of the page (menu/menu_create.html)
-![]()
+![Menu App's create page after fix](sprint4pics/pic21.png)
 
 ###### Menu App's create page after fix - bottom half of the page (menu/menu_create.html)
-![]()
+![Menu App's create page after fix](sprint4pics/pic22.png)
 
 ###### Menu App's details page after fix - top half of the page (menu/menu_details.html)
-![]()
+![Menu App's details page after fix](sprint4pics/pic23.png)
 
 ###### Menu App's details page after fix - bottom half of the page (menu/menu_details.html)
-![]()
+![Menu App's details page after fix](sprint4pics/pic24.png)
 
 ###### Menu App's inspiration page after fix - top half of the page (menu/menu_inspiration.html)
-![]()
+![Menu App's inspiration page after fix](sprint4pics/pic25.png)
 
 ###### Menu App's inspiration page after fix - bottom half of the page (menu/menu_inspiration.html)
-![]()
+![Menu App's inspiration page after fix](sprint4pics/pic26.png)
 
 ###### Side navbar no longer blocking content when page width is resized smaller
-![]()
+![Side navbar no longer blocking content when page width is resized smaller](sprint4pics/pic27.png)
 
 ###### Cafe App's new Hours page - top half of the page (cafe/cafe_hours.html)
-![]()
+![Cafe App's new Hours page](sprint4pics/pic28.png)
 
 ###### Cafe App's new Hours page - bottom half of the page (cafe/cafe_hours.html)
-![]()
+![Cafe App's new Hours page](sprint4pics/pic29.png)
 
 ###### Cafe App's new Location page - top half of the page (cafe/cafe_iss.html)
-![]()
+![Cafe App's new Location page](sprint4pics/pic30.png)
 
 ###### Cafe App's new Location page - bottom half of the page (cafe/cafe_iss.html)
-![]()
+![Cafe App's new Location page](sprint4pics/pic31.png)
 
 
 
 
 ## User Story 3: Navbar Hover Upgrade
-![]()
+![User Story 3](sprint4pics/pic32.png)
 
 #### 1. What is the issue?
 This story required upgrading the UI experience by giving users the ability to see the children of the navbar sub-items when users hover over them. In this instance, the "Services" navbar item contain two sub-items, "Apis" and "Space Wiki", that contain more sub-items.
 
-###### Navbar Services sub-menu before fix
-![]()
+###### Navbar "Services" sub-menu before fix
+![Navbar Services sub-menu before fix](sprint4pics/pic33.png)
 
 #### 2. How is the issue resolved?
 I resolved the issue by using Bootstrap 4 to create a sub-menu for the navbar sub-items "Apis" and "Space Wiki". I used custom CSS to create the hover effect that triggers the new sub-menus to appear. I used django template tags to set the href attributes for the new sub-items to link them to their appropriate templates.
@@ -945,10 +945,10 @@ I resolved the issue by using Bootstrap 4 to create a sub-menu for the navbar su
 The end result is a better UI experience by showing navbar item's sub-menus on hover.
 
 ###### Navbar "Services" sub-menu after fix
-![]()
+![Navbar "Services" sub-menu after fix](sprint4pics/pic34.png)
 
 ###### Navbar "Apis" sub-menu on hover after fix
-![]()
+![Navbar "Apis" sub-menu on hover after fix](sprint4pics/pic35.png)
 
 ###### Navbar "Space Wiki" sub-menu on hover after fix
-![]()
+![Navbar "Space Wiki" sub-menu on hover after fix](sprint4pics/pic36.png)
