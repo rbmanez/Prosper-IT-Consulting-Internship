@@ -41,7 +41,7 @@ For each user story I answer the following questions:
 ![user story](sprint4pics/pic1.png)
 
 #### 1. What is the issue?
-The issue with this story was that the layout for the Location Data App was visually unorganized and. This story required clearly separating each section into their own container and adding their own image or graphic.
+The issue with this story was that the layout for the Location Data App was visually unorganized. This story required clearly separating each section into their own container and adding their own image or graphic.
 
 This story had optional requirements to include a map of the user's current location and also to include an additional API source for local information.
 
@@ -157,7 +157,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 </main>
 ```
 
-###### CSS styles specific to only the Location Data App (static/css/styles.css)
+###### CSS styles specific to only the Location Data App to fix margin spacing, font size, and to style the map that I created for one of the optional requirements (static/css/styles.css)
 ```css
 /* LOCATION DATA STYLE */
 
@@ -189,7 +189,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 /* LOCATION DATA STYLE ENDS */
 ```
 
-As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the API key.
+As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the API key. I created a `local_weather` function to handle the API request and response to get the local weather information.
 
 Inside the views, there was already two functions (`User_Latitude` and `User_Longitude`) that used IP-API to return the user's location coordinates (used for the `RadiationExposure` function).
 
@@ -197,9 +197,9 @@ I used those two functions to pass the user's latitude and longitude values into
 
 From the Openweathermap API's JSON object response, I extracted the values for weather description, average temp, high temp, low temp, humidity, and the weather icon code.
 
-I wrapped all of this data into a dictionary to be returned. From the `index` function, I updated the `context` with the `local_weather`'s data to be rendered and used in the template using django template tags.
+I wrapped all of this data into a dictionary to be returned. From the `index` function, I used the `update` method to update the `context` with the `local_weather`'s data to be rendered and used in the template using django template tags.
 
-###### `local_weather` function from the views (my_locationData/views.py)
+###### I created `local_weather` function from the views to handle the API request and response to get the local weather information (my_locationData/views.py)
 ```python
 def local_weather(latitude, longitude):
   api_key = "api_key_hidden_for_privacy"
@@ -229,7 +229,7 @@ def local_weather(latitude, longitude):
   return context
 ```
 
-###### `index` function from the views - I added lines 5 and 6 (my_locationData/views.py)
+###### `index` function from the views - I added lines 5 and 6 to update the context with data from `local_weather` function (my_locationData/views.py)
 ```python
 def index(request):
   location = User_Location()
@@ -242,7 +242,7 @@ def index(request):
 
 The temperature values returned from Openweathermap API was in Kelvin. I created a function to convert Kelvin to Fahrenheit, then returned that value as a string so it can be used in the template.
 
-###### `kelvin_to_fahrenheit` function (my_locationData/views.py)
+###### I created `kelvin_to_fahrenheit` function (my_locationData/views.py)
 ```python
 def kelvin_to_fahrenheit(k_temp):
   # convert kelvin to fahrenheit and round
@@ -269,7 +269,7 @@ I accomplished the other optional requirement of including a map of the user's c
   crossorigin=""></script>
 ```
 
-###### JavaScript code for creating the map (my_location_data_base.html)
+###### JavaScript code for creating the leaflet map (my_location_data_base.html)
 ```html
 <!-- JAVASCRIPT FOR LOCATION DATA'S MAP -->
 <script>
@@ -303,7 +303,7 @@ I accomplished the other optional requirement of including a map of the user's c
 ```
 
 #### 4. What is the end result?
-The end result is a visually structured, appealing, and functional page for Location Data. The page looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
+The end result is a visually structured, appealing, and informative page for Location Data. The page looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
 
 It now also includes the new features I added: user's local map location and weather data.
 
