@@ -84,7 +84,7 @@ The `Details` view was throwing an error due to a line of code from inside of th
 The `Create` view lacked the create functionality because:
 1. the view did not have an option to select an existing `Job` object. And since `Job` objects and `ShiftTime` objects had a 1 to 0..1 (zero or one) relationship, in order to create a `ShiftTime` object there must first be an existing `Job` object to select and attach it to.
 2. the controller's `Create` GET method didn't do much besides simply returning the view.
-3. the controller's `Create` POST method had the entire method commented out with code that was implementing a `Guid` data type for the `ShiftTimeId` property (when in fact, based on the `ShiftTime` model it should be an integer) and a partial view of `"_shiftTimeModal"` that was created for Jobs controller and view.
+3. the controller's `Create` POST method was completely commented out, and the commented out code was implementing a `Guid` data type for the `ShiftTimeId` property (when in fact, based on the `ShiftTime` model it should be an integer) and a partial view of `"_shiftTimeModal"` that was created for Jobs controller and view.
 
 ###### ShiftTime Create view before fix
 ![ShiftTime Create view before fix](sprint3pics/pic24.png)
