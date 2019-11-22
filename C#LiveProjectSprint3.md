@@ -53,7 +53,7 @@ The `Edit` view was throwing an error because in the `ShiftTimes` controller's `
 
 As a result of this mismatch, the `id` parameter in the `Edit` method always became `null` and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
-###### ShiftTimes controller's `Edit` GET method (notice `Guid? id`)
+###### ShiftTimes controller's `Edit` GET method - notice `Guid? id` (before fix)
 ```c#
 public ActionResult Edit(Guid? id)
 {
@@ -70,7 +70,7 @@ public ActionResult Edit(Guid? id)
 }
 ```
 
-###### Code snippet of `ShiftTime` model (notice `int ShiftTimeId`)
+###### Code snippet of `ShiftTime` model - notice `int ShiftTimeId`
 ```c#
 public class ShiftTime
 {
@@ -130,7 +130,7 @@ public class ShiftTime
 }
 ```
 
-###### ShiftTimes controller's `Create` GET method
+###### ShiftTimes controller's `Create` GET method (before fix)
 ```c#
 public ActionResult Create()
 {
@@ -138,7 +138,7 @@ public ActionResult Create()
 }
 ```
 
-###### ShiftTimes controller's `Create` POST method
+###### ShiftTimes controller's `Create` POST method (before fix)
 ```c#
 //[HttpPost]
 //[ValidateAntiForgeryToken]
@@ -158,7 +158,7 @@ public ActionResult Create()
 #### 3. How is the issue resolved?
 I fixed the `Edit` view by changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property and value by using the `Html.DisplayFor` method.
 	
-###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int`
+###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int` (after fix)
 ```c#
 public ActionResult Edit(int id)
 {
@@ -216,7 +216,7 @@ I fixed the `Create` view by:
 </div>
 ```
 
-###### ShiftTimes controller's `Create` GET method
+###### ShiftTimes controller's `Create` GET method (after fix)
 ```c#
 public ActionResult Create()
 {
@@ -228,7 +228,7 @@ public ActionResult Create()
 }
 ```
 
-###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected existing `Job` object
+###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected existing `Job` object (after fix)
 ```c#
 [HttpPost]
 [ValidateAntiForgeryToken]
@@ -290,19 +290,19 @@ Then I took the logic for uploading a profile picture from the `ManageController
 2. I added the logic for the `DeleteProfilePictureConfirmed` method.
 3. I added comments to the `Photo`, `ProfiePicture` POST, `DeleteProfilePicture`, and `DeleteProfilePictureConfirmed` POST methods for more clarity.
 
-###### PersonalProfilesController `Photo` method for uploading a profile picture or default picture
+###### PersonalProfilesController `Photo` method for uploading a profile picture or default picture (after fix)
 ![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
 
-###### PersonalProfilesController `ProfilePicture` GET method
+###### PersonalProfilesController `ProfilePicture` GET method (after fix)
 ![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
 
-###### PersonalProfilesController `ProfilePicture` POST method
+###### PersonalProfilesController `ProfilePicture` POST method (after fix)
 ![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
 
-###### PersonalProfilesController `DeleteProfilePicture` GET method
+###### PersonalProfilesController `DeleteProfilePicture` GET method (after fix)
 ![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
 
-###### PersonalProfilesController `DeleteProfilePictureConfirmed` POST method
+###### PersonalProfilesController `DeleteProfilePictureConfirmed` POST method I added (after fix)
 ![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
 
 I updated all the view files that dealt with showing the profile picture since `PersonalProfilesController` was now in charge of that logic instead of the `ManageController`.
@@ -360,7 +360,7 @@ If users do not have a personal profile or if users do have a personal profile b
 #### 1. What is the issue?
 This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar.
 
-When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule has been deleted.
+When a schedule is deleted, its associated calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule has been deleted.
 
 ###### Deleting a `Schedule` object
 ![delete schedule](sprint3pics/pic13.png)
