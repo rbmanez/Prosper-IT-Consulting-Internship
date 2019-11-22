@@ -3,7 +3,7 @@
 - [C# Live Project Sprint 2 General Information](#c-live-project-sprint-2-general-information)
   - [Project Overview](#project-overview)
   - [List of Technologies Used](#list-of-technologies-used)
-  - [User Stories](#user-stories)
+  - [User Story Overview](#user-story-overview)
 - [User Story 1: Show Directions on Map Load](#user-story-1-show-directions-on-map-load)
 - [User Story 2: Sorting, Filtering, & Paging ChatMessages Index](#user-story-2-sorting-filtering--paging-chatmessages-index)
 - [User Story 3: Delete Unregistered Users](#user-story-3-delete-unregistered-users)
@@ -34,7 +34,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - Bootstrap 4
 - Slack and Google Meet for communications
 
-#### User Stories
+#### User Story Overview
 For each user story, I answer the following questions:
 1. What is the issue?
 2. Why is this an issue? (If applicable)
@@ -46,13 +46,13 @@ For each user story, I answer the following questions:
 ## User Story 1: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic2.png)
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 The current project map was created using JavaScript and leafletjs for the map and leaflet routing machine for map routing. I researched leafletjs and leaflet routing machine to understand the previous developer's implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
 
 ###### setLeafletMap() function is for creating the map
@@ -85,7 +85,7 @@ var control = L.Routing.control({
 ###### JobSites database table
 ![JobSites database table](sprint2pics/pic3.png)
 
-#### What is the end result?
+#### 3. What is the end result?
 The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the job site's location, the written directions, and a red polyline connecting the 2 locations.
 
 ###### App after fix
@@ -98,13 +98,13 @@ The result is that when a user goes to the job site's details page, they will se
 ## User Story 2: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic7.png)
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 First, I researched and used Microsoft's documentation as a resource. Then, looking inside ChatMessagesController.cs and it's Index method, all it did was return a list of data from the ChatMessages database table. I replaced it and added the sorting and filtering logic and used a NuGet package called PagedList.Mvc for the paging functionalitites. In the Index view, I added column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination.
 
 ###### ChatMessagesController.cs/Index method code
@@ -118,7 +118,7 @@ First, I researched and used Microsoft's documentation as a resource. Then, look
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
-#### What is the end result?
+#### 3. What is the end result?
 The end result is an interactive table for chat messages that has pages and can be sorted and filtered for ease of use.
 
 ###### App after fix
@@ -130,10 +130,10 @@ The end result is an interactive table for chat messages that has pages and can 
 ## User Story 3: Delete Unregistered Users
 ![pic of user story](sprint2pics/pic16.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 The delete function for unregistered users was not deleting them from the database. Instead, when you try to confirm and delete an unregistered user it goes back to the Index view and the unregistered user is still there.
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 I went to CreateUserRequestController.cs and found the DeleteConfirmed method responsible for deleting unregistered users. The reason the function did not work properly is because all it did was redirect to the Index view.
 
 ###### Code snippet
@@ -146,7 +146,7 @@ public ActionResult DeleteConfirmed(Guid id)
 }
 ```
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 I searched the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
 
 ###### Code snippet
@@ -170,7 +170,7 @@ public ActionResult DeleteConfirmed(Guid id)
 ![CreateUserRequests database table](sprint2pics/pic17.png)
 
 
-#### What is the end result?
+#### 4. What is the end result?
 The result is a properly operating delete button that deletes unregistered users.
 
 ###### Delete user
@@ -188,13 +188,13 @@ The result is a properly operating delete button that deletes unregistered users
 ## User Story 4: List of Jobs to JobSite Details
 ![pic of user story](sprint2pics/pic21.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story required adding a list of job titles to the JobSites/Details view that are associated with that job site. It needed to be on the right side taking up 1/3 of the container.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic22.png)
 
-#### How is the issue resolved?
+#### 2. How is the issue resolved?
 In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling), I found the #jobSiteMap ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
 
 ###### JobSites/Details.cshtml code snippet
@@ -221,7 +221,7 @@ In JobSites/Details.cshtml I added a third column and adjusted the current boots
 ###### Jobs database table
 ![Jobs database table](sprint2pics/pic23.png)
 
-#### What is the result?
+#### 3. What is the result?
 The result is when a user goes to the job site's details page, it'll display the jobs associated with that job site.
 
 ###### App after fix
@@ -233,10 +233,10 @@ The result is when a user goes to the job site's details page, it'll display the
 ## User Story 5: Users List Pagination Issue
 ![pic of user story](sprint2pics/pic25.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers partial view was using the same paging and sorting variables used for the _UserList partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering only for Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
 
 ###### UserController.cs code snippet used for _UserList and _SuspendedUsers method to query database
@@ -248,7 +248,7 @@ var users = from s in db.Users
 ###### AspNetUsers database table (for active and suspended users)
 ![AspNetUsers database table](sprint2pics/pic26.png)
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
 
 ###### _SuspendedUsers.cshtml code snippet
@@ -276,7 +276,7 @@ var users = from s in db.Users
             select s;
 ```
 
-#### What is the end result?
+#### 4. What is the end result?
 The result were tables with properly operating pagination and sorting features for active and suspended users.
 
 ###### App after fix
@@ -289,10 +289,10 @@ The result were tables with properly operating pagination and sorting features f
 ## User Story 6: Prevent Page Refresh
 ![pic of user story](sprint2pics/pic14.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story had an issue where if we use the sort, filter, or pagination feature on the User List table (a table that renders 3 sub tables and partial views for Active Users, Suspended Users, and Unregistered Users) from the Home/Dashboard view, it would refresh the page to the User/Index view. Instead, it should refresh on the current page where the features were applied.
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
 
 ###### Code snippet
@@ -307,7 +307,7 @@ Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers
   new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 ```
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
 
 ###### Code snippet
@@ -330,7 +330,7 @@ I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url
   new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 ```
 
-#### What is the end result?
+#### 4. What is the end result?
 The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
 
 ###### App after fix
@@ -342,13 +342,13 @@ The result is a dynamic User List table that when used to sort, filter, or pagin
 ## User Story 7: Front End Margin Tweak
 ![pic of user story](sprint2pics/pic29.png)
 
-#### What is the issue?
+#### 1. What is the issue?
 This user story had an issue with the top margin for the global CSS class inside of all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside of it.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic30.png)
 
-#### Why is this an issue?
+#### 2. Why is this an issue?
 I went to Content/site.css (responsible for the global CSS styling), located the .defaultContainer CSS class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
 
 ###### Content/site.css code snippet
@@ -368,7 +368,7 @@ I went to Content/site.css (responsible for the global CSS styling), located the
 <div class="defaultContainer">
 ```
 
-#### How is the issue resolved?
+#### 3. How is the issue resolved?
 Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer class to inside of it. Then inside Content/site.css I changed the .defaultContainer class to minimize the top margin.
 
 ###### JobSites/Index.cshtml code snippet
@@ -388,7 +388,7 @@ Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer c
 }
 ```
 
-#### What is the end result?
+#### 4. What is the end result?
 The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is now inside of its container.
 
 ###### App after fix
