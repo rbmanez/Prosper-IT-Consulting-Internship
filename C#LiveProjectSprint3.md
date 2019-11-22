@@ -85,9 +85,9 @@ public class ShiftTime
 ###### Error message when trying to access `Edit` view due to `Edit` method's `id` parameter being assigned the wrong data type
 ![Error message when trying to access Edit view](sprint3pics/pic22.png)
 
-The `Details` view was throwing an error due to a line of code from inside of the view that was looking for a file that did not exist.
+The `Details` view was throwing an error due to an `Html.Partial` method from inside of the view that was looking for a file that did not exist.
 
-###### The code causing the error for `Details` view due to searching for a file that did not exist
+###### `Html.Partial` method causing the error for `Details` view due to searching for a file that did not exist
 ```cshtml
 @Html.Partial("_EditButtonPartial", Model.ShiftTimeId)
 ```
