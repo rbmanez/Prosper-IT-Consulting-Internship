@@ -156,7 +156,7 @@ public ActionResult Create()
 ```
 
 #### 3. How is the issue resolved?
-I fixed the `Edit` view by changing the `Edit` GET method's parameter's data type for `id` from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property and value by using the `Html.DisplayFor` method.
+I fixed the `Edit` view by changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property and value by using the `Html.DisplayFor` method.
 	
 ###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int`
 ```c#
@@ -228,7 +228,7 @@ public ActionResult Create()
 }
 ```
 
-###### ShiftTimes controller's `Create` POST method that creates new `ShiftTime` objects for `Job` objects
+###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected existing `Job` object
 ```c#
 [HttpPost]
 [ValidateAntiForgeryToken]
