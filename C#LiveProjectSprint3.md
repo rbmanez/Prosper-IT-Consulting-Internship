@@ -386,7 +386,7 @@ The result is that when a schedule is deleted, it's associated calendar event on
 ###### Creating a new `Schedule` object
 ![Creating a new schedule](sprint3pics/pic17.png)
 
-###### An associated `CalendarEvent` object created due to new `Schedule` object
+###### An associated `CalendarEvent` object is automatically created due to creating the `Schedule` object
 ![Calendar event created due to new schedule](sprint3pics/pic18.png)
 
 ###### Deleting `Schedule` object
