@@ -46,12 +46,12 @@ For each user story, I answer the following questions:
 #### 1. What is the issue?
 This user story had an issue with `Job` object's `ShiftTimes` property's CRUD functionality. Its `Edit` and `Details` view were throwing errors.
 
-Its `Create` view already had a basic layout but it did not have a working create functionality. It also required a drop down list and moving the `Default` element to the top of the page.
+Its `Create` view already had a basic layout but it did not have a working create functionality. It also required a drop down list to select existing `Job` objects and moving the `Default` element from the bottom of the page to the top.
 
 #### 2. Why is this an issue?
 The `Edit` view was throwing an error because in the `ShiftTimes` controller's `Edit` GET method, its `id` parameter was assigned the wrong data type of `Guid` while the actual `ShiftTime` model (used in the `Edit` view) assigns its `id` property with the data type of `int`.
 
-As a result of this mismatch, the `id` parameter in the `Edit` method always became `null` and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
+As a result of this mismatch, the `id` parameter in the `Edit` method always became `null` and would throw an error.
 
 ###### ShiftTimes controller's `Edit` GET method - notice `Guid? id` (before fix)
 ```c#
@@ -156,7 +156,7 @@ public ActionResult Create()
 ```
 
 #### 3. How is the issue resolved?
-I fixed the `Edit` view by changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property and value by using the `Html.DisplayFor` method.
+I fixed the `Edit` view by changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property's value by using the `Html.DisplayFor` method.
 	
 ###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int` (after fix)
 ```c#
@@ -186,7 +186,7 @@ I fixed the `Details` view by completely eliminating the unnecessary `Html.Parti
 3. there was already a functional Edit button from the `Index` view.
 4. there was no `"_EditButtonPartial"` file.
 
-I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle` property and value using `Html.DisplayFor`. Previously there was no heading.
+I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle` property's value using `Html.DisplayFor`. Previously there was no heading.
 
 ###### Dynamic heading for `Details` view by using `Html.DisplayFor` method
 ```cshtml
@@ -228,7 +228,7 @@ public ActionResult Create()
 }
 ```
 
-###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected existing `Job` object (after fix)
+###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected `Job` object (after fix)
 ```c#
 [HttpPost]
 [ValidateAntiForgeryToken]
@@ -286,7 +286,7 @@ public byte[] ProfilePicture { get; set; }
 ```
 
 Then I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and added extra funcionality:
-1. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default profile picture.
+1. I added an "or" condition (`||`) to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR if users have a personal profile but did not set a profile picture, their profile picture will be set to the default profile picture.
 2. I added the logic for the `DeleteProfilePictureConfirmed` method.
 3. I added comments to the `Photo`, `ProfiePicture` POST, `DeleteProfilePicture`, and `DeleteProfilePictureConfirmed` POST methods for more clarity.
 
@@ -381,7 +381,7 @@ I accomplished the user story by adding the logic for deleting `CalendarEvent` o
 ![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
 
 #### 4. What is the end result?
-The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
+The result is that when a `Schedule` object is deleted, it's associated `CalendarEvent` object on the calendar is automatically deleted as well.
 
 ###### Creating a new `Schedule` object
 ![Creating a new schedule](sprint3pics/pic17.png)
