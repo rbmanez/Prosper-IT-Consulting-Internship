@@ -49,11 +49,11 @@ This user story had an issue with `Job` object's `ShiftTimes` property's CRUD fu
 The `Create` view also required a drop down list and moving the `Default` element to the top of the page.
 
 #### 2. Why is this an issue?
-The `Edit` view was throwing an error because in the `ShiftTimes` controller's `Edit` GET method, the `id` parameter that was declared was of the wrong data type.
+The `Edit` view was throwing an error because in the `ShiftTimes` controller's `Edit` GET method, the `id` parameter was assigned the wrong data type.
 
-The `ShiftTime` model used in the `Edit` view has an integer data type for its `id` property, but the `Edit` method's parameter was declared as a Guid.
+The `ShiftTime` model used in the `Edit` view has an `id` property with an `int` data type, but the `Edit` method's parameter was declared as a `Guid` data type.
 
-As a result, `id` always had a value of `null` and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
+As a result of this mismatch, the `id` parameter in the `Edit` method always became `null` and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
 ###### ShiftTimes controller's `Edit` GET method
 ```c#
