@@ -56,8 +56,8 @@ The reason why the page was visually unorganized is because the previous develop
 
 The code's functionality did not trasfer over well to the Location Data template and required more adjustments to make it more visually effective.
 
-###### Location Data App template code before fix (notice `id="cafe"`)
-```html
+###### Location Data App template code before fix - notice `id="cafe"` (my_location_data_base.html)
+```django
 <section id="cafe" class="about-section text-center">
   <div class="container">
     <div class="row">
@@ -98,13 +98,13 @@ The code's functionality did not trasfer over well to the Location Data template
 #### 3. How is the issue resolved?
 I fixed the layout by first removing all unnecessary Bootstrap and CSS styling. This removed the black background and revealed the main app's very appealing background that was underneath it, which extended from the main app's base.html.
 
-Then I replaced all of the div tags with semantic tags to give it more structure and meaning. I added an `h1` tag. I added images for each section.
+Then I replaced all of the `div` tags with semantic tags to give it more structure and meaning. I added an `h1` tag. I added images for each section.
 
 For styling I took a minimalist and clean approach. I used Bootstrap 4's `.container`, `.row`, and `.column` for layout structure. The project already had global styles for the `h1`, `h2`, and `p` tags so I used those as well to keep a uniform look with the rest of the site.
 
 Then I created CSS classes specific to only the Data Location App to fix margin spacing, font size, and to style the map that I created for one of the optional requirements.
 	
-###### Location Data App template's code
+###### Location Data App template's code after fix (my_location_data_base.html)
 ```html
 <!-- LOCATION DATA PAGE -->
 <main class="container">
@@ -157,7 +157,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 </main>
 ```
 
-###### CSS styles specific to only the Location Data App from static/styles.css
+###### CSS styles specific to only the Location Data App (static/css/styles.css)
 ```css
 /* LOCATION DATA STYLE */
 
@@ -199,7 +199,7 @@ From the Openweathermap API's JSON object response, I extracted the values for w
 
 I wrapped all of this data into a dictionary to be returned. From the `index` function, I updated the `context` with the `local_weather`'s data to be rendered and used in the template using django template tags.
 
-###### `local_weather` function from the views
+###### `local_weather` function from the views (my_locationData/views.py)
 ```python
 def local_weather(latitude, longitude):
   api_key = "api_key_hidden_for_privacy"
@@ -229,7 +229,7 @@ def local_weather(latitude, longitude):
   return context
 ```
 
-###### `index` function from the views (I added lines 5 and 6)
+###### `index` function from the views - I added lines 5 and 6 (my_locationData/views.py)
 ```python
 def index(request):
   location = User_Location()
@@ -242,7 +242,7 @@ def index(request):
 
 The temperature values returned from Openweathermap API was in Kelvin. I created a function to convert Kelvin to Fahrenheit, then returned that value as a string so it can be used in the template.
 
-###### `kelvin_to_fahrenheit` function from the views
+###### `kelvin_to_fahrenheit` function (my_locationData/views.py)
 ```python
 def kelvin_to_fahrenheit(k_temp):
   # convert kelvin to fahrenheit and round
@@ -257,7 +257,7 @@ I brought this to the project manager's attention and she said the issue may be 
 
 I accomplished the other optional requirement of including a map of the user's current location by using Leafletjs and Openstreet API. I used the pre-existing `User_Latitude` and `User_Longitude` functions to get the user's coordinates for the map.
 
-###### Required link and script tags for leaflet map
+###### Required link and script tags for leaflet map (my_location_data_base.html)
 ```html
 <!-- Include Leaflet CSS file -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -269,7 +269,7 @@ I accomplished the other optional requirement of including a map of the user's c
   crossorigin=""></script>
 ```
 
-###### JavaScript code for creating the map
+###### JavaScript code for creating the map (my_location_data_base.html)
 ```html
 <!-- JAVASCRIPT FOR LOCATION DATA'S MAP -->
 <script>
@@ -290,7 +290,7 @@ I accomplished the other optional requirement of including a map of the user's c
 </script>
 ```
 
-###### CSS styling for the map
+###### CSS styling for the map (static/css/styles.css)
 ```css
 /* map */
 #location-data-map {
@@ -314,3 +314,542 @@ It now also includes the new features I added: user's local map location and wea
 []()
 
 ###### App after fix (bottom third of the page)
+[]()
+
+
+
+
+## User Story 2: Restaurant Redesign
+[]()
+
+#### 1. What is the issue?
+The issue with this story is that neither the Cafe App and it's associated pages nor the Menu App home page are appropriately styled to match the theme of the site. These two apps function together to create the information needed for our hypothetical restaurant.
+
+From the main app's home page, I needed to transfer the Cafe content from inside of it and into the Cafe App's home page, and then move the Cafe button to just below the Services button.
+
+The page content from the Cafe and Menu Apps are also blocked by the side navbar when the page's width is resized smaller. I also need to make sure the side navbar properly links to each section.
+
+This user story had optional add-ons of creating an Hours page that included information about Cafe hours in Zulu time and creating an International Space Station page with ISS location information and a link that connects to the ISS App home page.
+
+###### Cafe App's home page before fix (cafe/index.html)
+[]()
+
+###### Menu App's home page before fix (menu/menu_index.html)
+[]()
+
+###### Menu App's create page before fix - top half (menu/menu_create.html)
+[]()
+
+###### Menu App's create page before fix - bottom half (menu/menu_create.html)
+[]()
+
+###### Menu App's details page before fix (menu/menu_details.html)
+[]()
+
+###### Menu App's inspiration page before fix (menu/menu_inspiration.html)
+[]()
+
+###### Side navbar blocking content when page width is resized smaller
+[]()
+
+#### 2. Why is this an issue?
+The Cafe and Menu Apps were not styled appropriately because the django template tags (`{% extends %}` and `{% include %}`) and CSS styling were not implemented well. The side navbar was blocking page content when the page width was resized because there was no proper margin in place.
+
+I noticed a common structural template pattern with all of the apps from the project in regards to rendering that app's home page. The pattern is that those apps have their own base.html template that contains all of the content specific for that app's home page.
+
+Those apps also have their own index.html template that extends the main app's base.html template, contains block tags for body content, and includes the navbar, the app's base.html, and footer. This index.html template renders the app's home page.
+
+It seems that the previous developer tried to implement this pattern with the other pages of the Menu App. While this pattern worked well for creating the home page, creating the other pages required some adjustments.
+
+###### Code from cafe/index.html before fix (for Cafe App's home page which includes cafe/cafe_base.html)
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "cafe/cafe_base.html" %}
+{% include "footer.html" %}
+{% endblock %}
+```
+
+###### Code from cafe/cafe_base.html before fix
+```django
+{% include "sidebar.html"%}
+<div class="main">
+	<header class="cafe_header">
+		<div class="container d-flex h-100 align-items-center">
+			<div class="mx-auto text-center"> 
+				<h1 class="text-white-50 mx-auto mt-2 mb-2">SpaceBar Cafe</h1>
+				<h1 class="text-white-50 mx-auto mt-2 mb-5">Restaurant</h1>
+				<p class="text-white-50">Welcome to the SpaceBar Cafe!</p>
+				<p class="text-white-50">Please take a look at our menu and book a reservation.</p>
+			</div>
+		</div>
+	</header>
+	<div>
+		{% block content %}{% endblock %}
+	</div>
+</div>
+```
+
+###### Code from menu/menu_index.html before fix (Menu App's home page which includes menu/menu_base.html)
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "menu/menu_base.html" %}
+<div class="main">
+	<div class="container mb-5">
+		<div class="row">     
+			{% for product in object_list %}
+				<p class="text-white-50"><a href="{% url 'menu:details' pk=product.pk %}"> {{ product.name }}</a> - ${{ product.price }}</p>
+			{% endfor %}        
+		</div>
+	</div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
+```
+
+###### Code from menu/menu_base.html before fix
+```django
+{% include "sidebar.html"%}
+<div class="main">
+	<header class="menu_header">
+		<div class="container d-flex h-50">
+			<div class="mx-auto text-center"> 
+				<h2 class="text-white-50 mx-auto mt-2 mb-2">SpaceBar Cafe</h1>
+				<h2 class="text-white-50 mx-auto mt-2">Restaurant</h1>
+			</div>
+		</div>
+		<br>
+		<div class="container d-flex">
+				<div class="mx-auto text-center">
+					<h1 class="menu_title">Menu</h1>              
+				</div>
+		</div>
+	</header>
+	<div>
+		{% block content %}{% endblock %}
+
+	</div>
+</div>
+```
+
+###### Code from menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template for the Menu App's home page. This created an awkward stacking of templates that was a strange pattern for Menu App's create, details, and inspiration pages.
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "menu/menu_base.html" %}
+
+<div class="main">
+	<div class="container d-flex align-items-center">
+		<div class="mx-auto text-center">
+			<h1>Create</h1>              
+		</div>
+	</div>
+	<br><br>
+	<div class="container d-flex">
+		<form method="POST" action="{% url 'menu:create' %}">
+			<div class="row">
+				<!--Cross Site Request Forgery (csrf_token) protection -->
+				{% csrf_token %}
+				{{ form.non_field_errors }}
+				{{ form.as_p }} 
+			</div>
+			<div>
+				<input type="submit" class="btn btn-primary" value="Create New Item" name="Save_Item">
+				<a href="{% url 'menu:index' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+				<a href="{% url 'menu:inspiration' %}"><button type="button" class="btn btn-warning" value="Find Inspiration">Find Inspiration</button></a>
+			</div>
+		</form>
+	</div>
+{% include 'footer.html' %}
+{% endblock %}
+```
+
+#### 3. How did you resolve this issue?
+I resolved the issues with the Cafe App home page by moving the Cafe content from the main app's home page to the Cafe App's home page and making adjustments to make the Cafe content work properly for it's new location. Some of the adjustments I made:
+1. I created a CSS class called `.cafe-menu-container` that creates a margin preventing the side navbar from blocking content when the page's width is resized smaller. (I used `.cafe-menu-container` for Cafe App's home page and all of Menu App's pages)
+2. I created a CSS class called `.cafe-menu-heading` that creates spacing to make the `h1` stand out similarly to the main app's home page to create a consistent theme. (I used `.cafe-menu-heading` for Cafe App's home page and all of Menu App's pages)
+3. I moved `{% include 'sidebar.html' %}` to cafe/index.html since that's where all of the similar django template tags were already located and used.
+4. I moved `{% include "footer.html" %}` inside of the `.cafe-menu-container` so that it was not blocked by the side navbar when the page is resized smaller.
+5. I moved `{% load static %}` to cafe/cafe_base.html so the images will render since they were not rendering when the tag was located inside cafe/index.html.
+6. I replaced some over used `div` tags with `section` and `article` tags to create more semantic.
+7. From the main app's home page I moved the Cafe button to just below the Services button.
+
+###### cafe/index.html 
+```django
+{% extends "base.html" %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+{% include "cafe/cafe_base.html" %}
+{% endblock %}
+```
+
+###### cafe/cafe_base.html after fix
+```django
+{% load static %}
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">Spacebar Cafe</h1>
+	<!-- Spacebar Cafe Section -->
+	<section class="about-section text-center">
+		<article class="container">
+			<img class="img-thumbnail" src="{% static '/images/art4.jpg' %}" class="img-fluid" alt="">
+		</article>
+	</section>
+	<!-- Menu Section -->
+	<section class="projects-section">
+		<section class="container">
+			<!-- Food One Row -->
+			<article class="row justify-content-center no-gutters mb-5 mb-lg-0">
+				<div class="col-lg-6">
+					<img class="img-fluid" src="{% static '/images/pizza.jpg' %}" alt="">
+				</div>
+				<div class="col-lg-6">
+					<div class="bg-black text-center h-100 project">
+						<div class="d-flex h-100">
+							<div class="project-text w-100 my-auto text-center text-lg-left">
+								<h4 class="text-white">Food</h4>
+								<p class="mb-0 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<hr class="d-none d-lg-block mb-0 ml-0">
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+			<!-- Drinks Two Row -->
+			<article class="row justify-content-center no-gutters">
+				<div class="col-lg-6">
+					<img class="img-fluid" src="{% static '/images/drinks.jpg' %}" alt="">
+				</div>
+				<div class="col-lg-6 order-lg-first">
+					<div class="bg-black text-center h-100 project">
+						<div class="d-flex h-100">
+							<div class="project-text w-100 my-auto text-center text-lg-right">
+								<h4 class="text-white">Drinks</h4>
+								<p class="mb-0 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<hr class="d-none d-lg-block mb-0 mr-0">
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+	</section>
+	{% include "footer.html" %}
+</section>
+```
+
+###### CSS classes I created
+```css
+/* CAFE AND MENU STYLING */
+
+/* prevent side navbar from blocking content when page width is resized smaller */
+.cafe-menu-container {
+  margin-left: 10rem;
+}
+
+/* create space to make h1 stand out */
+.cafe-menu-heading {
+  margin: 15rem 0 28rem 0;
+}
+
+/* END CAFE AND MENU STYLING */
+```
+
+How I resolved the issues with the Menu App:
+1. I moved the logic from menu/menu_index.html that handled looping through `object_list` to menu/menu_base.html and added `{% include "sidebar.html %}` to menu/menu_index.html to maintain the project's template convention and pattern.
+2. In menu/menu_base.html I added a link to Cafe App's home page by using an `a` tag and a django template tag to set the `href` to `{% url 'cafe' %}`.
+3. In menu_base.html, menu_create.html, menu_details.html, and menu_inspiration.html pages:
+  - I utilized the `.cafe-menu-container` CSS class I created to prevent their content from being blocked by the side navbar when the page is resized smaller.
+  - I utilized the `.cafe-menu-heading` CSS class I created that creates spacing to make the `h1` stand out similarly to the main app's home page to have a consistent theme.
+  - I moved `{% include "footer.html" %}` inside `.cafe-menu-container` so that it was not blocked by the side navbar when the page is resized smaller.
+  - I implemented some Bootstrap 4 classes to create additional styling.
+4. In menu_create.html, menu_details.html, menu_inspiration.html:
+  - I added `{% include "sidebar.html" %}` to include the side navbar to these pages.
+  - I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top of these pages.
+5. In menu_create.html, since the project was already utilizing django-crispy-forms to style a user login form, I utilized it as well to style the Menu App's create form by using `{% load crispy_forms_tags %}` then changing `{{ form.as_p }}` to `{{ form|crispy }}`.
+
+###### menu/menu_index.html after fix
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html"%}
+{% include "menu/menu_base.html" %}
+{% endblock %}
+```
+
+###### menu/menu_base.html after fix
+```django
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">SpaceBar Cafe Menu</h1>
+	<section class="container mb-5">
+		<article class="card mx-auto">
+			<h3 class="card-header bg-info text-white text-center">Menu Items</h3>
+			<ul class="list-group list-group-flush">
+				{% for product in object_list %}
+				<li class="list-group-item text-center">
+					<h5 class="text-capitalize my-4">
+						<a href="{% url 'menu:details' pk=product.pk %}">{{ product.name }} - ${{ product.price }}</a>
+					</h5>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="card-body">
+				<a href="{% url 'cafe' %}" class="card-link">Return to Cafe Home</a>
+			</div>
+		</article>
+	</section>
+	{% include "footer.html" %}
+</section>
+```
+
+###### menu/menu_create.html after fix
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+<!-- django-crispy-forms is used to style forms -->
+{% load crispy_forms_tags %}
+
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">Create Menu Item</h1>
+	<section class="container">
+		<form method="POST" action="{% url 'menu:create' %}" class="text-white">
+			<!--Cross Site Request Forgery (csrf_token) protection -->
+			{% csrf_token %}
+			{{ form.non_field_errors }}
+			<!-- using django-crispy-forms -->
+			{{ form|crispy }}
+			<input type="submit" class="btn btn-primary btn-block mb-1" value="Create New Item" name="Save_Item">
+		</form>
+		<a href="{% url 'menu:inspiration' %}"><button type="button" class="btn btn-warning btn-block mb-1" value="Find Inspiration">Find Inspiration</button></a>
+		<a href="{% url 'menu:index' %}"><button type="button" class="btn btn-secondary btn-block mb-1" value="Cancel">Cancel</button></a>
+	</section>
+	{% include "footer.html" %}
+</section>
+
+{% endblock %}
+```
+
+###### menu/menu_details.html after fix
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">Menu Item Details</h1>
+		<section class="container mb-5">
+			<article class="card mx-auto">
+				<h3 class="card-header bg-info text-white text-center text-capitalize">{{ product.name }}</h3>
+				<div class="card-body">
+					<h3 class="my-5 text-center">{{ product.type }}</h3>
+					<p class="card-text text-dark text-center mb-5 text-capitalize">${{ product.price }} - {{ product.description }}</p>
+					<a href="{% url 'menu:index' %}" class="card-link">Return to Menu</a>
+				</div>
+			</article>
+		</section>
+	{% include "footer.html" %}
+</section>
+
+{% endblock %}
+```
+
+###### menu/menu_inspiration.html after fix
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">Menu Inspiration</h1>
+	<section class="container">
+		<form method="POST">
+			{% csrf_token %}
+			<div class="form-group">
+				<input type="text" placeholder="Main Ingredient" class="form-control" name="ingredient_name" required>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block mb-1">Find Recipes</button>
+		</form>
+		<a href="{% url 'menu:create' %}"><button type="button" class="btn btn-secondary btn-block mb-1">Back to Create</button></a>
+	</section>
+	{% include "footer.html" %}
+</section>
+
+{% endblock %}
+```
+
+The steps I took to accomplish the optional requirements of creating an Hours page that includes information about Cafe hours in Zulu time and creating a new International Space Station page that gives location information and contains a link that connects to the ISS App home page:
+1. I created cafe/cafe_hours.html and cafe/cafe_iss.html from scratch utilizing HTML5 semantic tags, custom CSS classes, Bootstrap 4 classes, and django template tags.
+2. In order for either new templates to be recognized when requested, I had to register them in the `urlpatterns` inside cafe/urls.py.
+3. In cafe/views.py I created two functions (`hours` and `iss`) that renders each template when either is requested.
+
+###### The newly created cafe_hours.html
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">Spacebar Cafe Hours</h1>
+	<section class="container mb-5">
+		<article class="card mx-auto">
+			<h3 class="card-header bg-info text-white text-center">Hours of Operation</h3>
+			<div class="card-body">
+				<h5 class="my-5 text-center">11:00 to 23:00 ZULU Time</h5>
+				<a href="{% url 'cafe' %}" class="card-link">Return to Cafe Home</a>
+			</div>
+		</article>
+	</section>
+	{% include "footer.html" %}
+</section>
+
+{% endblock%}
+```
+
+###### The newly created cafe_iss.html (contains a link for the ISS App's home page as required by the user story)
+```django
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "navbar.html" %}
+{% include "sidebar.html" %}
+
+<section class="cafe-menu-container">
+	<h1 class="cafe-menu-heading">International Space Station</h1>
+	<section class="container mb-5">
+		<article class="card mx-auto">
+			<h3 class="card-header bg-info text-white text-center">Welcome to the ISS!</h3>
+			<div class="card-body">
+				<p class="card-text text-dark text-center">Thank you for boarding the ISS, the number one space station orbiting Earth!</p>
+				<p class="text-dark text-center">The ISS serves as a microgravity and space environment research laboratory in which crew members conduct experiments in biology, human biology, physics, astronomy, meteorology, and other fields.</p>
+				<p class="text-center mb-5"><a href="{% url 'iss' %}">Click here to see our current orbital location!</a></p>
+				<a href="{% url 'cafe' %}" class="card-link">Return to Cafe Home</a>
+			</div>
+		</article>
+	</section>
+	{% include "footer.html" %}
+</section>
+
+{% endblock%}
+```
+
+###### cafe/urls.py before update (url named `hours` and `location` triggered the views `index` function, which rendered the home page)
+```python
+urlpatterns = [
+		...
+		path('hours/', views.index, name='hours'),
+		path('location/', views.index, name='location'),
+		...
+	]
+```
+
+###### cafe/urls.py after update (url named `hours` and `location` now triggers the views `hours` and `iss` functions which renders their new pages `cafe_hours.html` and `cafe_iss.html`)
+```python
+urlpatterns = [
+		...
+		path('hours/', views.hours, name='hours'),
+		path('location/', views.iss, name='location'),
+		...
+	]
+```
+
+###### The two functions I created in menu/views.py that renders cafe/cafe_hours.html and cafe/cafe_iss.html
+```python
+def hours(request):
+	return render(request, "cafe/cafe_hours.html")
+
+def iss(request):
+	return render(request, "cafe/cafe_iss.html")
+```
+
+As for the side navbar, the only thing I had to update was the link for the "Location" tab. Previously it was linked directly to the ISS App's home page. I updated it to link to Cafe App's ISS page as required by the user story. Everything else was linking properly.
+
+###### sidebar.html's (for side navbar) "Location" link before update
+```html
+<a href="/iss">
+	Location
+	...
+</a>
+```
+
+###### sidebar.html's (for side navbar) "Location" link after update
+```django
+<a href="{% url 'location' %}">
+	Location
+	...
+</a>
+```
+
+#### 4. What is the end result?
+The end result is that the Cafe App's home page and all of the Menu App's pages are all styled appropriately to match the theme of the site. The Cafe App now also has 2 new pages, one for Cafe Hours and another for ISS Location.
+
+The Cafe content from the main app's home page has been transferred to Cafe App's home page, the Cafe button has been moved up to just below the Services button, the side navbar is operating and linking properly, and all of the templates for the Cafe and Menu Apps
+are working and linking properly.
+
+###### The main app's home page with the Cafe button moved up to just below the Services button
+[]()
+
+###### Cafe App's home page after fix - top 1/3 of the page (cafe/index.html)
+[]()
+
+###### Cafe App's home page after fix - mid 1/3 of the page (cafe/index.html)
+[]()
+
+###### Cafe App's home page after fix - bottom 1/3 of the page (cafe/index.html)
+[]()
+
+###### Menu App's home page after fix - top half of the page (menu/menu_index.html)
+[]()
+
+###### Menu App's home page after fix - bottom half of the page (menu/menu_index.html)
+[]()
+
+###### Menu App's create page after fix - top half of the page (menu/menu_create.html)
+[]()
+
+###### Menu App's create page after fix - bottom half of the page (menu/menu_create.html)
+[]()
+
+###### Menu App's details page after fix - top half of the page (menu/menu_details.html)
+[]()
+
+###### Menu App's details page after fix - bottom half of the page (menu/menu_details.html)
+[]()
+
+###### Menu App's inspiration page after fix - top half of the page (menu/menu_inspiration.html)
+[]()
+
+###### Menu App's inspiration page after fix - bottom half of the page (menu/menu_inspiration.html)
+[]()
+
+###### Side navbar no longer blocking content when page width is resized smaller
+[]()
+
+###### Cafe App's new Hours page - top half of the page (cafe/cafe_hours.html)
+[]()
+
+###### Cafe App's new Hours page - bottom half of the page (cafe/cafe_hours.html)
+[]()
+
+###### Cafe App's new Location page - top half of the page (cafe/cafe_iss.html)
+[]()
+
+###### Cafe App's new Location page - bottom half of the page (cafe/cafe_iss.html)
+[]()
