@@ -189,7 +189,7 @@ Then I created CSS classes specific to only the Data Location App to fix margin 
 /* LOCATION DATA STYLE ENDS */
 ```
 
-As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the API key. I created a `local_weather` function to handle the API request and response to get the local weather information.
+As for the optional requirements, I incorporated Openweathermap API as a source of local weather data and signed up to acquire the API key. I created a `local_weather` function to handle the API request and response to get local weather information.
 
 Inside the views, there was already two functions (`User_Latitude` and `User_Longitude`) that used IP-API to return the user's location coordinates (used for the `RadiationExposure` function).
 
@@ -197,7 +197,7 @@ I used those two functions to pass the user's latitude and longitude values into
 
 From the Openweathermap API's JSON object response, I extracted the values for weather description, average temp, high temp, low temp, humidity, and the weather icon code.
 
-I wrapped all of this data into a dictionary to be returned. From the `index` function, I used the `update` method to update the `context` with the `local_weather`'s data to be rendered and used in the template using django template tags.
+I wrapped all of this data into a dictionary to be returned. From the `index` function, I used the `update` function to update the `context` with the `local_weather`'s data to be rendered and used in the template using django template tags.
 
 ###### I created `local_weather` function from the views to handle the API request and response to get the local weather information (my_locationData/views.py)
 ```python
@@ -357,11 +357,11 @@ The Cafe and Menu Apps were not styled appropriately because the django template
 
 I noticed a common structural template pattern with all of the apps from the project in regards to rendering that app's home page. The pattern is that those apps have their own base.html template that contains all of the content specific for that app's home page.
 
-Those apps also have their own index.html template that extends the main app's base.html template, contains block tags for body content, and includes the navbar, the app's base.html, and footer. This index.html template renders the app's home page.
+Those apps also have their own index.html template that extends the main app's base.html template, contains block tags for body content, and includes the navbar, the app's base.html, and footer. This index.html template is what ultimately renders the app's home page.
 
-It seems that the previous developer tried to implement this pattern with the other pages of the Menu App. While this pattern worked well for creating the home page, creating the other pages required some adjustments.
+It seems that the previous developer tried to implement this pattern with the other pages of the Menu App (create, details, and inspirations pages). While this pattern worked well for creating the home page, creating the other pages required some adjustments.
 
-###### Code from cafe/index.html before fix (for Cafe App's home page which includes cafe/cafe_base.html)
+###### cafe/index.html before fix (Cafe App's home page which includes `{% include "cafe/cafe_base.html" %}`)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -372,7 +372,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### Code from cafe/cafe_base.html before fix
+###### cafe/cafe_base.html before fix
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -392,7 +392,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 </div>
 ```
 
-###### Code from menu/menu_index.html before fix (Menu App's home page which includes menu/menu_base.html)
+###### menu/menu_index.html before fix (Menu App's home page which includes `{% include "menu/menu_base.html" %}`)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -412,7 +412,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### Code from menu/menu_base.html before fix
+###### menu/menu_base.html before fix
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -437,7 +437,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 </div>
 ```
 
-###### Code from menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template for the Menu App's home page. This created an awkward stacking of templates that was a strange pattern for Menu App's create, details, and inspiration pages.
+###### menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template for the Menu App's home page's content. This created an awkward stacking of templates that was a strange pattern for Menu App's create, details, and inspiration pages.
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -474,14 +474,14 @@ It seems that the previous developer tried to implement this pattern with the ot
 #### 3. How did you resolve this issue?
 I resolved the issues with the Cafe App home page by moving the Cafe content from the main app's home page to the Cafe App's home page and making adjustments to make the Cafe content work properly for it's new location. Some of the adjustments I made:
 1. I created a CSS class called `.cafe-menu-container` that creates a margin preventing the side navbar from blocking content when the page's width is resized smaller. (I used `.cafe-menu-container` for Cafe App's home page and all of Menu App's pages)
-2. I created a CSS class called `.cafe-menu-heading` that creates spacing to make the `h1` stand out similarly to the main app's home page to create a consistent theme. (I used `.cafe-menu-heading` for Cafe App's home page and all of Menu App's pages)
+2. I created a CSS class called `.cafe-menu-heading` that creates spacing to make the `h1` stand out similarly to the main app's home page's `h1` to create a consistent theme. (I used `.cafe-menu-heading` for Cafe App's home page and all of Menu App's pages)
 3. I moved `{% include 'sidebar.html' %}` to cafe/index.html since that's where all of the similar django template tags were already located and used.
 4. I moved `{% include "footer.html" %}` inside of the `.cafe-menu-container` so that it was not blocked by the side navbar when the page is resized smaller.
 5. I moved `{% load static %}` to cafe/cafe_base.html so the images will render since they were not rendering when the tag was located inside cafe/index.html.
 6. I replaced some over used `div` tags with `section` and `article` tags to create more semantic.
 7. From the main app's home page I moved the Cafe button to just below the Services button.
 
-###### cafe/index.html 
+###### cafe/index.html after fix (I moved `{% include "sidebar.html" %}` in here)
 ```django
 {% extends "base.html" %}
 {% block content %}
@@ -491,7 +491,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 {% endblock %}
 ```
 
-###### cafe/cafe_base.html after fix
+###### cafe/cafe_base.html after fix (I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags)
 ```django
 {% load static %}
 <section class="cafe-menu-container">
@@ -545,7 +545,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 </section>
 ```
 
-###### CSS classes I created
+###### CSS classes I created (`.cafe-menu-container` and `.cafe-menu-heading`)
 ```css
 /* CAFE AND MENU STYLING */
 
@@ -575,7 +575,7 @@ How I resolved the issues with the Menu App:
   - I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top of these pages.
 5. In menu_create.html, since the project was already utilizing django-crispy-forms to style a user login form, I utilized it as well to style the Menu App's create form by using `{% load crispy_forms_tags %}` then changing `{{ form.as_p }}` to `{{ form|crispy }}`.
 
-###### menu/menu_index.html after fix
+###### menu/menu_index.html after fix (I moved the logic that handled looping through `object_list` to maintain the project's convention)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -586,7 +586,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_base.html after fix
+###### menu/menu_base.html after fix (I added the logic that handled looping through `object_list` here. I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags.)
 ```django
 <section class="cafe-menu-container">
 	<h1 class="cafe-menu-heading">SpaceBar Cafe Menu</h1>
@@ -611,7 +611,7 @@ How I resolved the issues with the Menu App:
 </section>
 ```
 
-###### menu/menu_create.html after fix
+###### menu/menu_create.html after fix (I utilizied django-crispy-forms, `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -641,7 +641,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_details.html after fix
+###### menu/menu_details.html after fix (I utilizied `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -667,7 +667,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_inspiration.html after fix
+###### menu/menu_inspiration.html after fix (I utilizied `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -698,7 +698,7 @@ The steps I took to accomplish the optional requirements of creating an Hours pa
 2. In order for either new templates to be recognized when requested, I had to register them in the `urlpatterns` inside cafe/urls.py.
 3. In cafe/views.py I created two functions (`hours` and `iss`) that renders each template when either is requested.
 
-###### The newly created cafe_hours.html
+###### The newly created cafe_hours.html (I utilized HTML5 semantic tags, custom CSS classes, Bootstrap 4 classes, and django template tags)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -723,7 +723,7 @@ The steps I took to accomplish the optional requirements of creating an Hours pa
 {% endblock%}
 ```
 
-###### The newly created cafe_iss.html (contains a link for the ISS App's home page as required by the user story)
+###### The newly created cafe_iss.html (contains a link for the ISS App's home page as required by the user story. I utilized HTML5 semantic tags, custom CSS classes, Bootstrap 4 classes, and django template tags)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -781,7 +781,7 @@ def iss(request):
 
 As for the side navbar, the only thing I had to update was the link for the "Location" tab. Previously it was linked directly to the ISS App's home page. I updated it to link to Cafe App's ISS page as required by the user story. Everything else was linking properly.
 
-###### sidebar.html's (for side navbar) "Location" link before update
+###### sidebar.html's (for side navbar) "Location" link before update - linked to the ISS App's home page
 ```html
 <a href="/iss">
 	Location
@@ -789,7 +789,7 @@ As for the side navbar, the only thing I had to update was the link for the "Loc
 </a>
 ```
 
-###### sidebar.html's (for side navbar) "Location" link after update
+###### sidebar.html's (for side navbar) "Location" link after update - links to Cafe App's ISS page
 ```django
 <a href="{% url 'location' %}">
 	Location
@@ -809,28 +809,28 @@ are working and linking properly.
 ###### Cafe App's home page after fix - top 1/3 of the page (cafe/index.html)
 ![Cafe App's home page after fix](sprint4pics/pic16.png)
 
-###### Cafe App's home page after fix - mid 1/3 of the page (cafe/index.html)
+###### Cafe App's home page after fix - mid 1/3 of the page showing an image (cafe/index.html)
 ![Cafe App's home page after fix](sprint4pics/pic17.png)
 
-###### Cafe App's home page after fix - bottom 1/3 of the page (cafe/index.html)
+###### Cafe App's home page after fix - bottom 1/3 of the page dummy menu information (cafe/index.html)
 ![Cafe App's home page after fix](sprint4pics/pic18.png)
 
 ###### Menu App's home page after fix - top half of the page (menu/menu_index.html)
 ![Menu App's home page after fix](sprint4pics/pic19.png)
 
-###### Menu App's home page after fix - bottom half of the page (menu/menu_index.html)
+###### Menu App's home page after fix - bottom half of the page showing created menu items (menu/menu_index.html)
 ![Menu App's home page after fix](sprint4pics/pic20.png)
 
 ###### Menu App's create page after fix - top half of the page (menu/menu_create.html)
 ![Menu App's create page after fix](sprint4pics/pic21.png)
 
-###### Menu App's create page after fix - bottom half of the page (menu/menu_create.html)
+###### Menu App's create page after fix - bottom half of the page showing form to create menu item (menu/menu_create.html)
 ![Menu App's create page after fix](sprint4pics/pic22.png)
 
 ###### Menu App's details page after fix - top half of the page (menu/menu_details.html)
 ![Menu App's details page after fix](sprint4pics/pic23.png)
 
-###### Menu App's details page after fix - bottom half of the page (menu/menu_details.html)
+###### Menu App's details page after fix - bottom half of the page showing menu item details (menu/menu_details.html)
 ![Menu App's details page after fix](sprint4pics/pic24.png)
 
 ###### Menu App's inspiration page after fix - top half of the page (menu/menu_inspiration.html)
@@ -845,13 +845,13 @@ are working and linking properly.
 ###### Cafe App's new Hours page - top half of the page (cafe/cafe_hours.html)
 ![Cafe App's new Hours page](sprint4pics/pic28.png)
 
-###### Cafe App's new Hours page - bottom half of the page (cafe/cafe_hours.html)
+###### Cafe App's new Hours page - bottom half of the page showing Cafe hours in Zulu time (cafe/cafe_hours.html)
 ![Cafe App's new Hours page](sprint4pics/pic29.png)
 
 ###### Cafe App's new Location page - top half of the page (cafe/cafe_iss.html)
 ![Cafe App's new Location page](sprint4pics/pic30.png)
 
-###### Cafe App's new Location page - bottom half of the page (cafe/cafe_iss.html)
+###### Cafe App's new Location page - bottom half of the page showing ISS Location information and link to ISS App's home page (cafe/cafe_iss.html)
 ![Cafe App's new Location page](sprint4pics/pic31.png)
 
 
