@@ -273,77 +273,81 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 ![user story 2](sprint3pics/pic1.png)
 
 #### 1. What is the issue?
-This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles. It also required adding full CRUD capabilities for profile pictures.
+This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles and handling a default picture for users who do not have a personal profile and users who do have a personal profile but did not set a profile picture.
+
+It also required adding full CRUD capabilities for profile pictures.
 
 #### 2. How is the issue resolved?
 The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model.
 
 I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead. Inside `PersonalProfilesController` I added logic for CRUD functionality.
 
-###### ProfilePicture property inside PersonalProfile model
+###### `ProfilePicture` property added inside of `PersonalProfile` model
 ```c#
 public byte[] ProfilePicture { get; set; }
 ```
 
-I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and made some adjustments to make it work for the views that needed access to it.
+I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController`. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture.
 
-###### PersonalProfilesController Photo method for profile picture
+Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default picture.
+
+###### PersonalProfilesController `Photo` method for uploading a profile picture or default picture
 ![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
 
-###### PersonalProfilesController ProfilePicture GET method
+###### PersonalProfilesController `ProfilePicture` GET method
 ![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
 
-###### PersonalProfilesController ProfilePicture POST method
+###### PersonalProfilesController `ProfilePicture` POST method
 ![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
 
-###### PersonalProfilesController DeleteProfilePicture GET method
+###### PersonalProfilesController `DeleteProfilePicture` GET method
 ![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
 
-###### PersonalProfilesController DeleteProfilePictureConfirmed POST method
+###### PersonalProfilesController `DeleteProfilePictureConfirmed` POST method
 ![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
 
-I updated all the view files that dealt with the profile picture since `PersonalProfilesController` was now in charge of that logic.
+I updated all the view files that dealt with the profile picture since `PersonalProfilesController` was now in charge of that logic instead of the `ManageController`.
 
-###### Access to profile picture (or default picture for users without profile pictures)
+###### Using `Url.Action` method for `img` tag's `src` attribute to access profile picture (or default picture for users without profile pictures)
 ```cshtml
 <img id="ProfileImg" src="@Url.Action("Photo", "PersonalProfiles" , new { UserId=User.Identity.GetUserId() })" height="48" width="48" />
 ```
 
-###### Link to upload profile picture
+###### Using `Html.ActionLink` method to create a link to upload profile picture
 ```cshtml
 @Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
 ```
 
-###### Links to update, see details, and delete for profile picture
+###### Using `Html.ActionLink` method to create links to update, see details for, and delete profile picture
 ```cshtml
 @Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
 @Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
 @Html.ActionLink("Delete", "DeleteProfilePicture", new { id = Model.ProfileID })
 ```
 
-###### Logic to upload profile picture via POST
+###### Using `Html.BeginForm` method to upload profile picture via POST
 ```cshtml
 @using (Html.BeginForm("ProfilePicture", "PersonalProfiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
 ```
 	
-###### Logic for profile picture delete confirmation via POST
+###### Using `Html.BeginForm` method for profile picture delete confirmation via POST
 ```cshtml
 @using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
 ```
 
 #### 3. What is the end result?
-The result is a fully functioning CRUD feature for profile pictures that is now being handled by `PersonalProfilesController` and its views.
+The result is a fully functional CRUD feature for profile pictures that is now being handled by `PersonalProfilesController` and its views. Users can now upload, see, update, or delete their profile pictures.
 
-###### PersonalProfiles/Edit view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
+###### `PersonalProfiles/Edit` view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
 ![edit view](sprint3pics/pic7.png)
 	
-###### PersonalProfiles/ProfilePicture view for uploading profile picture
+###### `PersonalProfiles/ProfilePicture` view for uploading profile picture
 ![ProfilePicture view](sprint3pics/pic8.png)
 
-###### PersonalProfiles/Details view (I uploaded a new profile picture)
+###### `PersonalProfiles/Details` view (I uploaded a new profile picture)
 ![details view](sprint3pics/pic9.png)
 
-###### PersonalProfiles/DeleteProfilePicture view for delete confirmation
+###### `PersonalProfiles/DeleteProfilePicture` view for delete confirmation
 ![delete view](sprint3pics/pic10.png)
 
 
