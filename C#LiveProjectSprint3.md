@@ -278,18 +278,19 @@ This user story required making the `PersonalProfilesController` and its view re
 It also required adding full CRUD capabilities for profile pictures.
 
 #### 2. How is the issue resolved?
-The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model.
+The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model. I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead.
 
-I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead. Inside `PersonalProfilesController` I added logic for CRUD functionality.
-
-###### `ProfilePicture` property added inside of `PersonalProfile` model
+###### `ProfilePicture` property removed from `User` model and added inside of `PersonalProfile` model
 ```c#
 public byte[] ProfilePicture { get; set; }
 ```
 
-I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController`. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture.
+Inside `PersonalProfilesController` I handled the logic for CRUD functionality.
 
-Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default picture.
+I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and added extra funcionality:
+1. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default picture.
+2. I added the logic for the `DeleteProfilePictureConfirmed` method.
+3. I added comments to the `Photo`, `ProfiePicture` POST, `DeleteProfilePicture`, and `DeleteProfilePictureConfirmed` POST methods for more clarity.
 
 ###### PersonalProfilesController `Photo` method for uploading a profile picture or default picture
 ![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
@@ -306,31 +307,31 @@ Now, if users do not have a personal profile OR users have a personal profile bu
 ###### PersonalProfilesController `DeleteProfilePictureConfirmed` POST method
 ![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
 
-I updated all the view files that dealt with the profile picture since `PersonalProfilesController` was now in charge of that logic instead of the `ManageController`.
+I updated all the view files that dealt with showing the profile picture since `PersonalProfilesController` was now in charge of that logic instead of the `ManageController`.
 
-###### Using `Url.Action` method for `img` tag's `src` attribute to access profile picture (or default picture for users without profile pictures)
+###### Using `Url.Action` method for `img` tag's `src` attribute to access profile picture (or default picture for users without profile pictures) via `PersonalProfiles/Photo` method
 ```cshtml
 <img id="ProfileImg" src="@Url.Action("Photo", "PersonalProfiles" , new { UserId=User.Identity.GetUserId() })" height="48" width="48" />
 ```
 
-###### Using `Html.ActionLink` method to create a link to upload profile picture
+###### Using `Html.ActionLink` method to create a link to upload profile picture via `PersonalProfiles/ProfilePicture` method
 ```cshtml
 @Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
 ```
 
-###### Using `Html.ActionLink` method to create links to update, see details for, and delete profile picture
+###### Using `Html.ActionLink` method to create links to update, see details for, and delete profile picture via `PersonalProfiles/ProfilePicture`, `PersonalProfiles/Details`, and `PersonalProfiles/DeleteProfilePicture` methods
 ```cshtml
 @Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
 @Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
 @Html.ActionLink("Delete", "DeleteProfilePicture", new { id = Model.ProfileID })
 ```
 
-###### Using `Html.BeginForm` method to upload profile picture via POST
+###### Using `Html.BeginForm` method to upload profile picture via `PersonalProfiles/ProfilePicture` POST method
 ```cshtml
 @using (Html.BeginForm("ProfilePicture", "PersonalProfiles", FormMethod.Post, new { enctype = "multipart/form-data" }))
 ```
 	
-###### Using `Html.BeginForm` method for profile picture delete confirmation via POST
+###### Using `Html.BeginForm` method for profile picture delete confirmation via `PersonalProfiles/DeleteProfilePicture` POST method
 ```cshtml
 @using (Html.BeginForm("DeleteProfilePicture", "PersonalProfiles", FormMethod.Post))
 ```
