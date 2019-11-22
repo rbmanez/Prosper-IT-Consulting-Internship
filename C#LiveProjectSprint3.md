@@ -402,12 +402,24 @@ The result is that when a schedule is deleted, it's associated calendar event on
 ![user story 4](sprint3pics/pic11.png)
 
 #### 1. What is the issue?
-This user story needed a new `Vacation` model to be created so that we can track `Users` vacation time.
+This user story needed a new `Vacation` model to be created so that we can track `User` object's vacation time.
 
 #### 2. How is the issue resolved?
-I accomplished the user story by creating a new `Vacation` model, creating an `enum` for vacation type, and updating the `User` model by adding a `Vacation` property to it. This established a 1 to many relationship between `User` and `Vacation` objects.
+I accomplished the user story by creating an `enum` for vacation type, creating a new `Vacation` model, and updating the `User` model by adding a `Vacation` property to it. This established a 1 to many relationship between `User` and `Vacation` objects.
 	
-###### New Vacation class model
+###### `enum` for `VacationType` property
+```c#
+public enum VacationType
+{
+	PTO,
+	Injury,
+	FamilyLeave,
+	SickTime,
+	Other
+}
+```
+	
+###### New `Vacation` model with `VacationType` property and `User` object property
 ```c#
 public class Vacation
 {
@@ -427,22 +439,10 @@ public class Vacation
 }
 ```
 	
-###### Enum for vacation type
-```c#
-public enum VacationType
-{
-	PTO,
-	Injury,
-	FamilyLeave,
-	SickTime,
-	Other
-}
-```
-	
-###### New Vacation property in User model
+###### New `Vacation` property in `User` model
 ```c#
 public virtual ICollection<Vacation> Vacation { get; set; }
 ```
 
 #### 3. What is the end result?
-The result is that there is now a `Vacation` model to help keep track of `Users` vacation time.
+The result is that there is now a `Vacation` model to help keep track of `User` object's vacation time.
