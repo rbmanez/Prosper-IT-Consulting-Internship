@@ -44,9 +44,9 @@ For each user story, I answer the following questions:
 ![user story 1](sprint3pics/pic21.png)
 
 #### 1. What is the issue?
-This user story had an issue with `Job` object's `ShiftTimes` property's CRUD functionality. The `Edit` and `Details` view were throwing errors.
+This user story had an issue with `Job` object's `ShiftTimes` property's CRUD functionality. Its `Edit` and `Details` view were throwing errors.
 
-The `Create` view already had a basic layout but it did not have a working create functionality. It also required a drop down list and moving the `Default` element to the top of the page.
+Its `Create` view already had a basic layout but it did not have a working create functionality. It also required a drop down list and moving the `Default` element to the top of the page.
 
 #### 2. Why is this an issue?
 The `Edit` view was throwing an error because in the `ShiftTimes` controller's `Edit` GET method, its `id` parameter was assigned the wrong data type of `Guid`. On the other hand, the `ShiftTime` model (used in the `Edit` view) has an `id` property with the data type of `int` data type.
