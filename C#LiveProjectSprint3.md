@@ -51,7 +51,7 @@ The `Edit` view was throwing an error because in the `ShiftTimes` controller's `
 
 As a result, `id` always had a value of `null` and would throw an error. Besides this view issue, the Edit functionality and its POST method was working perfectly.
 
-###### Code snippet of ShiftTimes controller's Edit GET method
+###### ShiftTimes controller's `Edit` GET method
 ```c#
 public ActionResult Edit(Guid? id)
 {
@@ -68,17 +68,17 @@ public ActionResult Edit(Guid? id)
 }
 ```
 
-###### Error message when trying to access Edit view
+###### Error message when trying to access `Edit` view due to parameter being passed to the `Edit` method having the wrong data type
 ![Error message when trying to access Edit view](sprint3pics/pic22.png)
 
 The `Details` view was throwing an error due to a line of code from inside of the view that was looking for a file that did not exist.
 
-###### The code causing the error
+###### The code causing the error for `Details` view due to searching for a file that did not exist
 ```cshtml
 @Html.Partial("_EditButtonPartial", Model.ShiftTimeId)
 ```
 
-###### Error message when trying to access Details view
+###### Error message when trying to access `Details` view
 ![Error message when trying to access Details view](sprint3pics/pic23.png)
 
 The `Create` view lacked the create functionality because:
@@ -86,10 +86,10 @@ The `Create` view lacked the create functionality because:
 2. the controller's `Create` GET method didn't do much besides simply returning the view.
 3. the controller's `Create` POST method was completely commented out, and the commented out code was implementing a `Guid` data type for the `ShiftTimeId` property (when in fact, based on the `ShiftTime` model it should be an integer) and a partial view of `"_shiftTimeModal"` that was created for Jobs controller and view.
 
-###### ShiftTime Create view before fix
+###### ShiftTime `Create` view before fix
 ![ShiftTime Create view before fix](sprint3pics/pic24.png)
 	
-###### Code snippet of Job model
+###### Code snippet of `Job` model
 ```c#
 public class Job
 {
@@ -104,7 +104,7 @@ public class Job
 }
 ```
 	
-###### Code snippet of ShiftTime model
+###### Code snippet of `ShiftTime` model
 ```c#
 public class ShiftTime
 {
@@ -116,7 +116,7 @@ public class ShiftTime
 }
 ```
 
-###### Create GET method
+###### ShiftTimes controller's `Create` GET method
 ```c#
 public ActionResult Create()
 {
@@ -124,7 +124,7 @@ public ActionResult Create()
 }
 ```
 
-###### Create POST method
+###### ShiftTimes controller's `Create` POST method
 ```c#
 //[HttpPost]
 //[ValidateAntiForgeryToken]
@@ -144,7 +144,7 @@ public ActionResult Create()
 #### 3. How is the issue resolved?
 I fixed the `Edit` view by changing the parameter data type for `id` from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property and value by using `Html.DisplayFor`.
 	
-###### Code snippet of ShiftTimes controller's Edit GET method
+###### ShiftTimes controller's `Edit` GET method
 ```c#
 public ActionResult Edit(int id)
 {
@@ -161,7 +161,7 @@ public ActionResult Edit(int id)
 }
 ```
 
-###### Dynamic heading
+###### Dynamic heading by using `Html.DisplayFor`
 ```cshtml
 <h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
 ```
@@ -173,24 +173,24 @@ I fixed the `Details` view by completely eliminating the line of code that was c
 
 I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle` property and value using `Html.DisplayFor`. Previously there was no heading.
 
-###### Dynamic heading
+###### Dynamic heading by using `Html.DisplayFor`
 ```cshtml
 <h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
 ```
 
 I fixed the `Create` view by:
 1. moving the `Default` element to the top of the page.
-2. setting up `Html.BeginForm`.
+2. setting up `Html.BeginForm` for a create form.
 3. setting up `Html.DropDownList` for the drop down list and using `Html.LabelFor` for a dynamic heading for the drop down list.
 4. setting up ShiftTimes controller's `Create` GET method to pass to the view a list of Jobs from the `Job` database that did not have its `WeeklyShift` property assigned yet.
 5. setting up ShiftTimes controller's `Create` POST method to find the selected `Job` object from the `Job` database and assigning its `WeeklyShift` property to the newly created `shiftTime`. Then I added the new `shiftTime` object to the `ShiftTime` database.
 
-###### Html.BeginForm
+###### `Html.BeginForm` for a create form
 ```cshtml
 @using (Html.BeginForm("Create", "ShiftTimes", FormMethod.Post))
 ```
 
-###### Html.DropDownList
+###### `Html.DropDownList` for the drop down list and `Html.LabelFor` for a dynamic heading for the drop down list
 ```cshtml
 @*drop down list for Jobs with WeeklyShifts that equal null*@
 <div class="form-group">
@@ -201,7 +201,7 @@ I fixed the `Create` view by:
 </div>
 ```
 
-###### ShiftTimes controller's Create GET method
+###### ShiftTimes controller's `Create` GET method
 ```c#
 public ActionResult Create()
 {
@@ -213,7 +213,7 @@ public ActionResult Create()
 }
 ```
 
-###### ShiftTimes controller's Create POST method
+###### ShiftTimes controller's `Create` POST method
 ```c#
 [HttpPost]
 [ValidateAntiForgeryToken]
@@ -239,16 +239,16 @@ public ActionResult Create([Bind(Include = "ShiftTimeId,Monday,Tuesday,Wednesday
 #### 4. What is the end result?
 The result is a functional CRUD feature for `ShiftTimes` objects. A manager can now go into `ShiftTimes` and see, create, edit, or delete a `ShiftTime` object associated to a `Job` object.
 
-###### Create view after fix
+###### `Create` view after fix
 ![Create view after fix](sprint3pics/pic25.png)
 
-###### Index view showing created ShiftTime for Job named "Yellowstone"
+###### `Index` view showing created `ShiftTime` object for `Job` object named "Yellowstone"
 ![Index view](sprint3pics/pic26.png)
 
-###### Edit view after fix
+###### `Edit` view after fix
 ![Edit view after fix](sprint3pics/pic27.png)
 
-###### Details view after fix
+###### `Details` view after fix
 ![Details view after fix](sprint3pics/pic28.png)
 
 
