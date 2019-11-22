@@ -405,7 +405,7 @@ The result is that when a schedule is deleted, it's associated calendar event on
 This user story needed a new `Vacation` model to be created so that we can track `User` object's vacation time.
 
 #### 2. How is the issue resolved?
-I accomplished the user story by creating an `enum` for vacation type, creating a new `Vacation` model, and updating the `User` model by adding a `Vacation` property to it. This established a 1 to many relationship between `User` and `Vacation` objects.
+I accomplished the user story by creating an `enum` for `VacationType`, creating a new `Vacation` model with properties for `VacationType` and `User` object, and updating the `User` model by adding a `Vacation` object property to it. This established a 1 to many relationship between `User` and `Vacation` objects.
 	
 ###### `enum` for `VacationType` property
 ```c#
@@ -439,7 +439,7 @@ public class Vacation
 }
 ```
 	
-###### New `Vacation` property in `User` model
+###### New `Vacation` object property in `User` model
 ```c#
 public virtual ICollection<Vacation> Vacation { get; set; }
 ```
