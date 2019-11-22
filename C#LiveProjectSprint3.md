@@ -339,7 +339,7 @@ The result is a fully functional CRUD feature for profile pictures that is now b
 
 If users do not have a personal profile or if users do have a personal profile but did not set a profile picture, they are assigned a default profile picture.
 
-###### `PersonalProfiles/Edit` view showing the default profile picture and the update, details, and delete features.
+###### `PersonalProfiles/Edit` view showing the default profile picture and the Update, Details, and Delete features.
 ![edit view](sprint3pics/pic7.png)
 	
 ###### `PersonalProfiles/ProfilePicture` view for uploading profile picture
@@ -348,7 +348,7 @@ If users do not have a personal profile or if users do have a personal profile b
 ###### `PersonalProfiles/Details` view (I uploaded a new profile picture that replaced the default profile picture)
 ![details view](sprint3pics/pic9.png)
 
-###### `PersonalProfiles/DeleteProfilePicture` view for delete confirmation for profile picture
+###### `PersonalProfiles/DeleteProfilePicture` view for profile picture delete confirmation
 ![delete view](sprint3pics/pic10.png)
 
 
@@ -362,37 +362,37 @@ This user story had an issue with deleting calendar events from the calendar. Wh
 
 When a schedule is deleted, the calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule has been deleted.
 
-###### Deleting schedule
+###### Deleting a `Schedule` object
 ![delete schedule](sprint3pics/pic13.png)
 
-###### Calendar event persists
+###### The `CalendarEvent` object associated to the `Schedule` object persists
 ![calendar event persists](sprint3pics/pic14.png)
 
 #### 2. Why is this an issue?
-After looking inside the `SchedulesController`, the reason why calendar events were not being deleted from the calendar is because the delete method was only deleting the schedule. There was no logic that handled deleting the schedule's associated calendar event.
+After looking inside the `SchedulesController`, the reason why `CalendarEvent` objects were not being deleted from the calendar is because the `Schedules/DeleteConfirmed` POST method was only deleting the `Schedule` object. There was no logic that handled deleting the `Schedule` object's associated `CalendarEvent` object.
 
-###### Code snippet of SchedulesController.DeleteConfirmed method
+###### `Schedules/DeleteConfirmed` POST method only deleting `Schedule` objects (before fix)
 ![Code snippet of SchedulesController.DeleteConfirmed method](sprint3pics/pic15.png)
 
 #### 3. How is the issue resolved?
-I accomplished the user story by adding the logic for deleting calendar events when the associated schedule is deleted.
+I accomplished the user story by adding the logic for deleting `CalendarEvent` objects when the associated `Schedule` object is deleted.
 	
-###### Code snippet of solution from SchedulesController.DeleteConfirmed method
+###### `Schedules/DeleteConfirmed` POST method is now deleting `CalendarEvent` objects when it's associated `Schedule` object is deleted (after fix)
 ![Code snippet of solution from SchedulesController.DeleteConfirmed method](sprint3pics/pic16.png)
 
 #### 4. What is the end result?
 The result is that when a schedule is deleted, it's associated calendar event on the calendar is automatically deleted as well.
 
-###### Creating a new schedule
+###### Creating a new `Schedule` object
 ![Creating a new schedule](sprint3pics/pic17.png)
 
-###### Calendar event created due to new schedule
+###### An associated `CalendarEvent` object created due to new `Schedule` object
 ![Calendar event created due to new schedule](sprint3pics/pic18.png)
 
-###### Deleting schedule
+###### Deleting `Schedule` object
 ![Deleting schedule](sprint3pics/pic19.png)
 
-###### Calendar event deleted due to schedule being deleted
+###### `CalendarEvent` object is automatically deleted as well due to its associated `Schedule` object being deleted
 ![Calendar event deleted due to schedule being deleted](sprint3pics/pic20.png)
 
 
