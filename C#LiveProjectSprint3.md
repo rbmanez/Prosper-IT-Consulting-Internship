@@ -285,10 +285,8 @@ The feature to upload profile pictures was previously handled by the `ManageCont
 public byte[] ProfilePicture { get; set; }
 ```
 
-Inside `PersonalProfilesController` I handled the logic for CRUD functionality.
-
-I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and added extra funcionality:
-1. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default picture.
+Then I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and added extra funcionality:
+1. I added an "or" (`||`) condition to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR users have a personal profile but did not set a profile picture, their profile picture will be set to the default profile picture.
 2. I added the logic for the `DeleteProfilePictureConfirmed` method.
 3. I added comments to the `Photo`, `ProfiePicture` POST, `DeleteProfilePicture`, and `DeleteProfilePictureConfirmed` POST methods for more clarity.
 
@@ -339,16 +337,18 @@ I updated all the view files that dealt with showing the profile picture since `
 #### 3. What is the end result?
 The result is a fully functional CRUD feature for profile pictures that is now being handled by `PersonalProfilesController` and its views. Users can now upload, see, update, or delete their profile pictures.
 
-###### `PersonalProfiles/Edit` view showing default profile picture (for users who has not uploaded their own profile picture) and the update, details, and delete features.
+If users do not have a personal profile or if users do have a personal profile but did not set a profile picture, they are assigned a default profile picture.
+
+###### `PersonalProfiles/Edit` view showing the default profile picture and the update, details, and delete features.
 ![edit view](sprint3pics/pic7.png)
 	
 ###### `PersonalProfiles/ProfilePicture` view for uploading profile picture
 ![ProfilePicture view](sprint3pics/pic8.png)
 
-###### `PersonalProfiles/Details` view (I uploaded a new profile picture)
+###### `PersonalProfiles/Details` view (I uploaded a new profile picture that replaced the default profile picture)
 ![details view](sprint3pics/pic9.png)
 
-###### `PersonalProfiles/DeleteProfilePicture` view for delete confirmation
+###### `PersonalProfiles/DeleteProfilePicture` view for delete confirmation for profile picture
 ![delete view](sprint3pics/pic10.png)
 
 
