@@ -358,14 +358,14 @@ If users do not have a personal profile or if users do have a personal profile b
 ![user story 3](sprint3pics/pic12.png)
 
 #### 1. What is the issue?
-This user story had an issue with deleting calendar events from the calendar. When a schedule is created it automatically creates a calendar event that shows on the calendar.
+This user story had an issue with deleting `CalendarEvent` objects from the calendar. When a `Schedule` object is created it automatically creates an associated `CalendarEvent` object that shows on the calendar.
 
-When a schedule is deleted, its associated calendar event from the calendar should automatically be deleted as well. However the calendar event persists on the calendar even after the associated schedule has been deleted.
+When a `Schedule` object is deleted, its associated `CalendarEvent` object from the calendar should automatically be deleted as well. However the `CalendarEvent` object persists on the calendar even after its associated `Schedule` object has been deleted.
 
 ###### Deleting a `Schedule` object
 ![delete schedule](sprint3pics/pic13.png)
 
-###### The `CalendarEvent` object associated to the `Schedule` object persists
+###### The `CalendarEvent` object persists even after its associated `Schedule` object has been deleted 
 ![calendar event persists](sprint3pics/pic14.png)
 
 #### 2. Why is this an issue?
