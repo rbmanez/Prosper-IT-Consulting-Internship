@@ -372,7 +372,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### cafe/cafe_base.html before fix
+###### cafe/cafe_base.html before fix (only contains content specific for it's home page)
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -412,7 +412,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### menu/menu_base.html before fix
+###### menu/menu_base.html before fix (only contains content specific for it's home page)
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -437,7 +437,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 </div>
 ```
 
-###### menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template for the Menu App's home page's content. This created an awkward stacking of templates that was a strange pattern for Menu App's create, details, and inspiration pages.
+###### menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template that only contains content specific for it's home page. This created an awkward stacking of the home page template on top that happened for the Menu App's create, details, and inspiration pages.
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -942,7 +942,7 @@ I resolved the issue by using Bootstrap 4 to create a sub-menu for the navbar su
 
 
 ## What is the end result?
-The end result is a better UI experience by showing navbar item's sub-menus on hover.
+The end result is a better UI experience by showing the sub-menus for the navbar sub-item's "Apis" and "Space Wiki" on hover.
 
 ###### Navbar "Services" sub-menu after fix
 ![Navbar "Services" sub-menu after fix](sprint4pics/pic34.png)
