@@ -119,9 +119,6 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (second half)
 ![ChatMessagesController.cs/Index method code](sprint2pics/pic10.png)
 
-###### `ChatMessages` database table
-![ChatMessages database table](sprint2pics/pic8.png)
-
 ###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (top of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 
@@ -176,10 +173,6 @@ public ActionResult DeleteConfirmed(Guid id)
 }
 ```
 
-###### `CreateUserRequests` database table
-![CreateUserRequests database table](sprint2pics/pic17.png)
-
-
 #### 4. What is the end result?
 The result is a properly operating delete button that deletes `CreateUserRequest` objects (unregistered users) from the database.
 
@@ -227,11 +220,8 @@ Then in `Content/site.css` (responsible for global styling), I found the `#jobSi
 }
 ```
 
-###### `Jobs` database table
-![Jobs database table](sprint2pics/pic23.png)
-
 #### 3. What is the result?
-The result is when a user goes to the `JobSite/Details` view, it'll display the all the `JobTitles` associated with that `JobSite` object.
+The result is when a user goes to the `JobSite/Details` view, it'll display all of the `Job` object's `JobTitles` associated with that `JobSite` object.
 
 ###### App after fix
 ![App after fix](sprint2pics/pic24.png)
