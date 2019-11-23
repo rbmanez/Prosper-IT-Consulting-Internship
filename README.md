@@ -41,17 +41,6 @@ Click the headings below in this section to see the completed user stories for t
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Overview
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
-
-#### List of Technologies Used
-- Python & Django Web Framework
-- HTML, CSS, JavaScript
-- Amadeus API (used for Airports App)
-- Virtualenv (Python Library)
-- DevOps (Project Management)
-- Git (Source Control)
-- Slack (Team Communication)
-- Google Meet (Team Meetings)
-- VS Code (Code Editor)
   
 ### [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
 #### Project Overview
@@ -61,20 +50,6 @@ The primary components of this project include the creation of registered users,
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
-#### List of Technologies Used
-- C# ASP.Net MVC
-- HTML, CSS, JavaScript
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
-- Entity Framework 6
-- PagedList.Mvc
-- Leafletjs
-- Leafet Routing Machinge API
-- Geolocation API
-- Bootstrap 4
-- Slack and Google Meet for communications
-
 ### [C# Live Project Sprint 3](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
 #### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
@@ -82,22 +57,10 @@ The Management Portal software is used to manage a collection of jobs. Admins ar
 The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
-
-#### List of Technologies Used
-- C# ASP.Net MVC
-- HTML, CSS, JavaScript
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
-- Entity Framework 6
-- Bootstrap 4
-- Slack and Google Meet for communications
   
 ### Python Live Project Sprint 4
 #### Project Overview
-
-#### List of Technologies Used
-- 
+The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
 
 
 
