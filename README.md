@@ -1183,6 +1183,97 @@ are working and linking properly.
 
 
 
+- ### User Story 5: Show Directions on Map Load
+![user story image](sprint2pics/pic1.png)
+
+#### 1. What is the issue?
+This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
+
+###### App before fix
+![App before fix](sprint2pics/pic2.png)
+
+#### 2. How is the issue resolved?
+The current project map was created using JavaScript and Leafletjs for the map and Leaflet Routing Machine for map routing. I used the Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location.
+
+Then I used the `JobSite` object's `latitude` and `longitude` properties saved in the `JobSites` database table to use as the ending location.
+
+###### `setLeafletMap()` function was created by a previous developer for creating the map
+```javascript
+function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
+```
+
+###### Using Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location. The `setLeafletMap()` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
+```javascript
+navigator.geolocation.getCurrentPosition(function (location) {
+  var currentLat = location.coords.latitude
+  var currentLong = location.coors.longitude
+  setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
+});
+```
+###### Part of `setLeafletMap()` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations using user's current location as the starting point and the `JobSite`'s location as the ending point
+```javascript
+var control = L.Routing.control({
+                waypoints: [
+                    L.latLng(currentLat, currentLong),
+                    L.latLng(jobSiteLat, jobSiteLong)
+                ],
+                routeWhileDragging: true,
+                show: true,
+                geocoder: L.Control.Geocoder.nominatim(),
+                autoRoute: true
+            }).addTo(leafletMap);
+```
+
+###### `JobSites` database table
+![JobSites database table](sprint2pics/pic3.png)
+
+#### 3. What is the end result?
+The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the `JobSite`'s location, the written directions, and a red polyline connecting the 2 locations.
+
+###### App showing auto populated starting and ending points with written directions (after fix)
+![App after fix](sprint2pics/pic4.png)
+
+###### App showing red polyline connecting the starting and ending points (after fix)
+![App after fix](sprint2pics/pic5.png)
+
+
+
+
+- ### User Story 6: Sorting, Filtering, & Paging ChatMessages Index
+![pic of user story](sprint2pics/pic6.png)
+
+#### 1. What is the issue?
+This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
+
+###### ChatMessages view before fix
+![App before fix](sprint2pics/pic7.png)
+
+#### 2. How is the issue resolved?
+Looking inside `ChatMessagesController` and it's `Index` method, all it did was return a list of data from the `ChatMessages` database table. I replaced it and added the sorting and filtering logic and used a NuGet package called `PagedList.Mvc` for the paging functionalitites.
+
+In the `Index` view, I added column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method.
+
+###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (first half)
+![ChatMessagesController.cs/Index method code](sprint2pics/pic9.png)
+
+###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (second half)
+![ChatMessagesController.cs/Index method code](sprint2pics/pic10.png)
+
+###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (top of the page)
+![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
+
+###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
+![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
+
+#### 3. What is the end result?
+The end result is an interactive table for chat messages that shows 3 messages per page and can be sorted and filtered for ease of use.
+
+###### ChatMessages view with functional sorting, filtering, and paging (after fix)
+![App after fix](sprint2pics/pic13.png)
+
+
+
+
 ## The Four Live Project Sprints
 Click the sub-heading hyperlinks below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the previous section above.
 
