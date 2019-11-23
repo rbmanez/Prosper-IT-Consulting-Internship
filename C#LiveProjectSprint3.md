@@ -5,7 +5,7 @@
   - [List of Technologies Used](#list-of-technologies-used)
   - [User Story Overview](#user-story-overview)
 - [User Story 1: Debug Shift Time CRUD](#user-story-1-debug-shift-time-crud)
-- [User Story 2: Personal Photo Refator](#user-story-2-personal-photo-refator)
+- [User Story 2: Personal Photo Refactor](#user-story-2-personal-photo-refactor)
 - [User Story 3: Calendar Event Delete](#user-story-3-calendar-event-delete)
 - [User Story 4: New Class Vacation Time](#user-story-4-new-class-vacation-time)
 
@@ -23,11 +23,11 @@ The secondary components include a Chat feature (for all users to have a single 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
 - Entity Framework 6
 - Bootstrap 4
+- Git and Team Foundation Server
+- Azure DevOps
+- Visual Studio 2017
 - Slack and Google Meet for communications
 
 #### User Story Overview
@@ -269,13 +269,13 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 
 
-## User Story 2: Personal Photo Refator
+## User Story 2: Personal Photo Refactor
 ![user story 2](sprint3pics/pic1.png)
 
 #### 1. What is the issue?
 This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles and handling a default picture for users who do not have a personal profile and users who do have a personal profile but did not set a profile picture.
 
-It also required adding full CRUD capabilities for profile pictures.
+It also required having full CRUD capabilities for profile pictures.
 
 #### 2. How is the issue resolved?
 The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model. I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead.
@@ -317,7 +317,7 @@ I updated all the view files that dealt with showing the profile picture since `
 @Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
 ```
 
-###### Using `Html.ActionLink` method to create links to update, see details for, and delete profile picture via `PersonalProfiles/ProfilePicture`, `PersonalProfiles/Details`, and `PersonalProfiles/DeleteProfilePicture` methods
+###### Using `Html.ActionLink` method to create links for Update, Details, and Delete for profile picture via `PersonalProfiles/ProfilePicture`, `PersonalProfiles/Details`, and `PersonalProfiles/DeleteProfilePicture` methods
 ```cshtml
 @Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
 @Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
