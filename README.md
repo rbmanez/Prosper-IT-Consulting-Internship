@@ -3,16 +3,16 @@
 - [Live Project Sprint General Information](#live-project-sprint-general-information)
   - [Live Project Sprint Overview](#live-project-sprint-overview)
   - [Live Project Sprint Weekly Process](#live-project-sprint-weekly-process)
-- [The Four Live Project Sprints](#the-four-live-project-sprints)
-  - [Python Live Project Sprint 1](#python-live-project-sprint-1)
-  - [C# Live Project Sprint 2](#c-live-project-sprint-2)
-  - [C# Live Project Sprint 3](#c-live-project-sprint-3)
-  - [Python Live Project Sprint 4](#python-live-project-sprint-4)
 - [Featured User Stories](#featured-user-stories)
   - [User Story 1](#user-story-1)
   - [User Story 2](#user-story-2)
   - [User Story 3](#user-story-3)
   - [User Story 4](#user-story-4)
+- [The Four Live Project Sprints](#the-four-live-project-sprints)
+  - [Python Live Project Sprint 1](#python-live-project-sprint-1)
+  - [C# Live Project Sprint 2](#c-live-project-sprint-2)
+  - [C# Live Project Sprint 3](#c-live-project-sprint-3)
+  - [Python Live Project Sprint 4](#python-live-project-sprint-4)
 - [Conclusion](#conclusion)
   - [My Take Away Lessons](#my-take-away-lessons)
 
@@ -35,8 +35,28 @@ For 8 weeks, we solely did actual development work that resulted in practical ex
 
 
 
+## Featured User Stories
+Below are some featured user stories I completed during the entire 8 week (4 sprint) process to conveniently see here. To see all of the user stories I completed please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading links.
+
+For each user story, I answer the following questions:
+1. What is the issue?
+2. Why is this an issue? (If applicable)
+3. How is the issue resolved?
+4. What is the end result?
+
+- ### User Story 1
+
+- ### User Story 2
+
+- ### User Story 3
+
+- ### User Story 4
+
+
+
+
 ## The Four Live Project Sprints
-Click the headings below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the next section below.
+Click the headings below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the previous section above.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Overview
@@ -61,26 +81,6 @@ The secondary components include a Chat feature (for all users to have a single 
 ### Python Live Project Sprint 4
 #### Project Overview
 The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
-
-
-
-
-## Featured User Stories
-Below are some featured user stories I completed during the entire 8 week, 4 sprint process to conveniently see here. To see all of the user stories I completed please see the section above, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading links.
-
-For each user story, I answer the following questions:
-1. What is the issue?
-2. Why is this an issue? (If applicable)
-3. How is the issue resolved?
-4. What is the end result?
-
-- ### User Story 1
-
-- ### User Story 2
-
-- ### User Story 3
-
-- ### User Story 4
 
 
 
