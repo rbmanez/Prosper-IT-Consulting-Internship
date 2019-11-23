@@ -301,13 +301,13 @@ The results were tables with properly operating pagination and sorting features 
 ![pic of user story](sprint2pics/pic29.png)
 
 #### 1. What is the issue?
-This user story had an issue with the top margin for all index pages being too large. This was controlled by the global CSS class `.defaultContainer`. Also, the "Job Site" title in `JobSites/Index` view was outside of its `.defaultContainer` and it needed to be inside of it.
+This user story had an issue with the top margin for all index pages being too large. This was controlled by the global CSS class `.defaultContainer`. Also, the "Job Sites" title in `JobSites/Index` view was outside of its `.defaultContainer` and it needed to be inside of it.
 
 ###### App showing top margin being too large and "Job Sites" title outside of its container (before fix)
 ![App before fix](sprint2pics/pic30.png)
 
 #### 2. Why is this an issue?
-I went to `Content/site.css` (responsible for the global CSS styling), located the `.defaultContainer` CSS class, and found that the margin was not set appropriately. Then I went to `JobSites/Index` view and found the `h2` for the "Job Sites" title outside of the `.defaultContainer`.
+I went to `Content/site.css` (responsible for the global CSS styling), located the `.defaultContainer` CSS class, and found that the margin was not set appropriately. Then I went to `JobSites/Index` view and found the `h2` for the "Job Sites" title outside of its `.defaultContainer`.
 
 ###### `Content/site.css` showing `.defaultContainer` having 10% margin on all sides (before fix)
 ```css
@@ -329,7 +329,7 @@ I went to `Content/site.css` (responsible for the global CSS styling), located t
 #### 3. How is the issue resolved?
 Inside `JobSites/Index` view I moved the `h2` from outside of the `.defaultContainer` CSS class to inside of it. Then inside `Content/site.css` I changed the `.defaultContainer` to eliminate the top margin.
 
-###### I moved `h2` inside of `.defaultContainer` in `JobSites/Index` view (after fix)
+###### I moved the `h2` inside of `.defaultContainer` in `JobSites/Index` view (after fix)
 ```cshtml
 <div class="defaultContainer">
     <h2>Job Sites</h2>
