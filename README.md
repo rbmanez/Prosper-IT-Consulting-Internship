@@ -47,6 +47,7 @@ For each user story, I answer the following questions:
 
 
 ## Featured User Story 1: Debug Shift Time CRUD
+#### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 ![user story 1](sprint3pics/pic21.png)
 
 #### List of Technologies Used
@@ -283,6 +284,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 
 ## Featured User Story 2: Personal Photo Refactor
+#### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 ![user story 2](sprint3pics/pic1.png)
 
 #### List of Technologies Used
@@ -375,6 +377,7 @@ If users do not have a personal profile or if users do have a personal profile b
 
 
 ## Featured User Story 3: Location Data Redesign
+#### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 ![user story](sprint4pics/pic1.png)
 
 #### List of Technologies Used
@@ -669,6 +672,7 @@ It now also includes the new features I added: user's local map location and wea
 
 
 ## Featured User Story 4: Restaurant Redesign
+#### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 ![user story](sprint4pics/pic7.png)
 
 #### List of Technologies Used
@@ -1216,6 +1220,7 @@ are working and linking properly.
 
 
 ## Featured User Story 5: Show Directions on Map Load
+#### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 ![user story image](sprint2pics/pic1.png)
 
 #### List of Technologies Used
@@ -1281,6 +1286,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 
 ## Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index
+#### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 ![pic of user story](sprint2pics/pic6.png)
 
 #### List of Technologies Used
