@@ -1,6 +1,6 @@
 # Python Live Project Sprint 4
 ## Table of Contents
-- [Sprint 4 General Information](#sprint-4-general-information)
+- [Python Live Project Sprint 4 General Information](#sprint-4-general-information)
   - [Project Overview](#project-overview)
   - [List of Technologies Used](#list-of-technologies-used)
   - [User Story Overview](#user-story-overview)
