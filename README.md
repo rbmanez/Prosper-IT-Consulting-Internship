@@ -9,7 +9,7 @@
 - [Featured User Story 3: Location Data Redesign](#featured-user-story-3-location-data-redesign)
 - [Featured User Story 4: Restaurant Redesign](#featured-user-story-4-restaurant-redesign)
 - [Featured User Story 5: Show Directions on Map Load](#featured-user-story-5-show-directions-on-map-load)
-- [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering-paging--chatmessages-index)
+- [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering--paging-chatmessages-index)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
   - [Python Live Project Sprint 1](#python-live-project-sprint-1)
   - [C# Live Project Sprint 2](#c-live-project-sprint-2)
