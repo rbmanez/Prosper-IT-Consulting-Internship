@@ -53,9 +53,9 @@ For each user story, I answer the following questions:
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
+- Git and Team Foundation Server (Source Control)
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
 
 #### 1. What is the issue?
 This user story had an issue with `Job` object's `ShiftTimes` property's CRUD functionality. Its `Edit` and `Details` view were throwing errors.
@@ -290,9 +290,9 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
+- Git and Team Foundation Server (Source Control)
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
 
 #### 1. What is the issue?
 This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles and handling a default picture for users who do not have a personal profile and users who do have a personal profile but did not set a profile picture.
@@ -386,11 +386,10 @@ If users do not have a personal profile or if users do have a personal profile b
 - Bootstrap 4
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
-- Django Crispy Forms (Django App for Styling Forms)
 - Virtualenv (Python Library)
-- VS Code (Code Editor)
-- DevOps (Project Management)
 - Git (Source Control)
+- DevOps (Project Management)
+- VS Code (Code Editor)
 
 #### 1. What is the issue?
 The issue with this story was that the layout for the Location Data App's page was visually unorganized. This story required clearly separating each section into their own container and adding their own image or graphic.
@@ -679,10 +678,11 @@ It now also includes the new features I added: user's local map location and wea
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
 - Bootstrap 4
+- Django Crispy Forms (Django App for Styling Forms)
 - Virtualenv (Python Library)
-- VS Code (Code Editor)
-- DevOps (Project Management)
 - Git (Source Control)
+- DevOps (Project Management)
+- VS Code (Code Editor)
 
 #### 1. What is the issue?
 The issue with this story is that neither the Cafe App and it's associated pages nor the Menu App home page are appropriately styled to match the theme of the site. These two apps function together to create the information needed for our hypothetical restaurant.
@@ -1226,12 +1226,12 @@ are working and linking properly.
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, JavaScript
-- Leafletjs
-- Leafet Routing Machinge API
-- Geolocation API
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
+- Leafletjs (Map)
+- Leafet Routing Machinge API (Map Routing)
+- Geolocation API (Current Location)
+- Git and Team Foundation Server (Source Control)
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
 
 #### 1. What is the issue?
 This user story required auto populating the current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath automatically connecting the start and end destinations immediately after page load.
@@ -1293,10 +1293,10 @@ The result is that when a user goes to the job site's details page, they will se
 - C# ASP.Net MVC
 - HTML
 - Entity Framework 6
-- PagedList.Mvc
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
+- PagedList.Mvc (Pagination)
+- Git and Team Foundation Server (Source Control)
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
 
 #### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
@@ -1315,10 +1315,10 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (second half)
 ![ChatMessagesController.cs/Index method code](sprint2pics/pic10.png)
 
-###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (top of the page)
+###### Adding a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods and column heading hyperlinks for sorting by using the `Html.ActionLink` method to ChatMessages `Index` view (top of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 
-###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
+###### Adding paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
