@@ -24,8 +24,8 @@ The secondary components include a Chat feature (for all users to have a single 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
-- Entity Framework 6
 - Bootstrap 4
+- Entity Framework 6
 - Git and Team Foundation Server
 - Azure DevOps (Project Management)
 - Visual Studio 2017 (Code Editor)
