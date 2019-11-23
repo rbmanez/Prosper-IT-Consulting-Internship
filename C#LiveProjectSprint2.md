@@ -25,15 +25,15 @@ The secondary components include a Chat feature (for all users to have a single 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
 - Entity Framework 6
 - PagedList.Mvc
 - Leafletjs
 - Leafet Routing Machinge API
 - Geolocation API
 - Bootstrap 4
+- Git and Team Foundation Server
+- Azure DevOps
+- Visual Studio 2017
 - Slack and Google Meet for communications
 
 #### User Story Overview
@@ -120,10 +120,10 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (second half)
 ![ChatMessagesController.cs/Index method code](sprint2pics/pic10.png)
 
-###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (top of the page)
+###### Adding a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods and column heading hyperlinks for sorting by using the `Html.ActionLink` method to ChatMessages `Index` view (top of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 
-###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
+###### Adding paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
