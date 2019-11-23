@@ -53,16 +53,16 @@ This user story required auto populating the project's current map with a start 
 ![App before fix](sprint2pics/pic2.png)
 
 #### 2. How is the issue resolved?
-The current project map was created using JavaScript and leafletjs for the map and leaflet routing machine for map routing. I used the Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location.
+The current project map was created using JavaScript and Leafletjs for the map and Leaflet Routing Machine for map routing. I used the Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location.
 
 Then I used the `JobSite` object's `latitude` and `longitude` properties saved in the `JobSites` database table to use as the ending location.
 
-###### `setLeafletMap()` function is for creating the map
+###### `setLeafletMap()` function was created by a previous developer for creating the map
 ```javascript
 function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
 ```
 
-###### Instantiates the map by calling `setLeafletMap()` and passing it the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
+###### Using Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location. The `setLeafletMap()` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
 ```javascript
 navigator.geolocation.getCurrentPosition(function (location) {
   var currentLat = location.coords.latitude
@@ -70,7 +70,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
   setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
 });
 ```
-###### Part of `setLeafletMap()` that uses leafletjs to populate the start and end destinations using user's current location as the starting point and the `JobSite`'s location as the ending point
+###### Part of `setLeafletMap()` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations using user's current location as the starting point and the `JobSite`'s location as the ending point
 ```javascript
 var control = L.Routing.control({
                 waypoints: [
@@ -90,7 +90,7 @@ var control = L.Routing.control({
 #### 3. What is the end result?
 The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the `JobSite`'s location, the written directions, and a red polyline connecting the 2 locations.
 
-###### App showing auto populated starting point and ending point with written directions (after fix)
+###### App showing auto populated starting and ending points with written directions (after fix)
 ![App after fix](sprint2pics/pic4.png)
 
 ###### App showing red polyline connecting the starting and ending points (after fix)
@@ -109,7 +109,7 @@ This user story required adding sorting, filtering, and paging functionalitites 
 ![App before fix](sprint2pics/pic7.png)
 
 #### 2. How is the issue resolved?
-Looking inside `ChatMessagesController` and it's `Index` method, all it did was return a list of data from the `ChatMessages` database table. I replaced it and added the sorting and filtering logic and used a NuGet package called PagedList.Mvc for the paging functionalitites.
+Looking inside `ChatMessagesController` and it's `Index` method, all it did was return a list of data from the `ChatMessages` database table. I replaced it and added the sorting and filtering logic and used a NuGet package called `PagedList.Mvc` for the paging functionalitites.
 
 In the `Index` view, I added column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method.
 
@@ -122,10 +122,10 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ###### `ChatMessages` database table
 ![ChatMessages database table](sprint2pics/pic8.png)
 
-###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination to ChatMessages `Index` view (top of the page)
+###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (top of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 
-###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination to ChatMessages `Index` view (bottom of the page)
+###### Adding column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method to ChatMessages `Index` view (bottom of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
@@ -141,12 +141,12 @@ The end result is an interactive table for chat messages that shows 3 messages p
 ![pic of user story](sprint2pics/pic16.png)
 
 #### 1. What is the issue?
-The delete function for unregistered users was not deleting them from the database. Instead, when you try to confirm and delete an unregistered user it goes back to the Index view and the unregistered user is still there.
+The delete function for `CreateUserRequest` objects (unregistered users) was not deleting them from the database. Instead, when you try to confirm and delete them it goes back to the `Index` view and the `CreateUserRequest` object (unregistered user) is still there.
 
 #### 2. Why is this an issue?
-I went to CreateUserRequestController.cs and found the DeleteConfirmed method responsible for deleting unregistered users. The reason the function did not work properly is because all it did was redirect to the Index view.
+I went to `CreateUserRequestController` and found the `DeleteConfirmed` POST method responsible for deleting `CreateUserRequest` objects  (unregistered users). The reason the function did not delete them is because all it did was redirect to the `Index` view.
 
-###### Code snippet
+###### `CreateUserRequest/DeleteConfirmed` POST method simply redirecting to `Index` view - before fix
 ```c#
 [HttpPost, ActionName("Delete")]
 [ValidateAntiForgeryToken]
@@ -157,9 +157,9 @@ public ActionResult DeleteConfirmed(Guid id)
 ```
 
 #### 3. How is the issue resolved?
-I searched the database table CreateUserRequest (for unregistered users) for the object's ID associated with the unregistered user, removed that CreateUserRequest object (unregistered user) from the database, saved the changes, and redirected back to the Index view.
+I searched the `CreateUserRequest` database table for the `CreateUserRequest` object's ID, removed that `CreateUserRequest` object (unregistered user) from the database, saved the changes, and redirected back to the `Index` view.
 
-###### Code snippet
+###### `CreateUserRequest/DeleteConfirmed` POST method now deleting `CreateUserRequest` objects (unregistered users) - after fix
 ```c#
 [HttpPost, ActionName("Delete")]
 [ValidateAntiForgeryToken]
@@ -176,20 +176,17 @@ public ActionResult DeleteConfirmed(Guid id)
 }
 ```
 
-###### CreateUserRequests database table
+###### `CreateUserRequests` database table
 ![CreateUserRequests database table](sprint2pics/pic17.png)
 
 
 #### 4. What is the end result?
-The result is a properly operating delete button that deletes unregistered users.
+The result is a properly operating delete button that deletes `CreateUserRequest` objects (unregistered users) from the database.
 
-###### Delete user
-![Delete user](sprint2pics/pic18.png)
-
-###### Delete user confirmation
+###### Delete `CreateUserRequest` object (unregistered user) confirmation
 ![Delete user confirmation](sprint2pics/pic19.png)
 
-##### User deleted
+##### `CreateUserRequest` object (unregistered user) successfully deleted
 ![User deleted](sprint2pics/pic20.png)
 
 
