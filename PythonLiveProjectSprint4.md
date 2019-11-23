@@ -310,10 +310,10 @@ It now also includes the new features I added: user's local map location and wea
 ###### App after fix (top third of the page)
 ![App after fix](sprint4pics/pic4.png)
 
-###### App after fix (middle third of the page)
+###### App after fix showing local sunrise/sunset times and radiation exposure (middle third of the page)
 ![App after fix](sprint4pics/pic5.png)
 
-###### App after fix (bottom third of the page)
+###### App after fix showing new map and local weather data (bottom third of the page)
 ![App after fix](sprint4pics/pic6.png)
 
 
@@ -491,7 +491,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 {% endblock %}
 ```
 
-###### cafe/cafe_base.html after fix (I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags)
+###### cafe/cafe_base.html after fix (I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags and moved `{% load static %}` and `{% include "footer.html" %}` in here)
 ```django
 {% load static %}
 <section class="cafe-menu-container">
@@ -575,7 +575,7 @@ How I resolved the issues with the Menu App:
   - I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top of these pages.
 5. In menu_create.html, since the project was already utilizing django-crispy-forms to style a user login form, I utilized it as well to style the Menu App's create form by using `{% load crispy_forms_tags %}` then changing `{{ form.as_p }}` to `{{ form|crispy }}`.
 
-###### menu/menu_index.html after fix (I moved the logic that handled looping through `object_list` to maintain the project's convention)
+###### menu/menu_index.html after fix (I removed the logic that handled looping through `object_list` to maintain the project's convention)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -586,7 +586,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_base.html after fix (I added the logic that handled looping through `object_list` here. I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags.)
+###### menu/menu_base.html after fix (I added the logic that handled looping through `object_list` here and a link to `{% url 'cafe' %}`. I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags.)
 ```django
 <section class="cafe-menu-container">
 	<h1 class="cafe-menu-heading">SpaceBar Cafe Menu</h1>
@@ -611,7 +611,7 @@ How I resolved the issues with the Menu App:
 </section>
 ```
 
-###### menu/menu_create.html after fix (I utilizied django-crispy-forms, `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_create.html after fix (I added `{% include "sidebar.html" %}` and utilizied django-crispy-forms, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -641,7 +641,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_details.html after fix (I utilizied `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_details.html after fix (I added `{% include "sidebar.html" %}` and utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -667,7 +667,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_inspiration.html after fix (I utilizied `{% include "sidebar.html" %}`, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_inspiration.html after fix (I added `{% include "sidebar.html" %}` and Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
 ```django
 {% extends "base.html" %}
 {% load static %}
