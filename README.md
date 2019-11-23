@@ -1220,11 +1220,10 @@ are working and linking properly.
 
 #### List of Technologies Used
 - C# ASP.Net MVC
-- HTML, CSS, JavaScript
+- HTML, JavaScript
 - Leafletjs
 - Leafet Routing Machinge API
 - Geolocation API
-- Bootstrap 4
 - Azure DevOps
 - Visual Studio 2017
 - Git and Team Foundation Server
@@ -1255,7 +1254,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
   setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
 });
 ```
-###### Part of `setLeafletMap` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations
+###### Part of `setLeafletMap` that uses Leaflet Routing Machine's `L.Routing.control` function for map routing
 ```javascript
 var control = L.Routing.control({
                 waypoints: [
@@ -1287,15 +1286,16 @@ The result is that when a user goes to the job site's details page, they will se
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML
+- Entity Framework 6
+- PagedList.Mvc
 - Azure DevOps
 - Visual Studio 2017
 - Git and Team Foundation Server
-- PagedList.Mvc
 
 #### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
-###### ChatMessages view before fix
+###### ChatMessages view with no sorting, filtering, and paging functionalitites (before fix)
 ![App before fix](sprint2pics/pic7.png)
 
 #### 2. How is the issue resolved?
@@ -1316,7 +1316,7 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
-The end result is an interactive table for chat messages that shows 3 messages per page and can be sorted and filtered for ease of use.
+The end result is an interactive table for chat messages with paging functionality that shows 3 messages per page and can be sorted and filtered for ease of use.
 
 ###### ChatMessages view with functional sorting, filtering, and paging (after fix)
 ![App after fix](sprint2pics/pic13.png)
@@ -1355,15 +1355,17 @@ The Space Bar is an interactive Django based site for researching things about s
 
 
 ## Conclusion
-In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical knowledge and skills to be a software developer. This is where all the tools we’ve learned came together. I gained the courage to arrive in the middle of a large project and collaborate with a team to accomplish our objectives. I grew a deeper understanding of the development process, workflow, and environment.
+In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical experience that improved my knowledge and skills as a software developer. I grew a deeper understanding of the development process, workflow, and team collaborations and communications.
 
 #### My Take Away Lessons
-- Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Remain patient and persistent. Start small and move forward towards a solution.
+- Patience and persistence are keys to improvement.
+- Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
 - Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
-- Always think in terms of what the end goal is, what the sub goal is, what I'm currently trying to accomplish and why, and what my code is actually doing.
+- Always think in terms of what the end goal is, what the sub-goals are, what I'm currently trying to accomplish and why, and what my code is actually doing.
 - Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - When in doubt, communicate and clarify.
 - Don't be stuck on a problem for too long and ask for help.
 - Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
-- Continually learn and improve in terms of work and personal development. It's about progress, not perfection. Enjoy the journey!
+- Continually learn and improve in terms of software development and personal development. Think big picture and holistically.
+- It's about progress, not perfection. Enjoy the journey!
