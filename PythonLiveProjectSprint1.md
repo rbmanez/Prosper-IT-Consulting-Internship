@@ -7,7 +7,7 @@
  - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
  - [User Story 2: Front End Calendar App](#user-story-2-front-end-calendar-app)
  - [User Story 3: Organize the Navbar](#user-story-3-organize-the-navbar)
- - [Go Back to Live Project Sprints Home Page](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/README.md)
+ - [Go Back to "Live Project Sprints" Home Page](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/README.md)
  
  
  
