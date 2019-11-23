@@ -21,7 +21,7 @@
 
 ## Live Project Sprint General Information
 #### Sprint Overview
-The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects lasted for 8 weeks, broken down into 2-week sprints with 4 iterations. Each sprint iteration focuses on specific tasks and technologies.
+The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Projects lasted for 8 weeks, broken down into 2-week sprints with 4 iterations. Each sprint iteration focused on specific tasks and technologies.
 
 For 8 weeks, we did development work that resulted in practical experience. We were challenged to work as part of a team and to figure out new things we weren’t taught.
 
@@ -30,7 +30,7 @@ The Live Project Sprints attempts to replicate what it’s like to do the actual
 #### Sprint Weekly Process
 - Each Monday is dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
 
-- We had daily stand up meetings from Monday through Friday through Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack and email.
+- We had daily stand up meetings from Monday through Friday via Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack.
 
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
@@ -38,7 +38,7 @@ The Live Project Sprints attempts to replicate what it’s like to do the actual
 
 
 ## Featured User Stories
-Below are some featured user stories I completed during the entire 8 week (4 sprint) process to conveniently see here. To see all of the user stories I completed please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading links.
+Below are some featured user stories I completed during the entire 8 week Live Project journey to conveniently see here. To see all of the user stories I completed please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
@@ -46,7 +46,7 @@ For each user story, I answer the following questions:
 3. How is the issue resolved?
 4. What is the end result?
 
-- ### User Story 1
+### - User Story 1
 
 - ### User Story 2
 
