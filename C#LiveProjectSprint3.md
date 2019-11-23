@@ -27,9 +27,9 @@ The secondary components include a Chat feature (for all users to have a single 
 - Entity Framework 6
 - Bootstrap 4
 - Git and Team Foundation Server
-- Azure DevOps
-- Visual Studio 2017
-- Slack and Google Meet for communications
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
+- Slack and Google Meet ((Team Communication and Stand Ups))
 
 #### User Story Overview
 For each user story, I answer the following questions:
