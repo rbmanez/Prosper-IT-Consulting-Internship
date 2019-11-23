@@ -1326,7 +1326,7 @@ The end result is an interactive table for chat messages that shows 3 messages p
 
 
 ## The Four Live Project Sprints
-Click the sub-heading hyperlinks below in this section to see the completed user stories for those sprints. There are also [Featured User Stories](#featured-user-stories) in the previous section above.
+To see all of the completed user stories I accomplished for each sprint, please click the sprint sub-heading hyperlinks below in this section.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Overview
