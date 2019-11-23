@@ -4,12 +4,12 @@
   - [Sprint Overview](#sprint-overview)
   - [Sprint Weekly Process](#sprint-weekly-process)
   - [Featured User Stories](#featured-user-stories)
-- [User Story 1](#user-story-1)
-- [User Story 2](#user-story-2)
-- [User Story 3](#user-story-3)
-- [User Story 4](#user-story-4)
-- [User Story 5]()
-- [User Story 6]()
+- [Featured User Story 1: Debug Shift Time CRUD](#featured-user-story-1-debug-shift-time-crud)
+- [Featured User Story 2: Personal Photo Refator](#featured-user-story-2-personal-photo-refactor)
+- [Featured User Story 3: Location Data Redesign](#featured-user-story-3-location-data-redesign)
+- [Featured User Story 4: Restaurant Redesign](#featured-user-story-4-restaurant-redesign)
+- [Featured User Story 5: Show Directions on Map Load](#featured-user-story-5-show-directions-on-map-load)
+- [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering-paging-chatmessages-index)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
   - [Python Live Project Sprint 1](#python-live-project-sprint-1)
   - [C# Live Project Sprint 2](#c-live-project-sprint-2)
@@ -46,7 +46,7 @@ For each user story, I answer the following questions:
 
 
 
-- ## User Story 1: Debug Shift Time CRUD
+- ## Featured User Story 1: Debug Shift Time CRUD
 ![user story 1](sprint3pics/pic21.png)
 
 #### List of Technologies Used
@@ -282,7 +282,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 
 
-- ## User Story 2: Personal Photo Refator
+- ## Featured User Story 2: Personal Photo Refator
 ![user story 2](sprint3pics/pic1.png)
 
 #### List of Technologies Used
@@ -374,7 +374,7 @@ If users do not have a personal profile or if users do have a personal profile b
 
 
 
-- ## User Story 3: Location Data Redesign
+- ## Featured User Story 3: Location Data Redesign
 ![user story](sprint4pics/pic1.png)
 
 #### List of Technologies Used
@@ -668,7 +668,7 @@ It now also includes the new features I added: user's local map location and wea
 
 
 
-- ## User Story 4: Restaurant Redesign
+- ## Featured User Story 4: Restaurant Redesign
 ![user story](sprint4pics/pic7.png)
 
 #### List of Technologies Used
@@ -1215,7 +1215,7 @@ are working and linking properly.
 
 
 
-- ## User Story 5: Show Directions on Map Load
+- ## Featured User Story 5: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
 
 #### List of Technologies Used
@@ -1280,7 +1280,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 
 
-- ## User Story 6: Sorting, Filtering, & Paging ChatMessages Index
+- ## Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
 
 #### List of Technologies Used
