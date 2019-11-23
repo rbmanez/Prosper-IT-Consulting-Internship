@@ -10,6 +10,7 @@
 - [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobsite-details)
 - [User Story 5: Users List Pagination Issue](#user-story-5-users-list-pagination-issue)
 - [User Story 6: Front End Margin Tweak](#user-story-6-front-end-margin-tweak)
+- [Go Back to "Live Project Sprints" Home Page](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/README.md)
 
 
 
