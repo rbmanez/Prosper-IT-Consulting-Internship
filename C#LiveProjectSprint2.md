@@ -26,16 +26,16 @@ The secondary components include a Chat feature (for all users to have a single 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
-- Entity Framework 6
-- PagedList.Mvc
-- Leafletjs
-- Leafet Routing Machinge API
-- Geolocation API
+- Leafletjs (Map)
+- Leafet Routing Machinge API (Map Routing)
+- Geolocation API (Current Location)
 - Bootstrap 4
+- PagedList.Mvc (Pagination)
+- Entity Framework 6
 - Git and Team Foundation Server
-- Azure DevOps
-- Visual Studio 2017
-- Slack and Google Meet for communications
+- Azure DevOps (Project Management)
+- Visual Studio 2017 (Code Editor)
+- Slack and Google Meet (Team Communication and Stand Ups)
 
 #### User Story Overview
 For each user story, I answer the following questions:
