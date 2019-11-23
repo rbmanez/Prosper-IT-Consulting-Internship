@@ -7,6 +7,7 @@
  - [User Story 1: Refactor Airports App](#user-story-1-refactor-airports-app)
  - [User Story 2: Front End Calendar App](#user-story-2-front-end-calendar-app)
  - [User Story 3: Organize the Navbar](#user-story-3-organize-the-navbar)
+ - [Go Back to Live Project Sprints Home Page](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/README.md)
  
  
  
@@ -20,11 +21,11 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 - HTML, CSS, JavaScript
 - Amadeus API (used for Airports App)
 - Virtualenv (Python Library)
-- DevOps (Project Management)
 - Git (Source Control)
+- DevOps (Project Management)
+- VS Code (Code Editor)
 - Slack (Team Communication)
 - Google Meet (Team Meetings)
-- VS Code (Code Editor)
 
 #### User Story Overview
 For each user story, I answer the following questions:
