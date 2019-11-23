@@ -49,22 +49,24 @@ For each user story, I answer the following questions:
 ![user story image](sprint2pics/pic1.png)
 
 #### 1. What is the issue?
-This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
+This user story required auto populating the current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath automatically connecting the start and end destinations immediately after page load.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic2.png)
 
 #### 2. How is the issue resolved?
-The current project map was created using JavaScript and Leafletjs for the map and Leaflet Routing Machine for map routing. I used the Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location.
+The current map was created using JavaScript and Leafletjs and the map routing used Leaflet Routing Machine. The previous developer created a `setLeafletMap` function to instantiate the map.
 
-Then I used the `JobSite` object's `latitude` and `longitude` properties saved in the `JobSites` database table to use as the ending location.
+The map showed the end location of the `JobSite` location. The issue was that getting the user's current location to be used as the start location was not implemented.
 
-###### `setLeafletMap()` function was created by a previous developer for creating the map
+I used the Geolocation API and it's `getCurrentPosition` method to get the user's current location to use as the map's start location.
+
+###### `setLeafletMap` function was created by a previous developer for creating the map. It had no implementation for getting user's current location.
 ```javascript
 function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
 ```
 
-###### Using Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location. The `setLeafletMap()` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
+###### I used Geolocation API and it's `getCurrentPosition` method to get user's current location to use as the start location. The `setLeafletMap` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
 ```javascript
 navigator.geolocation.getCurrentPosition(function (location) {
   var currentLat = location.coords.latitude
@@ -72,7 +74,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
   setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
 });
 ```
-###### Part of `setLeafletMap()` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations using user's current location as the starting point and the `JobSite`'s location as the ending point
+###### Part of `setLeafletMap` that uses Leaflet Routing Machine's `L.Routing.control` function for map routing
 ```javascript
 var control = L.Routing.control({
                 waypoints: [
@@ -85,9 +87,6 @@ var control = L.Routing.control({
                 autoRoute: true
             }).addTo(leafletMap);
 ```
-
-###### `JobSites` database table
-![JobSites database table](sprint2pics/pic3.png)
 
 #### 3. What is the end result?
 The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the `JobSite`'s location, the written directions, and a red polyline connecting the 2 locations.
@@ -107,7 +106,7 @@ The result is that when a user goes to the job site's details page, they will se
 #### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
-###### ChatMessages view before fix
+###### ChatMessages view with no sorting, filtering, and paging functionalitites (before fix)
 ![App before fix](sprint2pics/pic7.png)
 
 #### 2. How is the issue resolved?
@@ -128,7 +127,7 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
-The end result is an interactive table for chat messages that shows 3 messages per page and can be sorted and filtered for ease of use.
+The end result is an interactive table for chat messages with paging functionality that shows 3 messages per page and can be sorted and filtered for ease of use.
 
 ###### ChatMessages view with functional sorting, filtering, and paging (after fix)
 ![App after fix](sprint2pics/pic13.png)
