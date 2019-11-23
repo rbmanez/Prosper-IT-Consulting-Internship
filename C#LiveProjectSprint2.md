@@ -9,8 +9,10 @@
 - [User Story 3: Delete Unregistered Users](#user-story-3-delete-unregistered-users)
 - [User Story 4: List of Jobs to JobSite Details](#user-story-4-list-of-jobs-to-jobsite-details)
 - [User Story 5: Users List Pagination Issue](#user-story-5-users-list-pagination-issue)
-- [User Story 6: Prevent Page Refresh](#user-story-6-prevent-page-refresh)
-- [User Story 7: Front End Margin Tweak](#user-story-7-front-end-margin-tweak)
+- [User Story 6: Front End Margin Tweak](#user-story-6-front-end-margin-tweak)
+
+
+
 
 ## C# Live Project Sprint 2 General Information
 #### Project Overview
@@ -252,7 +254,9 @@ var users = from s in db.Users
 ![AspNetUsers database table](sprint2pics/pic26.png)
 
 #### 3. How is the issue resolved?
-In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was also used for the `_UserList` view) to `page2` and `sortORder2`. Then in the `UserController`, I made the `_UserList` method filter the database and grab only the Active Users. I did the same for the `_SuspendedUsers` method, filtering and grabbing only the Suspended Users.
+In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was also used for the `_UserList` view) to `page2` and `sortORder2`.
+
+Then in the `UserController`, I made the `_UserList` method filter the database and grab only the Active Users. I did the same for the `_SuspendedUsers` method, filtering and grabbing only the Suspended Users.
 
 ###### Using the new variable `sortORder2` in the `_SuspendedUsers` view
 ```cshtml
@@ -293,72 +297,19 @@ The results were tables with properly operating pagination and sorting features 
 
 
 
-## User Story 6: Prevent Page Refresh
-![pic of user story](sprint2pics/pic14.png)
-
-#### 1. What is the issue?
-This user story had an issue where if we use the sort, filter, or pagination feature on the User List table (a table that renders 3 sub tables and partial views for Active Users, Suspended Users, and Unregistered Users) from the Home/Dashboard view, it would refresh the page to the User/Index view. Instead, it should refresh on the current page where the features were applied.
-
-#### 2. Why is this an issue?
-Inside the _UserList (for Active Users), _SuspendedUsers, and _UnregisteredUsers views, the `Html.BeginForm` (for filtering), `Html.ActionLink` (for sorting), and `Url.Action` (for pagination) had their controllers and actions set specifically for the User controller and the Index method which will return the User/Index view every time.
-
-###### Code snippet
-```cshtml
-@using (Html.BeginForm("Index", "Users", FormMethod.Get))
-```
-```cshtml
-@Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
-```
-```cshtml
-@Html.PagedListPager(Model, page => Url.Action("Index",
-  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-```
-
-#### 3. How is the issue resolved?
-I set the controller and action for the Html.BeginForm, Html.ActionLink, and Url.Action for all 3 user views to `HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()` and `HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()`. These 2 methods make the features more dynamic by grabbing and using the controller and action names from the current url so that they can be used as a destination point.
-
-###### Code snippet
-```cshtml
-@using(
-  Html.BeginForm(HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  FormMethod.Get))
-```
-```cshtml
-@Html.ActionLink("User Name",
-  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  new { sortOrder = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter }, null)
-```
-```cshtml
-@Html.PagedListPager(Model, page => Url.Action(
-  HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString(),
-  HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(),
-  new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-```
-
-#### 4. What is the end result?
-The result is a dynamic User List table that when used to sort, filter, or paginate, it would refresh the page back to the current page it was accesssed from with the updated information.
-
-###### App after fix
-![App after fix](sprint2pics/pic15.png)
-
-
-
-
-## User Story 7: Front End Margin Tweak
+## User Story 6: Front End Margin Tweak
 ![pic of user story](sprint2pics/pic29.png)
 
 #### 1. What is the issue?
-This user story had an issue with the top margin for the global CSS class inside of all index pages, .defaultContainer, being too large. Also, the "Job Site" title in JobSites/Index view was outside of its container and it needed to be inside of it.
+This user story had an issue with the top margin for the global CSS class inside of all index pages, `.defaultContainer`, being too large. Also, the "Job Site" title in `JobSites/Index` view was outside of its container and it needed to be inside of it.
 
-###### App before fix
+###### App showing top margin being too large and "Job Site" title outside of container (before fix)
 ![App before fix](sprint2pics/pic30.png)
 
 #### 2. Why is this an issue?
-I went to Content/site.css (responsible for the global CSS styling), located the .defaultContainer CSS class, and found that the margin was not set appropriately. Then I went to JobSites/Index.cshtml and found the h2 for the "Job Site" title outside of the .defaultContainer.
+I went to `Content/site.css` (responsible for the global CSS styling), located the `.defaultContainer` CSS class, and found that the margin was not set appropriately. Then I went to `JobSites/Index` view and found the `h2` for the "Job Site" title outside of the `.defaultContainer`.
 
-###### Content/site.css code snippet
+###### `Content/site.css` (before fix)
 ```css
 .defaultContainer {
     background-color: rgba(255, 255, 255,0.8);
@@ -369,22 +320,22 @@ I went to Content/site.css (responsible for the global CSS styling), located the
 }
 ```
 
-###### JobSites/Index.cshtml code snippet
+###### `JobSites/Index` view showing `h2` outside of `.defaultContainer` (before fix)
 ```cshtml
 <h2>Job Sites</h2>
 <div class="defaultContainer">
 ```
 
 #### 3. How is the issue resolved?
-Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer class to inside of it. Then inside Content/site.css I changed the .defaultContainer class to minimize the top margin.
+Inside `JobSites/Index` view I moved the `h2` from outside of the `.defaultContainer` CSS class to inside of it. Then inside `Content/site.css` I changed the `.defaultContainer` to minimize the top margin.
 
-###### JobSites/Index.cshtml code snippet
+###### Moving `h2` inside of `.defaultContainer` in `JobSites/Index` view (after fix)
 ```cshtml
 <div class="defaultContainer">
     <h2>Job Sites</h2>
 ```
 
-###### Content/site.css code snippet
+###### Minimizing the top margin while keeping the other margin sides the same for `.defaultContainer` in `Content/site.css` (after fix)
 ```css
 .defaultContainer {
     background-color: rgba(255, 255, 255,0.8);
@@ -396,7 +347,7 @@ Inside JobSites/Index.cshtml I moved the h2 from outside the .defaultContainer c
 ```
 
 #### 4. What is the end result?
-The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title inside the JobSites/Index view is now inside of its container.
+The result is a properly sized top margin for the main container on all index pages and the "Current Jobs" title from the `JobSites/Index` view is now inside of `.defaultContainer` container.
 
-###### App after fix
+###### App showing top margin fix and "Current Jobs" title from the `JobSites/Index` view inside the `.defaultContainer` (after fix)
 ![App after fix](sprint2pics/pic31.png)
