@@ -26,7 +26,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - HTML, CSS, JavaScript
 - Bootstrap 4
 - Entity Framework 6
-- Git and Team Foundation Server
+- Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
 - Visual Studio 2017 (Code Editor)
 - Slack and Google Meet ((Team Communication and Stand Ups))
