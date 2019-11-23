@@ -105,13 +105,13 @@ The result is that when a user goes to the job site's details page, they will se
 #### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
 
-###### App before fix
+###### ChatMessages view before fix
 ![App before fix](sprint2pics/pic7.png)
 
 #### 2. How is the issue resolved?
 Looking inside `ChatMessagesController` and it's `Index` method, all it did was return a list of data from the `ChatMessages` database table. I replaced it and added the sorting and filtering logic and used a NuGet package called PagedList.Mvc for the paging functionalitites.
 
-In the `Index` view, I added column heading hyperlinks for sorting by using the `Html.ActionLink` method), a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method.
+In the `Index` view, I added column heading hyperlinks for sorting by using the `Html.ActionLink` method, a search box for searching and filtering by using `Html.BeginForm` and `Html.TextBox` methods, and paging links for pagination by using `Html.PagedListPager` method.
 
 ###### Adding filtering, sorting, and paging logic inside `ChatMessagesController/Index` method (first half)
 ![ChatMessagesController.cs/Index method code](sprint2pics/pic9.png)
@@ -122,16 +122,16 @@ In the `Index` view, I added column heading hyperlinks for sorting by using the 
 ###### `ChatMessages` database table
 ![ChatMessages database table](sprint2pics/pic8.png)
 
-###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination ChatMessages `Index` view (top of the page)
+###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination to ChatMessages `Index` view (top of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic11.png)
 
-###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination ChatMessages `Index` view (bottom of the page)
+###### Adding column heading hyperlinks for sorting, a search box for filtering, and paging links for pagination to ChatMessages `Index` view (bottom of the page)
 ![ChatMessages/Index.cshtml view](sprint2pics/pic12.png)
 
 #### 3. What is the end result?
 The end result is an interactive table for chat messages that shows 3 messages per page and can be sorted and filtered for ease of use.
 
-###### App with functional sorting, filtering, and paging (after fix)
+###### ChatMessages view with functional sorting, filtering, and paging (after fix)
 ![App after fix](sprint2pics/pic13.png)
 
 
