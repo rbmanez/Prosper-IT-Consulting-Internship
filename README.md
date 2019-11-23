@@ -282,7 +282,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 
 
-- ### User Story 2: Personal Photo Refator
+- ## User Story 2: Personal Photo Refator
 ![user story 2](sprint3pics/pic1.png)
 
 #### List of Technologies Used
@@ -295,7 +295,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 #### 1. What is the issue?
 This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles and handling a default picture for users who do not have a personal profile and users who do have a personal profile but did not set a profile picture.
 
-It also required adding full CRUD capabilities for profile pictures.
+It also required having full CRUD capabilities for profile pictures.
 
 #### 2. How is the issue resolved?
 The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model. I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead.
@@ -337,7 +337,7 @@ I updated all the view files that dealt with showing the profile picture since `
 @Html.ActionLink("Upload your profile image here", "ProfilePicture", "PersonalProfiles")
 ```
 
-###### Using `Html.ActionLink` method to create links to update, see details for, and delete profile picture via `PersonalProfiles/ProfilePicture`, `PersonalProfiles/Details`, and `PersonalProfiles/DeleteProfilePicture` methods
+###### Using `Html.ActionLink` method to create links for Update, Details, and Delete for profile picture via `PersonalProfiles/ProfilePicture`, `PersonalProfiles/Details`, and `PersonalProfiles/DeleteProfilePicture` methods
 ```cshtml
 @Html.ActionLink("Update", "ProfilePicture", "PersonalProfiles") |
 @Html.ActionLink("Details", "Details", new { id = Model.ProfileID }) |
@@ -374,7 +374,7 @@ If users do not have a personal profile or if users do have a personal profile b
 
 
 
-- ### User Story 3: Location Data Redesign
+- ## User Story 3: Location Data Redesign
 ![user story](sprint4pics/pic1.png)
 
 #### List of Technologies Used
@@ -390,7 +390,7 @@ If users do not have a personal profile or if users do have a personal profile b
 - Git (Source Control)
 
 #### 1. What is the issue?
-The issue with this story was that the layout for the Location Data App was visually unorganized. This story required clearly separating each section into their own container and adding their own image or graphic.
+The issue with this story was that the layout for the Location Data App's page was visually unorganized. This story required clearly separating each section into their own container and adding their own image or graphic.
 
 This story had optional requirements to include a map of the user's current location and also to include an additional API source for local information.
 
@@ -652,7 +652,7 @@ I accomplished the other optional requirement of including a map of the user's c
 ```
 
 #### 4. What is the end result?
-The end result is a visually structured, appealing, and informative page for Location Data. The page looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
+The end result is a visually structured, appealing, and informative page for Location Data App's page. It looks uniform with the rest of the site and it includes data for user location's sunrise/sunset time and radiation exposure.
 
 It now also includes the new features I added: user's local map location and weather data.
 
@@ -668,7 +668,7 @@ It now also includes the new features I added: user's local map location and wea
 
 
 
-- ### User Story 4: Restaurant Redesign
+- ## User Story 4: Restaurant Redesign
 ![user story](sprint4pics/pic7.png)
 
 #### List of Technologies Used
@@ -685,9 +685,9 @@ The issue with this story is that neither the Cafe App and it's associated pages
 
 From the main app's home page, I needed to transfer the Cafe content from inside of it and into the Cafe App's home page, and then move the Cafe button to just below the Services button.
 
-The page content from the Cafe and Menu Apps are also blocked by the side navbar when the page's width is resized smaller. I also need to make sure the side navbar properly links to each section.
+The page content from the Cafe and Menu Apps are also blocked by the side navbar when the page's width is resized smaller. I also needed to make sure the side navbar properly links to each section.
 
-This user story had optional add-ons of creating an Hours page that included information about Cafe hours in Zulu time and creating an International Space Station page with ISS location information and a link that connects to the ISS App home page.
+This user story had optional add-ons of creating an Hours page that included information about Cafe Hours in Zulu time and creating an International Space Station page with ISS location information and a link that connects to the ISS App home page.
 
 ###### Cafe App's home page before fix (cafe/index.html)
 ![Cafe App's home page before fix](sprint4pics/pic8.png)
@@ -715,11 +715,11 @@ The Cafe and Menu Apps were not styled appropriately because the django template
 
 I noticed a common structural template pattern with all of the apps from the project in regards to rendering that app's home page. The pattern is that those apps have their own base.html template that contains all of the content specific for that app's home page.
 
-Those apps also have their own index.html template that extends the main app's base.html template, contains block tags for body content, and includes the navbar, the app's base.html, and footer. This index.html template is what ultimately renders the app's home page.
+Those apps also have their own index.html template that extends the main app's base.html template,. They also contain block tags for body content and includes the navbar, the app's base.html, and footer. This index.html template is what ultimately renders the app's home page.
 
 It seems that the previous developer tried to implement this pattern with the other pages of the Menu App (create, details, and inspirations pages). While this pattern worked well for creating the home page, creating the other pages required some adjustments.
 
-###### cafe/index.html before fix (Cafe App's home page which includes `{% include "cafe/cafe_base.html" %}`)
+###### cafe/index.html renders Cafe App's home page which includes `{% include "cafe/cafe_base.html" %}` (before fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -730,7 +730,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### cafe/cafe_base.html before fix (only contains content specific for it's home page)
+###### cafe/cafe_base.html only contains content specific for it's home page (before fix)
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -750,7 +750,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 </div>
 ```
 
-###### menu/menu_index.html before fix (Menu App's home page which includes `{% include "menu/menu_base.html" %}`)
+###### menu/menu_index.html renders Menu App's home page which includes `{% include "menu/menu_base.html" %}` (before fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -770,7 +770,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 {% endblock %}
 ```
 
-###### menu/menu_base.html before fix (only contains content specific for it's home page)
+###### menu/menu_base.html only contains content specific for it's home page (before fix)
 ```django
 {% include "sidebar.html"%}
 <div class="main">
@@ -795,7 +795,7 @@ It seems that the previous developer tried to implement this pattern with the ot
 </div>
 ```
 
-###### menu/menu_create.html before fix. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template that only contains content specific for it's home page. This created an awkward stacking of the home page template on top that happened for the Menu App's create, details, and inspiration pages.
+###### menu/menu_create.html. Notice how it contains `{% include "menu/menu_base.html" %}`, which is the template that only contains content specific for it's home page. This created an awkward stacking of the home page content on top of the create page content. This happened for the Menu App's create, details, and inspiration pages. (before fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -839,7 +839,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 6. I replaced some over used `div` tags with `section` and `article` tags to create more semantic.
 7. From the main app's home page I moved the Cafe button to just below the Services button.
 
-###### cafe/index.html after fix (I moved `{% include "sidebar.html" %}` in here)
+###### cafe/index.html - I moved `{% include "sidebar.html" %}` in here (after fix)
 ```django
 {% extends "base.html" %}
 {% block content %}
@@ -849,7 +849,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 {% endblock %}
 ```
 
-###### cafe/cafe_base.html after fix (I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags and moved `{% load static %}` and `{% include "footer.html" %}` in here)
+###### cafe/cafe_base.html - I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags and moved `{% load static %}` and `{% include "footer.html" %}` in here (after fix)
 ```django
 {% load static %}
 <section class="cafe-menu-container">
@@ -903,7 +903,7 @@ I resolved the issues with the Cafe App home page by moving the Cafe content fro
 </section>
 ```
 
-###### CSS classes I created (`.cafe-menu-container` and `.cafe-menu-heading`)
+###### CSS classes I created: `.cafe-menu-container` and `.cafe-menu-heading`
 ```css
 /* CAFE AND MENU STYLING */
 
@@ -925,15 +925,15 @@ How I resolved the issues with the Menu App:
 2. In menu/menu_base.html I added a link to Cafe App's home page by using an `a` tag and a django template tag to set the `href` to `{% url 'cafe' %}`.
 3. In menu_base.html, menu_create.html, menu_details.html, and menu_inspiration.html pages:
   - I utilized the `.cafe-menu-container` CSS class I created to prevent their content from being blocked by the side navbar when the page is resized smaller.
-  - I utilized the `.cafe-menu-heading` CSS class I created that creates spacing to make the `h1` stand out similarly to the main app's home page to have a consistent theme.
+  - I utilized the `.cafe-menu-heading` CSS class I created that creates spacing to make the `h1` stand out similarly to the `h1` from the main app's home page to have a consistent theme.
   - I moved `{% include "footer.html" %}` inside `.cafe-menu-container` so that it was not blocked by the side navbar when the page is resized smaller.
   - I implemented some Bootstrap 4 classes to create additional styling.
 4. In menu_create.html, menu_details.html, menu_inspiration.html:
   - I added `{% include "sidebar.html" %}` to include the side navbar to these pages.
   - I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top of these pages.
-5. In menu_create.html, since the project was already utilizing django-crispy-forms to style a user login form, I utilized it as well to style the Menu App's create form by using `{% load crispy_forms_tags %}` then changing `{{ form.as_p }}` to `{{ form|crispy }}`.
+5. In menu_create.html, since the project was already utilizing django-crispy-forms to style the user login form, I utilized it as well to style the Menu App's create form by using `{% load crispy_forms_tags %}` then changing `{{ form.as_p }}` to `{{ form|crispy }}`.
 
-###### menu/menu_index.html after fix (I removed the logic that handled looping through `object_list` to maintain the project's convention)
+###### menu/menu_index.html - I removed the logic that handled looping through `object_list` to maintain the project's convention (after fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -944,7 +944,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_base.html after fix (I added the logic that handled looping through `object_list` here and a link to `{% url 'cafe' %}`. I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags.)
+###### menu/menu_base.html - I added the logic that handled looping through `object_list` here and a link to `{% url 'cafe' %}`. I utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags. (after fix)
 ```django
 <section class="cafe-menu-container">
 	<h1 class="cafe-menu-heading">SpaceBar Cafe Menu</h1>
@@ -969,7 +969,7 @@ How I resolved the issues with the Menu App:
 </section>
 ```
 
-###### menu/menu_create.html after fix (I added `{% include "sidebar.html" %}` and utilizied django-crispy-forms, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_create.html - I added `{% include "sidebar.html" %}` and utilizied django-crispy-forms, Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top. (after fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -999,7 +999,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_details.html after fix (I added `{% include "sidebar.html" %}` and utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_details.html - I added `{% include "sidebar.html" %}` and utilizied Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top. (after fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -1025,7 +1025,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-###### menu/menu_inspiration.html after fix (I added `{% include "sidebar.html" %}` and Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top.)
+###### menu/menu_inspiration.html - I added `{% include "sidebar.html" %}` and Bootstrap classes, custom CSS classes, and semantic HTML tags. I removed `{% include "menu/menu_base.html" %}` to avoid awkwardly stacking the menu_base.html template on top. (after fix)
 ```django
 {% extends "base.html" %}
 {% load static %}
@@ -1051,7 +1051,7 @@ How I resolved the issues with the Menu App:
 {% endblock %}
 ```
 
-The steps I took to accomplish the optional requirements of creating an Hours page that includes information about Cafe hours in Zulu time and creating a new International Space Station page that gives location information and contains a link that connects to the ISS App home page:
+The steps I took to accomplish the optional requirements of creating an Hours page that includes information about Cafe Hours in Zulu time and creating a new International Space Station page that gives ISS location information and contains a link that connects to the ISS App home page:
 1. I created cafe/cafe_hours.html and cafe/cafe_iss.html from scratch utilizing HTML5 semantic tags, custom CSS classes, Bootstrap 4 classes, and django template tags.
 2. In order for either new templates to be recognized when requested, I had to register them in the `urlpatterns` inside cafe/urls.py.
 3. In cafe/views.py I created two functions (`hours` and `iss`) that renders each template when either is requested.
@@ -1108,7 +1108,7 @@ The steps I took to accomplish the optional requirements of creating an Hours pa
 {% endblock%}
 ```
 
-###### cafe/urls.py before update (url named `hours` and `location` triggered the views `index` function, which rendered the home page)
+###### cafe/urls.py - url named `'hours'` and `'location'` triggered the views `index` function, which rendered the home page (before update)
 ```python
 urlpatterns = [
 		...
@@ -1118,7 +1118,7 @@ urlpatterns = [
 	]
 ```
 
-###### cafe/urls.py after update (url named `hours` and `location` now triggers the views `hours` and `iss` functions which renders their new pages `cafe_hours.html` and `cafe_iss.html`)
+###### cafe/urls.py - I changed the `path` function so that url named `'hours'` and `'location'` now triggers the views `hours` and `iss` functions which renders their new pages `cafe_hours.html` and `cafe_iss.html` (after update)
 ```python
 urlpatterns = [
 		...
@@ -1128,7 +1128,7 @@ urlpatterns = [
 	]
 ```
 
-###### The two functions I created in menu/views.py that renders cafe/cafe_hours.html and cafe/cafe_iss.html
+###### The `hours` and `iss` functions I created in menu/views.py that renders cafe/cafe_hours.html and cafe/cafe_iss.html
 ```python
 def hours(request):
 	return render(request, "cafe/cafe_hours.html")
@@ -1139,7 +1139,7 @@ def iss(request):
 
 As for the side navbar, the only thing I had to update was the link for the "Location" tab. Previously it was linked directly to the ISS App's home page. I updated it to link to Cafe App's ISS page as required by the user story. Everything else was linking properly.
 
-###### sidebar.html's (for side navbar) "Location" link before update - linked to the ISS App's home page
+###### side navbar - sidebar.html's "Location" link to the ISS App's home page (before update)
 ```html
 <a href="/iss">
 	Location
@@ -1147,7 +1147,7 @@ As for the side navbar, the only thing I had to update was the link for the "Loc
 </a>
 ```
 
-###### sidebar.html's (for side navbar) "Location" link after update - links to Cafe App's ISS page
+###### side navbar - sidebar.html's "Location" link to Cafe App's ISS page (after update)
 ```django
 <a href="{% url 'location' %}">
 	Location
@@ -1164,37 +1164,37 @@ are working and linking properly.
 ###### The main app's home page with the Cafe button moved up to just below the Services button
 ![The main app's home page with the Cafe button moved up to just below the Services button](sprint4pics/pic15.png)
 
-###### Cafe App's home page after fix - top 1/3 of the page (cafe/index.html)
+###### Cafe App's home page - top 1/3 of the page (cafe/index.html after fix)
 ![Cafe App's home page after fix](sprint4pics/pic16.png)
 
-###### Cafe App's home page after fix - mid 1/3 of the page showing an image (cafe/index.html)
+###### Cafe App's home page - mid 1/3 of the page showing cafe image (cafe/index.html after fix)
 ![Cafe App's home page after fix](sprint4pics/pic17.png)
 
-###### Cafe App's home page after fix - bottom 1/3 of the page dummy menu information (cafe/index.html)
+###### Cafe App's home page - bottom 1/3 of the page showing dummy menu information (cafe/index.html after fix)
 ![Cafe App's home page after fix](sprint4pics/pic18.png)
 
-###### Menu App's home page after fix - top half of the page (menu/menu_index.html)
+###### Menu App's home page - top half of the page (menu/menu_index.html after fix)
 ![Menu App's home page after fix](sprint4pics/pic19.png)
 
-###### Menu App's home page after fix - bottom half of the page showing created menu items (menu/menu_index.html)
+###### Menu App's home page - bottom half of the page showing created menu items (menu/menu_index.html after fix)
 ![Menu App's home page after fix](sprint4pics/pic20.png)
 
-###### Menu App's create page after fix - top half of the page (menu/menu_create.html)
+###### Menu App's create page - top half of the page (menu/menu_create.html after fix)
 ![Menu App's create page after fix](sprint4pics/pic21.png)
 
-###### Menu App's create page after fix - bottom half of the page showing form to create menu item (menu/menu_create.html)
+###### Menu App's create page - bottom half of the page showing form to create menu item (menu/menu_create.html after fix)
 ![Menu App's create page after fix](sprint4pics/pic22.png)
 
-###### Menu App's details page after fix - top half of the page (menu/menu_details.html)
+###### Menu App's details page - top half of the page (menu/menu_details.html after fix)
 ![Menu App's details page after fix](sprint4pics/pic23.png)
 
-###### Menu App's details page after fix - bottom half of the page showing menu item details (menu/menu_details.html)
+###### Menu App's details page - bottom half of the page showing menu item details (menu/menu_details.html after fix)
 ![Menu App's details page after fix](sprint4pics/pic24.png)
 
-###### Menu App's inspiration page after fix - top half of the page (menu/menu_inspiration.html)
+###### Menu App's inspiration page - top half of the page (menu/menu_inspiration.html after fix)
 ![Menu App's inspiration page after fix](sprint4pics/pic25.png)
 
-###### Menu App's inspiration page after fix - bottom half of the page (menu/menu_inspiration.html)
+###### Menu App's inspiration page - bottom half of the page (menu/menu_inspiration.html after fix)
 ![Menu App's inspiration page after fix](sprint4pics/pic26.png)
 
 ###### Side navbar no longer blocking content when page width is resized smaller
@@ -1203,49 +1203,51 @@ are working and linking properly.
 ###### Cafe App's new Hours page - top half of the page (cafe/cafe_hours.html)
 ![Cafe App's new Hours page](sprint4pics/pic28.png)
 
-###### Cafe App's new Hours page - bottom half of the page showing Cafe hours in Zulu time (cafe/cafe_hours.html)
+###### Cafe App's new Hours page - bottom half of the page showing Cafe Hours in Zulu time (cafe/cafe_hours.html)
 ![Cafe App's new Hours page](sprint4pics/pic29.png)
 
 ###### Cafe App's new Location page - top half of the page (cafe/cafe_iss.html)
 ![Cafe App's new Location page](sprint4pics/pic30.png)
 
-###### Cafe App's new Location page - bottom half of the page showing ISS Location information and link to ISS App's home page (cafe/cafe_iss.html)
+###### Cafe App's new Location page - bottom half of the page showing ISS location information and a link to ISS App's home page (cafe/cafe_iss.html)
 ![Cafe App's new Location page](sprint4pics/pic31.png)
 
 
 
 
-- ### User Story 5: Show Directions on Map Load
+- ## User Story 5: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
 
 #### List of Technologies Used
 - C# ASP.Net MVC
 - HTML, CSS, JavaScript
-- Azure DevOps
-- Visual Studio 2017
-- Git and Team Foundation Server
 - Leafletjs
 - Leafet Routing Machinge API
 - Geolocation API
 - Bootstrap 4
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
 
 #### 1. What is the issue?
-This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
+This user story required auto populating the current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath automatically connecting the start and end destinations immediately after page load.
 
 ###### App before fix
 ![App before fix](sprint2pics/pic2.png)
 
 #### 2. How is the issue resolved?
-The current project map was created using JavaScript and Leafletjs for the map and Leaflet Routing Machine for map routing. I used the Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location.
+The current map was created using JavaScript and Leafletjs and the map routing used Leaflet Routing Machine. The previous developer created a `setLeafletMap` function to instantiate the map.
 
-Then I used the `JobSite` object's `latitude` and `longitude` properties saved in the `JobSites` database table to use as the ending location.
+The map showed the end location of the `JobSite` location. The issue was that getting the user's current location to be used as the start location was not implemented.
 
-###### `setLeafletMap()` function was created by a previous developer for creating the map
+I used the Geolocation API and it's `getCurrentPosition` method to get the user's current location to use as the map's start location.
+
+###### `setLeafletMap` function was created by a previous developer for creating the map. It had no implementation for getting user's current location.
 ```javascript
 function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
 ```
 
-###### Using Geolocation API and it's `getCurrentPosition` method to get user's current location to be used as the start location. The `setLeafletMap()` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
+###### I used Geolocation API and it's `getCurrentPosition` method to get user's current location to use as the start location. The `setLeafletMap` function instantiates the map and is passed the map container's CSS id of `#jobSiteMap`, `JobSite`'s `Lat` property, `JobSite`'s `Long` property, user's current latitude, user's current longitude, and `JobSite`'s `Address` property
 ```javascript
 navigator.geolocation.getCurrentPosition(function (location) {
   var currentLat = location.coords.latitude
@@ -1253,7 +1255,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
   setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
 });
 ```
-###### Part of `setLeafletMap()` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations using user's current location as the starting point and the `JobSite`'s location as the ending point
+###### Part of `setLeafletMap` that uses Leafletjs' `L.Routing.control` and `addTo` functions to populate the start and end destinations
 ```javascript
 var control = L.Routing.control({
                 waypoints: [
@@ -1267,9 +1269,6 @@ var control = L.Routing.control({
             }).addTo(leafletMap);
 ```
 
-###### `JobSites` database table
-![JobSites database table](sprint2pics/pic3.png)
-
 #### 3. What is the end result?
 The result is that when a user goes to the job site's details page, they will see a map with the starting and ending location auto populated with the user's current location and the `JobSite`'s location, the written directions, and a red polyline connecting the 2 locations.
 
@@ -1282,7 +1281,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 
 
-- ### User Story 6: Sorting, Filtering, & Paging ChatMessages Index
+- ## User Story 6: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
 
 #### List of Technologies Used
@@ -1326,7 +1325,7 @@ The end result is an interactive table for chat messages that shows 3 messages p
 
 
 ## The Four Live Project Sprints
-To see all of the completed user stories I accomplished for each sprint, please click the sprint sub-heading hyperlinks below in this section.
+To see all of the user stories I completed for each sprint, please click the sprint sub-heading hyperlinks below in this section.
 
 ### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Overview
