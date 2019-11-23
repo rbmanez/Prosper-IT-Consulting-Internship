@@ -1365,7 +1365,7 @@ In the course of 8 weeks, The Live Project Sprints provided me with an abundance
 
 #### My Take Away Lessons
 - Patience and persistence are keys to improvement.
-- Be comfortable with not knowing something and optimistically accept that fact. No one knows everything. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
+- Be comfortable with not knowing something and optimistically accept that fact. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
 - Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
 - Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
 - Always think in terms of what the end goal is, what the sub-goals are, what I'm currently trying to accomplish and why, and what my code is actually doing.
