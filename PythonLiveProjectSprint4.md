@@ -942,7 +942,7 @@ I resolved the issue by using Bootstrap 4 to create a sub-menu for the navbar su
 
 
 ## What is the end result?
-The end result is a better UI experience by showing the sub-menus for the navbar sub-item's "Apis" and "Space Wiki" on hover.
+The end result is a better UI experience by showing the sub-menus for the navbar's sub-items "Apis" and "Space Wiki" on hover.
 
 ###### Navbar "Services" sub-menu after fix
 ![Navbar "Services" sub-menu after fix](sprint4pics/pic34.png)
