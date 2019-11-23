@@ -186,7 +186,7 @@ The result is a properly operating delete button that deletes `CreateUserRequest
 ###### Delete `CreateUserRequest` object (unregistered user) confirmation
 ![Delete user confirmation](sprint2pics/pic19.png)
 
-##### `CreateUserRequest` object (unregistered user) successfully deleted
+###### `CreateUserRequest` object (unregistered user) successfully deleted
 ![User deleted](sprint2pics/pic20.png)
 
 
@@ -196,15 +196,17 @@ The result is a properly operating delete button that deletes `CreateUserRequest
 ![pic of user story](sprint2pics/pic21.png)
 
 #### 1. What is the issue?
-This user story required adding a list of job titles to the JobSites/Details view that are associated with that job site. It needed to be on the right side taking up 1/3 of the container.
+This user story required adding a list of existing `Job` object's `JobTitle` to the `JobSites/Details` view that are associated with that `JobSite` object. The list needed to be on the right side taking up 1/3 of the container.
 
-###### App before fix
+###### App before fix (`JobSites/Details` view)
 ![App before fix](sprint2pics/pic22.png)
 
 #### 2. How is the issue resolved?
-In JobSites/Details.cshtml I added a third column and adjusted the current bootstrap column properties to properly accomodate it. Then I looped through the JobSite object's public virtual Jobs property to access the associated Jobs object's JobTitle property. Then in Content/site.css (responsible for global styling), I found the #jobSiteMap ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
+In `JobSites/Details` view I added a third column and adjusted the current Bootstrap columns to properly accomodate it. Then I looped through the `JobSite` object's public virtual `Jobs` property to access the associated `Job` object's `JobTitle` property.
 
-###### JobSites/Details.cshtml code snippet
+Then in `Content/site.css` (responsible for global styling), I found the `#jobSiteMap` ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
+
+###### Looping through the `JobSite` object's `Jobs` property to access the associated `Job` object's `JobTitle` property in `JobSites/Details` view
 ```cshtml
 <div class="col-md-4">
     <h4>Associated Jobs</h4>
@@ -217,7 +219,7 @@ In JobSites/Details.cshtml I added a third column and adjusted the current boots
 </div>
 ```
 
-###### Content/site.css code snippet
+###### Resizing map from `Content/site.css` to prevent overlapping
 ```css
 #jobSiteMap {
     height: 100%;
@@ -225,11 +227,11 @@ In JobSites/Details.cshtml I added a third column and adjusted the current boots
 }
 ```
 
-###### Jobs database table
+###### `Jobs` database table
 ![Jobs database table](sprint2pics/pic23.png)
 
 #### 3. What is the result?
-The result is when a user goes to the job site's details page, it'll display the jobs associated with that job site.
+The result is when a user goes to the `JobSite/Details` view, it'll display the all the `JobTitles` associated with that `JobSite` object.
 
 ###### App after fix
 ![App after fix](sprint2pics/pic24.png)
