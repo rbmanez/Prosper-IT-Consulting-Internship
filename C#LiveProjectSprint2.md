@@ -236,28 +236,30 @@ The result is when a user goes to the `JobSite/Details` view, it'll display all 
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
 
 #### 2. Why is this an issue?
-After inspecting `UserController` (the controller for Suspended and Active Users) I noticed that the `_SuspendedUsers` partial view was using the same paging and sorting variables (`page` and `sortOrder`) used for the `_UserList` partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users.
+After inspecting `UserController` (the controller for Suspended and Active Users) I noticed that the `_SuspendedUsers` partial view was using the same paging and sorting variables (`page` and `sortOrder`) used for the `_UserList` partial view (for Active Users).
 
-Also, the `_UserList` method (for Active Users) and `_SuspendedUsers` methods from the `UserController` was grabbing all of the users from the `AspNetUsers` database table (for active and suspended users) rather than the `_UserList` method filtering only for Active Users and the `_SuspendedUsers` method filtering only for Suspeded Users.
+Also, the `_UserList` method (for Active Users) and `_SuspendedUsers` methods from the `UserController` were both grabbing all of the Users from the `AspNetUsers` database table rather than the `_UserList` method filtering only for Active Users and the `_SuspendedUsers` method filtering only for Suspeded Users.
 
-This was causing the `ToPagedList` method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
+This was causing the `ToPagedList` method (responsible for paging) to receive the wrong number of Users being passed to the partial views, thus interfering with proper pagination behavior.
 
-###### Code snippet used for `UserController`'s `_UserList` and `_SuspendedUsers` method selecting all users, active and suspended
+###### Code snippet used for `UserController`'s `_UserList` (for Active Users) and `_SuspendedUsers` method selecting all Users, Active and Suspended alike
 ```c#
 var users = from s in db.Users
             select s;
 ```
 
-###### AspNetUsers database table (for active and suspended users)
+###### AspNetUsers database table (for Users)
 ![AspNetUsers database table](sprint2pics/pic26.png)
 
 #### 3. How is the issue resolved?
-In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was meant for the `_UserList` view) to `page2` and `sortORder2`. Then in the `UserController`, I made the `_UserList` method filter the database and grab only the Active Users. I did the same for the `_SuspendedUsers` method, filtering and grabbing only the Suspended Users.
+In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was also used for the `_UserList` view) to `page2` and `sortORder2`. Then in the `UserController`, I made the `_UserList` method filter the database and grab only the Active Users. I did the same for the `_SuspendedUsers` method, filtering and grabbing only the Suspended Users.
 
-###### Using the new variables `page2` and `sortORder2` in the `_SuspendedUsers` view
+###### Using the new variable `sortORder2` in the `_SuspendedUsers` view
 ```cshtml
 @Html.ActionLink("User Name", "Index", new { sortOrder2 = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
 ```
+
+###### Using the new variable `page2` in the `_SuspendedUsers` view
 ```cshtml
 @Html.PagedListPager(Model, page2 => Url.Action("Index",
   new { page2, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
@@ -280,7 +282,7 @@ var users = from s in db.Users
 ```
 
 #### 4. What is the end result?
-The results were tables with properly operating pagination and sorting features for active and suspended users.
+The results were tables with properly operating pagination and sorting features for Active and Suspended Users.
 
 ###### App after fix (Active Users table)
 ![App after fix](sprint2pics/pic27.png)
