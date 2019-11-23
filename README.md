@@ -52,6 +52,13 @@ For each user story, I answer the following questions:
 - ### User Story 1: Debug Shift Time CRUD
 ![user story 1](sprint3pics/pic21.png)
 
+#### List of Technologies Used
+- C# ASP.Net MVC
+- HTML
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+
 #### 1. What is the issue?
 This user story had an issue with `Job` object's `ShiftTimes` property's CRUD functionality. Its `Edit` and `Details` view were throwing errors.
 
@@ -281,6 +288,13 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 - ### User Story 2: Personal Photo Refator
 ![user story 2](sprint3pics/pic1.png)
 
+#### List of Technologies Used
+- C# ASP.Net MVC
+- HTML
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+
 #### 1. What is the issue?
 This user story required making the `PersonalProfilesController` and its view responsible for uploading profile pictures for personal profiles and handling a default picture for users who do not have a personal profile and users who do have a personal profile but did not set a profile picture.
 
@@ -365,6 +379,18 @@ If users do not have a personal profile or if users do have a personal profile b
 
 - ### User Story 3: Location Data Redesign
 ![user story](sprint4pics/pic1.png)
+
+#### List of Technologies Used
+- Python and Django Web Framework
+- HTML, CSS, JavaScript
+- Bootstrap 4
+- Leafletjs and Openstreet API (Map)
+- Openweather API (Local Weather Information)
+- Django Crispy Forms (Django App for Styling Forms)
+- Virtualenv (Python Library)
+- VS Code (Code Editor)
+- DevOps (Project Management)
+- Git (Source Control)
 
 #### 1. What is the issue?
 The issue with this story was that the layout for the Location Data App was visually unorganized. This story required clearly separating each section into their own container and adding their own image or graphic.
@@ -647,6 +673,15 @@ It now also includes the new features I added: user's local map location and wea
 
 - ### User Story 4: Restaurant Redesign
 ![user story](sprint4pics/pic7.png)
+
+#### List of Technologies Used
+- Python and Django Web Framework
+- HTML, CSS, JavaScript
+- Bootstrap 4
+- Virtualenv (Python Library)
+- VS Code (Code Editor)
+- DevOps (Project Management)
+- Git (Source Control)
 
 #### 1. What is the issue?
 The issue with this story is that neither the Cafe App and it's associated pages nor the Menu App home page are appropriately styled to match the theme of the site. These two apps function together to create the information needed for our hypothetical restaurant.
@@ -1186,6 +1221,17 @@ are working and linking properly.
 - ### User Story 5: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
 
+#### List of Technologies Used
+- C# ASP.Net MVC
+- HTML, CSS, JavaScript
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+- Leafletjs
+- Leafet Routing Machinge API
+- Geolocation API
+- Bootstrap 4
+
 #### 1. What is the issue?
 This user story required auto populating the project's current map with a start location using the user's current location, auto populating an end location using the job site's location, and a polypath connecting the start and end destinations immediately after page load.
 
@@ -1241,6 +1287,14 @@ The result is that when a user goes to the job site's details page, they will se
 
 - ### User Story 6: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
+
+#### List of Technologies Used
+- C# ASP.Net MVC
+- HTML
+- Azure DevOps
+- Visual Studio 2017
+- Git and Team Foundation Server
+- PagedList.Mvc
 
 #### 1. What is the issue?
 This user story required adding sorting, filtering, and paging functionalitites to the list table in the ChatMessages view.
