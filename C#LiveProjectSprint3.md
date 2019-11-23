@@ -8,6 +8,7 @@
 - [User Story 2: Personal Photo Refactor](#user-story-2-personal-photo-refactor)
 - [User Story 3: Calendar Event Delete](#user-story-3-calendar-event-delete)
 - [User Story 4: New Class Vacation Time](#user-story-4-new-class-vacation-time)
+- [Go Back to "Live Project Sprints" Home Page](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/README.md)
 
 
 
