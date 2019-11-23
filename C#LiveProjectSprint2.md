@@ -199,7 +199,7 @@ In `JobSites/Details` view I added a third column and adjusted the current Boots
 
 Then in `Content/site.css` (responsible for global styling), I found the `#jobSiteMap` ID associated with the map in the middle column and resized it to prevent it from overlapping into the new "Associated Jobs" column.
 
-###### Looping through the `JobSite` object's `Jobs` property to access the associated `Job` object's `JobTitle` property in `JobSites/Details` view
+###### I incorporated a Bootstrap column and inside it I looped through the `JobSite` object's `Jobs` property to access the associated `Job` object's `JobTitle` property in `JobSites/Details` view
 ```cshtml
 <div class="col-md-4">
     <h4>Associated Jobs</h4>
@@ -223,7 +223,7 @@ Then in `Content/site.css` (responsible for global styling), I found the `#jobSi
 #### 3. What is the result?
 The result is when a user goes to the `JobSite/Details` view, it'll display all of the `Job` object's `JobTitles` associated with that `JobSite` object.
 
-###### App after fix
+###### App showing `JobSite` object's "Associated Jobs" after fix (`JobSites/Details` view)
 ![App after fix](sprint2pics/pic24.png)
 
 
@@ -236,9 +236,13 @@ The result is when a user goes to the `JobSite/Details` view, it'll display all 
 This user story had an issue with the pagination feature for Suspended Users table controlling the pagination for the Active Users table. The sorting feature for Suspended Users was also controlling the sorting for Active Users.
 
 #### 2. Why is this an issue?
-After inspecting UserController.cs (the controller for Suspended and Active Users) I noticed that the _SuspendedUsers partial view was using the same paging and sorting variables used for the _UserList partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users. Also, the _UserList (method for Active Users) and _SuspendedUsers methods from the UserController was grabbing all the users from the database rather than the _UserList method filtering only for Active Users and the _SuspendedUsers method filtering only for Suspeded Users. This was causing the ToPagedList method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
+After inspecting `UserController` (the controller for Suspended and Active Users) I noticed that the `_SuspendedUsers` partial view was using the same paging and sorting variables (`page` and `sortOrder`) used for the `_UserList` partial view (view for Active Users). That was why the paging and sorting feature from Suspended Users was controlling the paging and sorting for Active Users.
 
-###### UserController.cs code snippet used for _UserList and _SuspendedUsers method to query database
+Also, the `_UserList` method (for Active Users) and `_SuspendedUsers` methods from the `UserController` was grabbing all of the users from the `AspNetUsers` database table (for active and suspended users) rather than the `_UserList` method filtering only for Active Users and the `_SuspendedUsers` method filtering only for Suspeded Users.
+
+This was causing the `ToPagedList` method (the method responsible for paging) to receive the wrong number of users being passed to the view, thus interfering with proper pagination behavior.
+
+###### Code snippet used for `UserController`'s `_UserList` and `_SuspendedUsers` method selecting all users, active and suspended
 ```c#
 var users = from s in db.Users
             select s;
@@ -248,9 +252,9 @@ var users = from s in db.Users
 ![AspNetUsers database table](sprint2pics/pic26.png)
 
 #### 3. How is the issue resolved?
-In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortOrder` and `page` (which was meant for _UserList.cshtml) to `sortORder2` and `page2`. Then in UserController.cs, I made the _UserList method filter the database and only grab the Active Users. I did the same for the _SuspendedUsers method, filtering and grabbing only the Suspended Users.
+In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was meant for the `_UserList` view) to `page2` and `sortORder2`. Then in the `UserController`, I made the `_UserList` method filter the database and grab only the Active Users. I did the same for the `_SuspendedUsers` method, filtering and grabbing only the Suspended Users.
 
-###### _SuspendedUsers.cshtml code snippet
+###### Using the new variables `page2` and `sortORder2` in the `_SuspendedUsers` view
 ```cshtml
 @Html.ActionLink("User Name", "Index", new { sortOrder2 = ViewBag.UNameSortParm, currentFilter = ViewBag.CurrentFilter })
 ```
@@ -259,7 +263,7 @@ In _SuspendedUsers.cshtml, I changed the paging and sorting variable from `sortO
   new { page2, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 ```
 
-###### UserController/_UserList method code snippet
+###### `UserController/_UserList` method selecting `User` objects whose `Suspended` property is equal to `false` (selecting Active Users)
 ```c#
 //grabs all non-suspended users from database
 var users = from s in db.Users
@@ -267,7 +271,7 @@ var users = from s in db.Users
             select s;
 ```
 
-###### UserController/_SuspendedUsers method code snippet
+###### `UserController/_SuspendedUsers` method selecting `User` objects whose `Suspended` property is equal to `true` (selecting Suspended Users)
 ```c#
 //grabs all suspended users from database
 var users = from s in db.Users
@@ -276,10 +280,12 @@ var users = from s in db.Users
 ```
 
 #### 4. What is the end result?
-The result were tables with properly operating pagination and sorting features for active and suspended users.
+The results were tables with properly operating pagination and sorting features for active and suspended users.
 
-###### App after fix
+###### App after fix (Active Users table)
 ![App after fix](sprint2pics/pic27.png)
+
+###### App after fix (Suspended Users table)
 ![App after fix](sprint2pics/pic28.png)
 
 
