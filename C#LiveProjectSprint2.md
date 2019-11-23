@@ -53,14 +53,14 @@ This user story required auto populating the project's current map with a start 
 ![App before fix](sprint2pics/pic2.png)
 
 #### 2. How is the issue resolved?
-The current project map was created using JavaScript and leafletjs for the map and leaflet routing machine for map routing. I researched leafletjs and leaflet routing machine to understand the previous developer's implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's getCurrentPosition method to get the start location. Then I used the JobSite object's latitude and longitude properties saved in the JobSites database table to get the ending location.
+The current project map was created using JavaScript and leafletjs for the map and leaflet routing machine for map routing. I researched leafletjs and leaflet routing machine to understand the previous developer's implementations. Then, I researched how to get a user's current location and found the Geolocation API and it's `getCurrentPosition` method to get the start location. Then I used the `JobSite` object's `latitude` and `longitude` properties saved in the `JobSites` database table to get the ending location.
 
-###### setLeafletMap() function is for creating the map
+###### `setLeafletMap()` function is for creating the map
 ```javascript
 function setLeafletMap(mapId, jobSiteLat, jobSiteLong, currentLat, currentLong, popupText)
 ```
 
-###### Instantiates the map by calling setLeafletMap() and passing it the CSS ID for the map container, job site latitude, job site longitude, user's current latitude, user's current longitude, and job site's address
+###### Instantiates the map by calling `setLeafletMap()` and passing it the CSS ID for the map container, `JobSite`'s `latitude`, `JobSite`'s `longitude`, user's current latitude, user's current longitude, and `JobSite`'s address
 ```javascript
 navigator.geolocation.getCurrentPosition(function (location) {
   var currentLat = location.coords.latitude
@@ -68,7 +68,7 @@ navigator.geolocation.getCurrentPosition(function (location) {
   setLeafletMap("jobSiteMap", @Model.Lat, @ Model.Long, currentLat, currentLong, @Model.Address)
 });
 ```
-###### Part of setLeafletMap() responsible for populating the start and end destinations
+###### Part of `setLeafletMap()` responsible for populating the start and end destinations
 ```javascript
 var control = L.Routing.control({
                 waypoints: [
