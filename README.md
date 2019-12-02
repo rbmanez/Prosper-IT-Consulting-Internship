@@ -367,7 +367,7 @@ If users do not have a personal profile or if users do have a personal profile b
 #### Technologies Used
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
-- Bootstrap 4
+- Bootstrap
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
 - Virtualenv (Python Library)
@@ -606,7 +606,7 @@ It now also includes the new features I added: user's local map location and wea
 #### Technologies Used
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
-- Bootstrap 4
+- Bootstrap
 - Django Crispy Forms (Django App for Styling Forms)
 - Virtualenv (Python Library)
 - Git (Source Control)
