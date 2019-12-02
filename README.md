@@ -33,7 +33,7 @@ My internship with Prosper I.T. Consulting provided me with real-world developme
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 #### Featured User Stories
-Below are some featured user stories I completed during the entire 8 week journey. To see all of the user stories I completed for each sprint please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+Below are quick highlights of some featured user stories I completed during the entire 8 week internship. To see the details of all the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
@@ -282,7 +282,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 
 ## Featured User Story 2: Personal Photo Refactor
-#### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
+### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 ![user story 2](sprint3pics/pic1.png)
 
 #### List of Technologies Used
@@ -375,7 +375,7 @@ If users do not have a personal profile or if users do have a personal profile b
 
 
 ## Featured User Story 3: Location Data Redesign
-#### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
+### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 ![user story](sprint4pics/pic1.png)
 
 #### List of Technologies Used
@@ -669,7 +669,7 @@ It now also includes the new features I added: user's local map location and wea
 
 
 ## Featured User Story 4: Restaurant Redesign
-#### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
+### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 ![user story](sprint4pics/pic7.png)
 
 #### List of Technologies Used
@@ -1218,7 +1218,7 @@ are working and linking properly.
 
 
 ## Featured User Story 5: Show Directions on Map Load
-#### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
+### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 ![user story image](sprint2pics/pic1.png)
 
 #### List of Technologies Used
@@ -1284,7 +1284,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 
 ## Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index
-#### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
+### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 ![pic of user story](sprint2pics/pic6.png)
 
 #### List of Technologies Used
