@@ -19,7 +19,7 @@ The Space Bar is an interactive Django based site for researching things about s
 #### List of Technologies Used
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
-- Bootstrap 4
+- Bootstrap
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
 - Django Crispy Forms (Django App for Styling Forms)
