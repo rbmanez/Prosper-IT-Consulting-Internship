@@ -28,10 +28,19 @@
 My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals. We implemented the Agile/Scrum methodology.
 
 #### Technologies Used
-- 
+- Languages: HTML, CSS, JavaScript, Python, C#, SQL, Git
+- Frameworks: Django, ASP.Net MVC, Bootstrap
+- Other: agile and scrum methodology
 
 #### Accomplishment Highlights
-- 
+- full stack development with a dev team implementing agile/scrum methodology and front end and back end logic on a Python/Django based software and a C#/ASP.Net based application
+- created and also debugged multiple CRUD (create, read, update, delete) features for
+database objects
+- created and also debugged sorting, filtering, and paging features for multiple tables of
+object lists
+- created and also redesigned multiple pages involving displaying database data
+- made API request to display user's local weather information
+- created a map to show user's location
 
 #### Sprint Weekly Process
 - Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
