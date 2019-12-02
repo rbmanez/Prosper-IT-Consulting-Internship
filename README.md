@@ -52,20 +52,8 @@ object lists
 #### My Take Away Lessons
 - Patience and persistence are keys to improvement.
 - Be comfortable with not knowing something, break down requirements into manageable steps, clarify any uncertainties, and move forward towards a solution.
-- I learned to not jump straight into implementation, but to first gain a full understanding of what the story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
+- I learned to not jump straight into implementation, but to first gain a full understanding of what the user story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
 - Always think in terms of what the end goal is, what I'm currently trying to accomplish and why, and what each line of my code is actually doing (also known as [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)).
-- When in doubt, communicate and clarify.
-- Don't be stuck on a problem for too long and ask for help.
-- Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
-- Continually learn and improve in terms of software development and personal development. Think big picture and holistically.
-- It's about progress, not perfection. Enjoy the journey!
-
-- Patience and persistence are keys to improvement.
-- Be comfortable with not knowing something and optimistically accept that fact. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
-- Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
-- Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
-- Always think in terms of what the end goal is, what the sub-goals are, what I'm currently trying to accomplish and why, and what my code is actually doing.
-- Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 - When in doubt, communicate and clarify.
 - Don't be stuck on a problem for too long and ask for help.
 - Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
