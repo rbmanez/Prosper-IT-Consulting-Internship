@@ -1,6 +1,6 @@
-# Live Poject Sprints
+# Prosper I.T. Internship
 ## Table of Contents
-- [Live Project Sprint General Information](#live-project-sprint-general-information)
+- [General Information](#live-project-sprint-general-information)
   - [Sprint Overview](#sprint-overview)
   - [Sprint Weekly Process](#sprint-weekly-process)
   - [Featured User Stories](#featured-user-stories)
@@ -21,9 +21,9 @@
 
 
 
-## Live Project Sprint General Information
+## General Information
 #### Sprint Overview
-My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals.
+My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals. We implemented the Agile/Scrum methodology.
 
 #### Sprint Weekly Process
 - Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
@@ -1359,7 +1359,7 @@ The Space Bar is an interactive Django based site for researching things about s
 
 
 ## Conclusion
-In the course of 8 weeks, The Live Project Sprints provided me with an abundance of practical experience that improved my knowledge and skills as a software developer. I grew a deeper understanding of the development process, workflow, and team collaborations and communications.
+In the course of 8 weeks, my internship with Prosper I.T. Consulting provided me with an abundance of practical experience that improved my knowledge and skills as a software developer. I grew a deeper understanding of the development process, workflow, and team collaborations and communications.
 
 #### My Take Away Lessons
 - Patience and persistence are keys to improvement.
