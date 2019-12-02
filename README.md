@@ -1,4 +1,4 @@
-# Prosper I.T. Internship
+# Prosper I.T. Consulting (Internship)
 ## Table of Contents
 - [General Information](#live-project-sprint-general-information)
   - [Sprint Overview](#sprint-overview)
@@ -269,11 +269,6 @@ It also required having full CRUD capabilities for profile pictures.
 #### 2. How is the issue resolved?
 The feature to upload profile pictures was previously handled by the `ManageController` and it was accessing the `ProfilePicture` property from the `User` model. I deleted the `ProfilePicture` property from the `User` model and added it to the `PersonalProfile` model instead.
 
-###### `ProfilePicture` property removed from `User` model and added inside of `PersonalProfile` model
-```c#
-public byte[] ProfilePicture { get; set; }
-```
-
 Then I took the logic for uploading a profile picture from the `ManageController` and transfered it to `PersonalProfilesController` and added extra funcionality:
 1. I added an "or" condition (`||`) to the `if` statement that checks for users who have a personal profile but has not set a profile picture. Now, if users do not have a personal profile OR if users have a personal profile but did not set a profile picture, their profile picture will be set to the default profile picture.
 2. I added the logic for the `DeleteProfilePictureConfirmed` method.
@@ -282,14 +277,8 @@ Then I took the logic for uploading a profile picture from the `ManageController
 ###### PersonalProfilesController `Photo` method for uploading a profile picture or default picture (after fix)
 ![PersonalProfilesController Photo method for profile picture](sprint3pics/pic2.png)
 
-###### PersonalProfilesController `ProfilePicture` GET method (after fix)
-![PersonalProfilesController ProfilePicture GET method](sprint3pics/pic3.png)
-
 ###### PersonalProfilesController `ProfilePicture` POST method (after fix)
 ![PersonalProfilesController ProfilePicture POST method](sprint3pics/pic4.png)
-
-###### PersonalProfilesController `DeleteProfilePicture` GET method (after fix)
-![PersonalProfilesController DeleteProfilePicture GET method](sprint3pics/pic5.png)
 
 ###### PersonalProfilesController `DeleteProfilePictureConfirmed` POST method I added (after fix)
 ![PersonalProfilesController DeleteProfilePictureConfirmed POST method](sprint3pics/pic6.png)
