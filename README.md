@@ -33,7 +33,7 @@ My internship with Prosper I.T. Consulting provided me with real-world developme
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 #### Featured User Stories
-Below are quick highlights of some featured user stories I completed during the entire 8 week internship. To see the details of all the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+Below are quick highlights of a few featured user stories I completed during the entire 8 week internship. To see the details of all the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
@@ -91,6 +91,8 @@ public class ShiftTime
 	public int ShiftTimeId { get; set; }
 
 	public virtual Job Job { get; set; }
+	
+	...
 }
 ```
 
@@ -127,6 +129,8 @@ public class Job
 
 	[Display(Name = "Weekly Shifts")]
 	public virtual ShiftTime WeeklyShifts { get; set; }
+	
+	...
 }
 ```
 	
@@ -139,51 +143,21 @@ public class ShiftTime
 	public int ShiftTimeId { get; set; }
 
 	public virtual Job Job { get; set; }
+	
+	...
 }
-```
-
-###### ShiftTimes controller's `Create` GET method (before fix)
-```c#
-public ActionResult Create()
-{
-	return View();
-}
-```
-
-###### ShiftTimes controller's `Create` POST method (before fix)
-```c#
-//[HttpPost]
-//[ValidateAntiForgeryToken]
-//public ActionResult Create([Bind(Include = "ShiftTimeId,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,Default")] ShiftTime shiftTime)
-//{
-//    if (ModelState.IsValid)
-//    {
-//        //shiftTime.ShiftTimeId = Guid.NewGuid();
-//        db.ShiftTime.Add(shiftTime);
-//        db.SaveChanges();
-//        return RedirectToAction("Index");
-//    }
-//    return PartialView("_shiftTimeModal", shiftTime);
-//}
 ```
 
 #### 3. How is the issue resolved?
-I fixed the `Edit` view by changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`. I also changed the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property's value by using the `Html.DisplayFor` method.
+I fixed the `Edit` view by:
+1. changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`
+2. changing the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property's value by using the `Html.DisplayFor` method
 	
 ###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int` (after fix)
 ```c#
 public ActionResult Edit(int id)
 {
-	if (id == null)
-	{
-		return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-	}
-	ShiftTime shiftTime = db.ShiftTime.Find(id);
-	if (shiftTime == null)
-	{
-		return HttpNotFound();
-	}
-	return View(shiftTime);
+	...
 }
 ```
 
@@ -199,11 +173,6 @@ I fixed the `Details` view by completely eliminating the unnecessary `Html.Parti
 4. there was no `"_EditButtonPartial"` file.
 
 I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle` property's value using `Html.DisplayFor`. Previously there was no heading.
-
-###### Dynamic heading for `Details` view by using `Html.DisplayFor` method
-```cshtml
-<h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
-```
 
 I fixed the `Create` view by:
 1. moving the `Default` element from the bottom of the page to the top above the `Monday` element.
