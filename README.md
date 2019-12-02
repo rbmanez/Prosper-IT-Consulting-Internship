@@ -45,7 +45,7 @@ For each user story, I answer the following questions:
 
 
 ## Featured User Story 1: Debug Shift Time CRUD
-#### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
+### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 ![user story 1](sprint3pics/pic21.png)
 
 #### List of Technologies Used
