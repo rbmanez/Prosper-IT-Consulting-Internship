@@ -1,4 +1,4 @@
-# Prosper I.T. Consulting (Internship)
+# Prosper I.T. Consulting - Internship
 ## Table of Contents
 - [General Information](#live-project-sprint-general-information)
   - [Sprint Overview](#sprint-overview)
@@ -33,7 +33,7 @@ My internship with Prosper I.T. Consulting provided me with real-world developme
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 #### Featured User Stories
-Below are quick highlights of a few featured user stories I completed during the entire 8 week internship. To see the details of all the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+Below are quick highlights of a few featured user stories I completed during the entire 8 week internship. To see the full details and all of the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
@@ -45,8 +45,8 @@ For each user story, I answer the following questions:
 
 
 ## Featured User Story 1: Debug Shift Time CRUD
-### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 ![user story 1](sprint3pics/pic21.png)
+### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### List of Technologies Used
 - C# ASP.Net MVC
