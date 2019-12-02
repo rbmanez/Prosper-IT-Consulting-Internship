@@ -25,15 +25,15 @@
 
 ## General Information
 #### Sprint Overview
-My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals. We implemented the Agile/Scrum methodology.
+My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals.
 
 #### Technologies Used
 - Languages: HTML, CSS, JavaScript, Python, C#, SQL, Git
 - Frameworks: Django, ASP.Net MVC, Bootstrap
-- Other: agile and scrum methodology
+- Other: Agile and Scrum methodology
 
 #### Accomplishment Highlights
-- full stack development with a dev team implementing agile/scrum methodology and front end and back end logic on a Python/Django based software and a C#/ASP.Net based application
+- full stack development with a dev team implementing Agile/Scrum methodology and front end and back end logic on a Python/Django based software and a C#/ASP.Net based application
 - created and also debugged multiple CRUD (create, read, update, delete) features for
 database objects
 - created and also debugged sorting, filtering, and paging features for multiple tables of
@@ -50,7 +50,7 @@ object lists
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 #### Featured User Stories
-Below are quick highlights of a few featured user stories I completed during the entire 8 week internship. To see the full details and all of the user stories I completed for each sprint, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+Below are quick highlights of 6 featured user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
