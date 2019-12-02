@@ -2,6 +2,8 @@
 ## Table of Contents
 - [General Information](#live-project-sprint-general-information)
   - [Sprint Overview](#sprint-overview)
+  - [Technologies Used](#technologies-used)
+  - [Accomplishment Highlights](#accomplishment-highlights)
   - [Sprint Weekly Process](#sprint-weekly-process)
   - [Featured User Stories](#featured-user-stories)
 - [Featured User Story 1: Debug Shift Time CRUD](#featured-user-story-1-debug-shift-time-crud)
@@ -24,6 +26,12 @@
 ## General Information
 #### Sprint Overview
 My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals. We implemented the Agile/Scrum methodology.
+
+#### Technologies Used
+- 
+
+#### Accomplishment Highlights
+- 
 
 #### Sprint Weekly Process
 - Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
@@ -48,7 +56,7 @@ For each user story, I answer the following questions:
 ![user story 1](sprint3pics/pic21.png)
 ### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
-#### List of Technologies Used
+#### Technologies Used
 - C# ASP.Net MVC
 - HTML
 - Git and Team Foundation Server (Source Control)
@@ -254,7 +262,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 ![user story 2](sprint3pics/pic1.png)
 ### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
-#### List of Technologies Used
+#### Technologies Used
 - C# ASP.Net MVC
 - HTML
 - Git and Team Foundation Server (Source Control)
@@ -336,7 +344,7 @@ If users do not have a personal profile or if users do have a personal profile b
 ![user story](sprint4pics/pic1.png)
 ### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
-#### List of Technologies Used
+#### Technologies Used
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
 - Bootstrap 4
@@ -575,7 +583,7 @@ It now also includes the new features I added: user's local map location and wea
 ![user story](sprint4pics/pic7.png)
 ### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
-#### List of Technologies Used
+#### Technologies Used
 - Python and Django Web Framework
 - HTML, CSS, JavaScript
 - Bootstrap 4
@@ -816,7 +824,7 @@ are working and linking properly.
 ![user story image](sprint2pics/pic1.png)
 ### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
-#### List of Technologies Used
+#### Technologies Used
 - C# ASP.Net MVC
 - HTML, JavaScript
 - Leafletjs (Map)
@@ -882,7 +890,7 @@ The result is that when a user goes to the job site's details page, they will se
 ![pic of user story](sprint2pics/pic6.png)
 ### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
-#### List of Technologies Used
+#### Technologies Used
 - C# ASP.Net MVC
 - HTML
 - Entity Framework 6
