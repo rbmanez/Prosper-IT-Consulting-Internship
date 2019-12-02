@@ -30,7 +30,7 @@ The secondary components include a Chat feature (for all users to have a single 
 - Leafet Routing Machinge API (Map Routing)
 - Geolocation API (Current Location)
 - PagedList.Mvc (Pagination)
-- Bootstrap 4
+- Bootstrap
 - Entity Framework 6
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
