@@ -26,7 +26,7 @@
 My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals.
 
 #### Sprint Weekly Process
-- Each Monday is dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
+- Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
 
 - We had daily stand up meetings from Monday through Friday via Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack.
 
