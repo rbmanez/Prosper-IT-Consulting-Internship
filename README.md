@@ -52,7 +52,7 @@ object lists
 #### My Take Away Lessons
 - Patience and persistence are keys to improvement.
 - Be comfortable with not knowing something, break down requirements into manageable steps, clarify any uncertainties, and move forward towards a solution.
-- I learned to not jump straight into implementation. Instead, first gain a full understanding of what the user story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
+- I learned to not jump straight into implementation. Instead, seek first to gain a full understanding of what the user story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
 - Always think in terms of what the end goal is, what I'm currently trying to accomplish and why, and what each line of my code is actually doing (also known as [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)).
 - When in doubt, communicate and clarify.
 - Don't be stuck on a problem for too long and ask for help.
