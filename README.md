@@ -23,9 +23,7 @@
 
 ## Live Project Sprint General Information
 #### Sprint Overview
-The Tech Academy's Live Project Sprints ensure students have real-world development experience. The Live Project Sprints lasted for 8 weeks. It was broken down into 2-week sprint intervals with 4 iterations. Each sprint iteration focused on specific tasks and technologies.
-
-For 8 weeks, we were challenged to work as part of a team and to figure out new things we weren’t taught. The Live Project Sprints attempts to replicate what it’s like to do the actual job and prepared us for the actual experience of working on a dev team. This is where all the tools we’ve learned came together and it resulted in pratical experience.
+My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals.
 
 #### Sprint Weekly Process
 - Each Monday is dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
