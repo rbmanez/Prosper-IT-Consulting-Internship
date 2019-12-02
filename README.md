@@ -5,6 +5,7 @@
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
   - [Sprint Weekly Process](#sprint-weekly-process)
+  - [My Take Away Lessons](#my-take-away-lessons)
   - [Featured User Stories](#featured-user-stories)
 - [Featured User Story 1: Debug Shift Time CRUD](#featured-user-story-1-debug-shift-time-crud)
 - [Featured User Story 2: Personal Photo Refactor](#featured-user-story-2-personal-photo-refactor)
@@ -18,7 +19,6 @@
   - [C# Live Project Sprint 3](#c-live-project-sprint-3)
   - [Python Live Project Sprint 4](#python-live-project-sprint-4)
 - [Conclusion](#conclusion)
-  - [My Take Away Lessons](#my-take-away-lessons)
 
 
 
@@ -48,6 +48,19 @@ object lists
 - We had daily stand up meetings from Monday through Friday via Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack.
 
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
+
+#### My Take Away Lessons
+- Patience and persistence are keys to improvement.
+- Be comfortable with not knowing something and optimistically accept that fact. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
+- Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
+- Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
+- Always think in terms of what the end goal is, what the sub-goals are, what I'm currently trying to accomplish and why, and what my code is actually doing.
+- Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
+- When in doubt, communicate and clarify.
+- Don't be stuck on a problem for too long and ask for help.
+- Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
+- Continually learn and improve in terms of software development and personal development. Think big picture and holistically.
+- It's about progress, not perfection. Enjoy the journey!
 
 #### Featured User Stories
 Below are quick highlights of 6 featured user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the next section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
@@ -972,16 +985,3 @@ The Space Bar is an interactive Django based site for researching things about s
 
 ## Conclusion
 In the course of 8 weeks, my internship with Prosper I.T. Consulting provided me with an abundance of practical experience that improved my knowledge and skills as a software developer. I grew a deeper understanding of the development process, workflow, and team collaborations and communications.
-
-#### My Take Away Lessons
-- Patience and persistence are keys to improvement.
-- Be comfortable with not knowing something and optimistically accept that fact. Even the best developers are constantly researching and learning. Start small and move forward towards a solution.
-- Before even coding make sure I know exactly what the user story is requiring and asking. Look around the app and code base and become familiar with the environment. Clarify any doubts. Do some initial research if necessary.
-- Break down user stories into manageable steps. Figure out what needs to be done in each step so that I can work, research, and ask more effectively.
-- Always think in terms of what the end goal is, what the sub-goals are, what I'm currently trying to accomplish and why, and what my code is actually doing.
-- Use [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
-- When in doubt, communicate and clarify.
-- Don't be stuck on a problem for too long and ask for help.
-- Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
-- Continually learn and improve in terms of software development and personal development. Think big picture and holistically.
-- It's about progress, not perfection. Enjoy the journey!
