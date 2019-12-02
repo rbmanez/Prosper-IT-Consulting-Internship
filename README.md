@@ -61,7 +61,7 @@ object lists
 - It's about progress, not perfection. Enjoy the journey!
 
 #### Featured User Stories
-The next 6 sections are quick highlights of 6 featured user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+The next 6 sections are featured highlights of 6 user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
