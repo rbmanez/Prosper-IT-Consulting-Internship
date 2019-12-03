@@ -18,7 +18,6 @@
   - [C# Live Project Sprint 2](#c-live-project-sprint-2)
   - [C# Live Project Sprint 3](#c-live-project-sprint-3)
   - [Python Live Project Sprint 4](#python-live-project-sprint-4)
-- [Conclusion](#conclusion)
 
 
 
@@ -33,7 +32,7 @@ My internship with Prosper I.T. Consulting provided me with real-world developme
 - Other: Agile and Scrum methodology
 
 #### Accomplishment Highlights
-- full stack development with a dev team implementing Agile/Scrum methodology and front end and back end logic on a Python/Django based software and a C#/ASP.Net based application
+- full stack development with a dev team implementing Agile/Scrum methodology and front-end and back-end logic on a Python/Django based software and a C#/ASP.Net based application
 - created and also debugged multiple CRUD (create, read, update, delete) features for
 database objects
 - created and also debugged sorting, filtering, and paging features for multiple tables of
@@ -50,6 +49,7 @@ object lists
 - Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
 
 #### My Take Away Lessons
+- I gained the experience of working with a dev team to develop software on the front-end and back-end.
 - Patience and persistence are keys to improvement.
 - Be comfortable with not knowing something, break down requirements into manageable steps, clarify any uncertainties, and move forward towards a solution.
 - I learned to not jump straight into implementation. Instead, seek first to gain a full understanding of what the user story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
@@ -977,9 +977,3 @@ The secondary components include a Chat feature (for all users to have a single 
 ### [Python Live Project Sprint 4](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
 #### Project Overview
 The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
-
-
-
-
-## Conclusion
-In the course of 8 weeks, my internship with Prosper I.T. Consulting provided me with an abundance of practical experience that improved my knowledge and skills as a software developer. I grew a deeper understanding of the development process, workflow, and team collaborations and communications.
