@@ -1,6 +1,7 @@
 # Prosper I.T. Consulting - Internship
 ## Table of Contents
 - [General Information](#live-project-sprint-general-information)
+  - [Prosper I.T. Consulting](#prosper-i.t.-consulting)
   - [Sprint Overview](#sprint-overview)
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
@@ -23,8 +24,8 @@
 
 
 ## General Information
-#### Sprint Overview
-My internship with Prosper I.T. Consulting provided me with real-world development experience working on a dev team. It lasted for 8 weeks and was broken down into 2-week sprint intervals.
+#### Prosper I.T. Consulting
+Prosper I.T. Consulting is a software development company that provides a wide variety of tech services, including: web development, creating custom software and building applications. My internship lasted for 8 weeks and was broken down into 2-week sprint intervals.
 
 #### Technologies Used
 - Languages: HTML, CSS, JavaScript, Python, C#, SQL, Git
@@ -32,7 +33,7 @@ My internship with Prosper I.T. Consulting provided me with real-world developme
 - Other: Agile and Scrum methodology
 
 #### Accomplishment Highlights
-- full stack development with a dev team implementing Agile/Scrum methodology and front-end and back-end logic on a Python/Django based software and a C#/ASP.Net based application
+- full stack development and dev team experience implementing Agile/Scrum methodology and front-end and back-end logic on a Python/Django based software and a C#/ASP.Net based application
 - created and also debugged multiple CRUD (create, read, update, delete) features for
 database objects
 - created and also debugged sorting, filtering, and paging features for multiple tables of
