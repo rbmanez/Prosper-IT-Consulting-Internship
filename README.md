@@ -283,7 +283,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 ### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### Technologies Used
-- C# ASP.NET MVC
+- C#/ASP.NET MVC
 - HTML
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
