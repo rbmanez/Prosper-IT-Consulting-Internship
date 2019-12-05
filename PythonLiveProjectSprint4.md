@@ -17,9 +17,8 @@
 The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
 
 #### List of Technologies Used
-- Python and Django Web Framework
-- HTML, CSS, JavaScript
-- Bootstrap
+- Python/Django
+- HTML, CSS/Bootstrap, JavaScript
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
 - Django Crispy Forms (Django App for Styling Forms)
