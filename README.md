@@ -15,8 +15,8 @@
 - [Featured User Story 5: Show Directions on Map Load](#featured-user-story-5-show-directions-on-map-load)
 - [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering--paging-chatmessages-index)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
-  - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4-the-space-bar)
-  - [C# Live Project Sprint 3 - Management Portal](#c-live-project-sprint-3-management-portal)
+  - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4---the-space-bar)
+  - [C# Live Project Sprint 3 - Management Portal](#c-live-project-sprint-3--management-portal)
   - [C# Live Project Sprint 2 - Management Portal](#c-live-project-sprint-2-management-portal)
   - [Python Live Project Sprint 1 - TravelScrape](#python-live-project-sprint-1-travelscrape)
 
