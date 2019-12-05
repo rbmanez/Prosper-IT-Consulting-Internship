@@ -250,9 +250,6 @@ var users = from s in db.Users
             select s;
 ```
 
-###### AspNetUsers database table (for Users)
-![AspNetUsers database table](sprint2pics/pic26.png)
-
 #### 3. How is the issue resolved?
 In the `_SuspendedUsers` view, I changed the paging and sorting variable from `page` and `sortOrder` (which was also used for the `_UserList` view) to `page2` and `sortORder2`.
 
