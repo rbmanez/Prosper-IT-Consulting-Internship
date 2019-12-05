@@ -15,10 +15,10 @@
 - [Featured User Story 5: Show Directions on Map Load](#featured-user-story-5-show-directions-on-map-load)
 - [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering--paging-chatmessages-index)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
-  - [Python Live Project Sprint 4](#python-live-project-sprint-4)
-  - [C# Live Project Sprint 3](#c-live-project-sprint-3)
-  - [C# Live Project Sprint 2](#c-live-project-sprint-2)
-  - [Python Live Project Sprint 1](#python-live-project-sprint-1)
+  - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4-the-space-bar)
+  - [C# Live Project Sprint 3 - Management Portal](#c-live-project-sprint-3-management-portal)
+  - [C# Live Project Sprint 2 - Management Portal](#c-live-project-sprint-2-management-portal)
+  - [Python Live Project Sprint 1 - TravelScrape](#python-live-project-sprint-1-travelscrape)
 
 
 
@@ -955,11 +955,11 @@ The end result is an interactive table for chat messages with paging functionali
 ## The Four Live Project Sprints
 To see all of the user stories I completed for each sprint, please click the sprint sub-heading hyperlinks below in this section.
   
-### [Python Live Project Sprint 4](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
+### [Python Live Project Sprint 4 - The Space Bar](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
 #### Project Overview
 The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
 
-### [C# Live Project Sprint 3](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
+### [C# Live Project Sprint 3 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
 #### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
@@ -967,7 +967,7 @@ The primary components of this project include the creation of registered users,
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
   
-### [C# Live Project Sprint 2](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
+### [C# Live Project Sprint 2 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
 #### Project Overview
 The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
 
@@ -975,6 +975,6 @@ The primary components of this project include the creation of registered users,
 
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
-### [Python Live Project Sprint 1](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
+### [Python Live Project Sprint 1 - TravelScrape](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
 #### Project Overview
 TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
