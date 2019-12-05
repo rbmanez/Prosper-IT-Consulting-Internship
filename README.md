@@ -28,7 +28,7 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 
 #### Technologies Used
 - Languages: HTML, CSS, JavaScript, Python, C#, SQL, Git
-- Frameworks: Django, ASP.Net MVC, Bootstrap
+- Frameworks: Django, ASP.NET MVC, Bootstrap
 - Other: Agile and Scrum methodology
 
 #### Accomplishment Highlights
@@ -77,8 +77,8 @@ For each user story, I answer the following questions:
 ### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### Technologies Used
-- C# ASP.Net MVC
-- HTML
+- C#/ASP.NET MVC
+- HTML, CSS/Bootstrap
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
 - Visual Studio 2017 (Code Editor)
@@ -283,7 +283,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 ### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### Technologies Used
-- C# ASP.Net MVC
+- C# ASP.NET MVC
 - HTML
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
@@ -365,9 +365,8 @@ If users do not have a personal profile or if users do have a personal profile b
 ### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
 #### Technologies Used
-- Python and Django Web Framework
-- HTML, CSS, JavaScript
-- Bootstrap
+- Python/Django
+- HTML, CSS/Bootstrap, JavaScript
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
 - Virtualenv (Python Library)
@@ -604,9 +603,8 @@ It now also includes the new features I added: user's local map location and wea
 ### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
 #### Technologies Used
-- Python and Django Web Framework
-- HTML, CSS, JavaScript
-- Bootstrap
+- Python/Django
+- HTML, CSS/Bootstrap, JavaScript
 - Django Crispy Forms (Django App for Styling Forms)
 - Virtualenv (Python Library)
 - Git (Source Control)
@@ -845,7 +843,7 @@ are working and linking properly.
 ### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
 #### Technologies Used
-- C# ASP.Net MVC
+- C#/ASP.NET MVC
 - HTML, JavaScript
 - Leafletjs (Map)
 - Leafet Routing Machinge API (Map Routing)
@@ -911,7 +909,7 @@ The result is that when a user goes to the job site's details page, they will se
 ### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
 #### Technologies Used
-- C# ASP.Net MVC
+- C#/ASP.NET MVC
 - HTML
 - Entity Framework 6
 - PagedList.Mvc (Pagination)
