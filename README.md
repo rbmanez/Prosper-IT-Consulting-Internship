@@ -2,7 +2,6 @@
 ## Table of Contents
 - [General Information](#live-project-sprint-general-information)
   - [Prosper I.T. Consulting](#prosper-it-consulting)
-  - [Sprint Overview](#sprint-overview)
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
   - [Sprint Weekly Process](#sprint-weekly-process)
