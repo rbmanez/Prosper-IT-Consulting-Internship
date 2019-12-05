@@ -24,13 +24,12 @@ The primary components of this project include the creation of registered users,
 The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
 
 #### List of Technologies Used
-- C# ASP.Net MVC
-- HTML, CSS, JavaScript
+- C#/ASP.NET MVC
+- HTML, CSS/Bootstrap, JavaScript
 - Leafletjs (Map)
 - Leafet Routing Machinge API (Map Routing)
 - Geolocation API (Current Location)
 - PagedList.Mvc (Pagination)
-- Bootstrap
 - Entity Framework 6
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
