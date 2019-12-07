@@ -43,15 +43,6 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - Developed on the front and back end on a Python/Django based space research software creating a map, retrieving and displaying API data, redesigning and creating responsive web pages.
 - Daily communication and collaboration with team and project manager on project status and discussing any roadblocks and solutions for improvement.
 
-- full stack development and dev team experience implementing Agile/Scrum methodology and front-end and back-end logic on a Python/Django based software and a C#/ASP.Net based application
-- created and also debugged multiple CRUD (create, read, update, delete) features for
-database objects
-- created and also debugged sorting, filtering, and paging features for multiple tables of
-object lists
-- created and also redesigned multiple pages involving displaying database data
-- made API request to display user's local weather information
-- created a map to show user's location
-
 #### Sprint Weekly Process
 - Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
 
