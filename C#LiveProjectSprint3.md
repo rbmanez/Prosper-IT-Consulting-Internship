@@ -23,7 +23,7 @@ The secondary components include a Chat feature (for all users to have a single 
 
 #### List of Technologies Used
 - C#/ASP.NET MVC
-- HTML, CSS/Bootstrap
+- CSS/Bootstrap, HTML
 - Entity Framework 6
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
