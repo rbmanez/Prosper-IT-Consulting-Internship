@@ -80,7 +80,7 @@ For each user story, I answer the following questions:
 
 #### Technologies Used
 - C#/ASP.NET MVC
-- HTML, CSS/Bootstrap
+- CSS/Bootstrap, HTML
 - Git and Team Foundation Server (Source Control)
 - Azure DevOps (Project Management)
 - Visual Studio 2017 (Code Editor)
@@ -368,7 +368,8 @@ If users do not have a personal profile or if users do have a personal profile b
 
 #### Technologies Used
 - Python/Django
-- HTML, CSS/Bootstrap, JavaScript
+- JavaScript
+- CSS/Bootstrap, HTML
 - Leafletjs and Openstreet API (Map)
 - Openweather API (Local Weather Information)
 - Virtualenv (Python Library)
@@ -606,7 +607,8 @@ It now also includes the new features I added: user's local map location and wea
 
 #### Technologies Used
 - Python/Django
-- HTML, CSS/Bootstrap, JavaScript
+- JavaScript
+- CSS/Bootstrap, HTML
 - Django Crispy Forms (Django App for Styling Forms)
 - Virtualenv (Python Library)
 - Git (Source Control)
@@ -846,7 +848,8 @@ are working and linking properly.
 
 #### Technologies Used
 - C#/ASP.NET MVC
-- HTML, JavaScript
+- JavaScript
+- HTML
 - Leafletjs (Map)
 - Leafet Routing Machinge API (Map Routing)
 - Geolocation API (Current Location)
