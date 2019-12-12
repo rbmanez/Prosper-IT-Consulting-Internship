@@ -25,7 +25,8 @@ The secondary components include a Chat feature (for all users to have a single 
 
 #### List of Technologies Used
 - C#/ASP.NET MVC
-- HTML, CSS/Bootstrap, JavaScript
+- JavaScript
+- CSS/Bootstrap, HTML
 - Leafletjs (Map)
 - Leafet Routing Machinge API (Map Routing)
 - Geolocation API (Current Location)
