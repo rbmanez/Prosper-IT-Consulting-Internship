@@ -105,7 +105,7 @@ TravelScrape is a web scraping application project built with Django and Beautfi
 
 ## Featured User Story 1: Debug Shift Time CRUD
 ![user story 1](sprint3pics/pic21.png)
-### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
+### [This Featured User Story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### Technologies Used
 - C#/ASP.NET MVC
@@ -311,7 +311,7 @@ The result is a functional CRUD feature for `ShiftTimes` objects. A manager can 
 
 ## Featured User Story 2: Personal Photo Refactor
 ![user story 2](sprint3pics/pic1.png)
-### [This featured user story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
+### [This Featured User Story is from C# Live Project Sprint 3](#c-live-project-sprint-3)
 
 #### Technologies Used
 - C#/ASP.NET MVC
@@ -393,7 +393,7 @@ If users do not have a personal profile or if users do have a personal profile b
 
 ## Featured User Story 3: Location Data Redesign
 ![user story](sprint4pics/pic1.png)
-### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
+### [This Featured User Story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
 #### Technologies Used
 - Python/Django
@@ -632,7 +632,7 @@ It now also includes the new features I added: user's local map location and wea
 
 ## Featured User Story 4: Restaurant Redesign
 ![user story](sprint4pics/pic7.png)
-### [This featured user story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
+### [This Featured User Story is from Python Live Project Sprint 4](#python-live-project-sprint-4)
 
 #### Technologies Used
 - Python/Django
@@ -873,7 +873,7 @@ are working and linking properly.
 
 ## Featured User Story 5: Show Directions on Map Load
 ![user story image](sprint2pics/pic1.png)
-### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
+### [This Featured User Story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
 #### Technologies Used
 - C#/ASP.NET MVC
@@ -940,7 +940,7 @@ The result is that when a user goes to the job site's details page, they will se
 
 ## Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index
 ![pic of user story](sprint2pics/pic6.png)
-### [This featured user story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
+### [This Featured User Story is from C# Live Project Sprint 2](#c-live-project-sprint-2)
 
 #### Technologies Used
 - C#/ASP.NET MVC
