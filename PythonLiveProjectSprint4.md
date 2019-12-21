@@ -14,7 +14,7 @@
 
 ## Sprint 4 General Information
 #### Project Overview
-The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
+The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources.
 
 #### List of Technologies Used
 - Python/Django
