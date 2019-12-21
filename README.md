@@ -958,7 +958,7 @@ To see all of the user stories I completed for each sprint, please click the spr
   
 ### [Python Live Project Sprint 4 - The Space Bar](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
 #### Project Overview
-The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources, web scraping from sites like Wikipedia, and packages like BeautifulSoup, Pandas, Selenium, and more.
+The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources.
 
 ### [C# Live Project Sprint 3 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
 #### Project Overview
