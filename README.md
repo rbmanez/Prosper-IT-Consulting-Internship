@@ -62,13 +62,43 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - It's about progress, not perfection. Enjoy the journey!
 
 #### Featured User Stories
-The next 6 sections are featured highlights of 6 user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+The 6 Featured User Stories are highlights of 6 user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
 2. Why is this an issue? (If applicable)
 3. How is the issue resolved?
 4. What is the end result?
+
+
+
+
+## The Four Live Project Sprints
+To see all of the user stories I completed for each sprint, please click the sprint sub-heading hyperlinks below in this section.
+  
+### [Python Live Project Sprint 4 - The Space Bar](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
+#### Project Overview
+The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources.
+
+### [C# Live Project Sprint 3 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
+#### Project Overview
+The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
+
+The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
+
+The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
+  
+### [C# Live Project Sprint 2 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
+#### Project Overview
+The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
+
+The primary components of this project include the creation of registered users, differentiation between users and admins, creation of Jobs with necessary details, adding users to those jobs with an instance of Schedule for each user on each job.
+
+The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
+
+### [Python Live Project Sprint 1 - TravelScrape](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
+#### Project Overview
+TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
 
 
 
@@ -949,33 +979,3 @@ The end result is an interactive table for chat messages with paging functionali
 
 ###### ChatMessages view with functional sorting, filtering, and paging (after fix)
 ![App after fix](sprint2pics/pic13.png)
-
-
-
-
-## The Four Live Project Sprints
-To see all of the user stories I completed for each sprint, please click the sprint sub-heading hyperlinks below in this section.
-  
-### [Python Live Project Sprint 4 - The Space Bar](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint4.md)
-#### Project Overview
-The Space Bar is an interactive Django based site for researching things about space. It uses APIs from NASA and other sources.
-
-### [C# Live Project Sprint 3 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint3.md)
-#### Project Overview
-The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
-
-The primary components of this project include the creation of registered users, differentiation between users and admins, creation of "Jobs" with necessary details, adding users to those jobs with an instance of "Schedule" for each user on each job.
-
-The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
-  
-### [C# Live Project Sprint 2 - Management Portal](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/C%23LiveProjectSprint2.md)
-#### Project Overview
-The Management Portal software is used to manage a collection of jobs. Admins are able to create and distribute a weekly schedule assigning users to certain jobs. Users are able to keep track of which job they are assigned to for the week.
-
-The primary components of this project include the creation of registered users, differentiation between users and admins, creation of Jobs with necessary details, adding users to those jobs with an instance of Schedule for each user on each job.
-
-The secondary components include a Chat feature (for all users to have a single main chat room for discussion) and Company News (where admins can create announcements for all employees to read).
-
-### [Python Live Project Sprint 1 - TravelScrape](https://github.com/rbmanez/TTA-Live-Project-Sprints/blob/master/PythonLiveProjectSprint1.md)
-#### Project Overview
-TravelScrape is a web scraping application project built with Django and Beautfiulsoup. With webscraping and API's, the application gathers data from the web that is relevant to the user who will be traveling. It will include weather, flights, events, restaurants, etc.
