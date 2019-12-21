@@ -7,17 +7,17 @@
   - [Sprint Weekly Process](#sprint-weekly-process)
   - [My Take Away Lessons](#my-take-away-lessons)
   - [Featured User Stories](#featured-user-stories)
+- [The Four Live Project Sprints](#the-four-live-project-sprints)
+  - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4---the-space-bar)
+  - [C# Live Project Sprint 3 - Management Portal](#c-live-project-sprint-3---management-portal)
+  - [C# Live Project Sprint 2 - Management Portal](#c-live-project-sprint-2---management-portal)
+  - [Python Live Project Sprint 1 - TravelScrape](#python-live-project-sprint-1---travelscrape)
 - [Featured User Story 1: Debug Shift Time CRUD](#featured-user-story-1-debug-shift-time-crud)
 - [Featured User Story 2: Personal Photo Refactor](#featured-user-story-2-personal-photo-refactor)
 - [Featured User Story 3: Location Data Redesign](#featured-user-story-3-location-data-redesign)
 - [Featured User Story 4: Restaurant Redesign](#featured-user-story-4-restaurant-redesign)
 - [Featured User Story 5: Show Directions on Map Load](#featured-user-story-5-show-directions-on-map-load)
 - [Featured User Story 6: Sorting, Filtering, & Paging ChatMessages Index](#featured-user-story-6-sorting-filtering--paging-chatmessages-index)
-- [The Four Live Project Sprints](#the-four-live-project-sprints)
-  - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4---the-space-bar)
-  - [C# Live Project Sprint 3 - Management Portal](#c-live-project-sprint-3---management-portal)
-  - [C# Live Project Sprint 2 - Management Portal](#c-live-project-sprint-2---management-portal)
-  - [Python Live Project Sprint 1 - TravelScrape](#python-live-project-sprint-1---travelscrape)
 
 
 
