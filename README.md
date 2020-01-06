@@ -62,7 +62,7 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - It's about progress, not perfection. Enjoy the journey!
 
 #### Featured User Stories
-The 6 Featured User Stories are highlights of 6 user stories I completed during the entire 8 week internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
+The 6 Featured User Stories are some highlights of user stories I completed during the internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 For each user story, I answer the following questions:
 1. What is the issue?
