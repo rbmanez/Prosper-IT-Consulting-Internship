@@ -24,7 +24,7 @@
 
 ## General Information
 #### Prosper I.T. Consulting
-Prosper I.T. Consulting is a software development company that provides a wide variety of tech services, including: web development, creating custom software and building applications. My internship lasted for 8 weeks and was broken down into 2-week sprint intervals.
+Prosper I.T. Consulting is a software development company that provides a wide variety of tech services, including: web development, creating custom software and building applications.
 
 #### Technologies Used
 - Python/Django
