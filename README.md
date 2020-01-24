@@ -37,10 +37,10 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - Agile/Scrum
 
 #### Accomplishment Highlights
-- Used Python/Django, JavaScript, CSS/Bootstrap, and HTML for full-stack development to create a map, retrieve and display API data, redesign and create responsive and interactive web pages on a space research software.
-- Used C#/ASP.NET MVC, JavaScript, CSS/Bootstrap, HTML, and SQL Server for front and back end development implementing CRUD, sorting, filtering, and paging features on a job management software.
-- Full-stack team development using Agile/Scrum methodology.
-- Daily communication and collaboration with team and project manager on project status and discussing any roadblocks and solutions for improvement.
+- Created a map, implemented an API call and displayed the response data, and designed responsive and interactive web pages for a Python and Django based space research application.
+- Implement CRUD functionalities and sorting, filtering, and paging features for a C# and ASP.NET MVC based job management software.
+- Utilized HTML, CSS/Bootstrap, JavaScript, Python/Django, C#/ASP.NET, SQL Server.
+- Engaged in daily Agile/Scrum team communication and collaboration discussing project status, roadblocks, and solutions for improvement.
 
 #### Sprint Weekly Process
 - Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
