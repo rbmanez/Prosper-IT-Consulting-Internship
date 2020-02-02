@@ -37,7 +37,7 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - Agile/Scrum
 
 #### Accomplishment Highlights
-- Created a map, implemented an API call and displayed the response data, and designed responsive and interactive web pages for a Python and Django based space research application.
+- Created a map, implemented API data, and designed responsive and interactive web pages for a Python and Django based space research application.
 - Implement CRUD functionalities and sorting, filtering, and paging features for a C# and ASP.NET MVC based job management software.
 - Utilized HTML, CSS/Bootstrap, JavaScript, Python/Django, C#/ASP.NET, SQL Server.
 - Engaged in daily Agile/Scrum team communication and collaboration discussing project status, roadblocks, and solutions for improvement.
@@ -155,9 +155,6 @@ public class ShiftTime
 }
 ```
 
-###### Error message when trying to access `Edit` view due to `Edit` method's `id` parameter being assigned the data type of `Guid` instead of `int`
-![Error message when trying to access Edit view](sprint3pics/pic22.png)
-
 The `Details` view was throwing an error due to an `Html.Partial` method from inside of the view that was looking for a file (`"_EditButtonPartial"`) that did not exist.
 
 ###### `Html.Partial` method causing the error for `Details` view due to searching for a file (`"_EditButtonPartial"`) that did not exist
@@ -165,17 +162,11 @@ The `Details` view was throwing an error due to an `Html.Partial` method from in
 @Html.Partial("_EditButtonPartial", Model.ShiftTimeId)
 ```
 
-###### Error message when trying to access `Details` view
-![Error message when trying to access Details view](sprint3pics/pic23.png)
-
 The `Create` view lacked the create functionality because:
-1. the view did not have an option to select an existing `Job` object. And since `Job` objects and `ShiftTime` objects had a 1 to 0..1 (zero or one) relationship, in order to create a `ShiftTime` object there must first be an existing `Job` object to select and associate it to.
-2. the controller's `Create` GET method didn't do much besides simply returning the view.
-3. the controller's `Create` POST method was completely commented out, and the commented out code was implementing a `Guid` data type for the `ShiftTimeId` property (when in fact, based on the `ShiftTime` model, the `ShiftTimeId` property should be an `int`) and a partial view of `"_shiftTimeModal"` that was created for Jobs controller and view.
 
+1. the view did not have an option to select an existing `Job` object. And since `Job` objects and `ShiftTime` objects had a 1 to 0..1 (zero or one) relationship, in order to create a `ShiftTime` object there must first be an existing `Job` object to select and associate it to.
 ###### ShiftTime `Create` view before fix (no option of selecting an existing `Job` object, therefore cannot create a `ShiftTime` object)
 ![ShiftTime Create view before fix](sprint3pics/pic24.png)
-	
 ###### Code snippet of `Job` model to show 1 to 0..1 (zero or one) relationship to `ShiftTime` objects
 ```c#
 public class Job
@@ -192,7 +183,6 @@ public class Job
 	...
 }
 ```
-	
 ###### Code snippet of `ShiftTime` model to show 0..1 (zero or one) to 1 relationship to `Job` objects
 ```c#
 public class ShiftTime
@@ -207,11 +197,21 @@ public class ShiftTime
 }
 ```
 
-#### 3. How is the issue resolved?
-I fixed the `Edit` view by:
-1. changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`
-2. changing the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property's value by using the `Html.DisplayFor` method
+2. the controller's `Create` GET method didn't do much besides simply returning the view.
+
+3. the controller's `Create` POST method was completely commented out, and the commented out code was implementing a `Guid` data type for the `ShiftTimeId` property (when in fact, based on the `ShiftTime` model, the `ShiftTimeId` property should be an `int`) and a partial view of `"_shiftTimeModal"` that was created for Jobs controller and view.
+
+
 	
+
+	
+
+
+#### 3. How is the issue resolved?
+
+I fixed the `Edit` view by:
+
+1. changing the `Edit` GET method's `id` parameter's data type from `Guid` to `int`
 ###### ShiftTimes controller's `Edit` GET method with `id` parameter properly assigned as an `int` (after fix)
 ```c#
 public ActionResult Edit(int id)
@@ -220,6 +220,7 @@ public ActionResult Edit(int id)
 }
 ```
 
+2. changing the view's static heading of "ShiftTime" to a more dynamic approach that grabs the specific `ShiftTime` object's associated `Job` object's `JobTitle` property's value by using the `Html.DisplayFor` method
 ###### Dynamic heading for `Edit` view by using `Html.DisplayFor` method
 ```cshtml
 <h4 class="card-title">@Html.DisplayFor(model => model.Job.JobTitle)</h4>
@@ -231,20 +232,19 @@ I fixed the `Details` view by completely eliminating the unnecessary `Html.Parti
 3. there was already a functional Edit button from the `Index` view.
 4. there was no `"_EditButtonPartial"` file.
 
-I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle` property's value using `Html.DisplayFor`. Previously there was no heading.
+I also added a dynamic heading that used the `ShiftTime` object's associated `Job` object's `JobTitle`'s value using `Html.DisplayFor`. Previously there was no heading.
 
 I fixed the `Create` view by:
-1. moving the `Default` element from the bottom of the page to the top above the `Monday` element.
-2. setting up `Html.BeginForm` for a create form.
-3. setting up `Html.DropDownList` for the drop down list and using `Html.LabelFor` for a dynamic heading for the drop down list.
-4. setting up ShiftTimes controller's `Create` GET method to pass to the view a list of Jobs from the `Job` database that did not have its `WeeklyShift` property (which has a data type of a `ShiftTime` object) assigned yet.
-5. setting up ShiftTimes controller's `Create` POST method to find the selected `Job` object from the `Job` database and assigning its `WeeklyShift` property (which has a data type of a `ShiftTime` object) to the newly created `shiftTime` object. Then I added the new `shiftTime` object to the `ShiftTime` database.
 
+1. moving the `Default` element from the bottom of the page to the top above the `Monday` element.
+
+2. setting up `Html.BeginForm` for a create form.
 ###### `Create` view using `Html.BeginForm` method for a create form
 ```cshtml
 @using (Html.BeginForm("Create", "ShiftTimes", FormMethod.Post))
 ```
 
+3. setting up `Html.DropDownList` for the drop down list and using `Html.LabelFor` for a dynamic heading for the drop down list.
 ###### `Create` view using `Html.DropDownList` method for the drop down list and `Html.LabelFor` method for a dynamic heading for the drop down list
 ```cshtml
 @*drop down list for Jobs with WeeklyShifts that equal null*@
@@ -256,6 +256,7 @@ I fixed the `Create` view by:
 </div>
 ```
 
+4. setting up ShiftTimes controller's `Create` GET method to pass to the view a list of Jobs from the `Job` database that did not have its `WeeklyShift` property (which has a data type of a `ShiftTime` object) assigned yet.
 ###### ShiftTimes controller's `Create` GET method (after fix)
 ```c#
 public ActionResult Create()
@@ -268,6 +269,7 @@ public ActionResult Create()
 }
 ```
 
+5. setting up ShiftTimes controller's `Create` POST method to find the selected `Job` object from the `Job` database and assigning its `WeeklyShift` property (which has a data type of a `ShiftTime` object) to the newly created `shiftTime` object. Then I added the new `shiftTime` object to the `ShiftTime` database.
 ###### ShiftTimes controller's `Create` POST method that creates a new `ShiftTime` object for a selected `Job` object (after fix)
 ```c#
 [HttpPost]
