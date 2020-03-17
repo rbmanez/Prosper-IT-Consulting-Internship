@@ -4,7 +4,6 @@
   - [Prosper I.T. Consulting](#prosper-it-consulting)
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
-  - [My Take Away Lessons](#my-take-away-lessons)
   - [Featured User Stories](#featured-user-stories)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
   - [Python Live Project Sprint 4 - The Space Bar](#python-live-project-sprint-4---the-space-bar)
@@ -38,18 +37,6 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 #### Accomplishment Highlights
 - Space Research Application: Implemented OpenWeatherMap API to display user’s local weather information, OpenStreetMap API and Leaflet.js to create a map, and designed responsive web pages. (HTML, CSS/Bootstrap, JavaScript, Python/Django)
 - Job Management Software: Implemented CRUD features for user's weekly schedules, profile pictures, and calendar events, and sorting, filtering, and paging features for chat messages and users tables. (HTML, CSS/Bootstrap, C#/ASP.NET MVC, SQL Server)
-
-#### My Take Away Lessons
-- I gained the experience of working with a dev team to develop software on the front-end and back-end.
-- Patience and persistence are keys to improvement.
-- Be comfortable with not knowing something, break down requirements into manageable steps, clarify any uncertainties, and move forward towards a solution.
-- I learned to not jump straight into implementation. Instead, seek first to gain a full understanding of what the user story is really asking and requiring. Look around the app and code base and become familiar with the environment. Do some initial research if necessary.
-- Always think in terms of what the end goal is, what I'm currently trying to accomplish and why, and what each line of my code is actually doing (also known as [Rubber Duck Debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)).
-- When in doubt, communicate and clarify.
-- Don't be stuck on a problem for too long and ask for help.
-- Empathy and kindness are keys to effective relationships and communication, whether it's at work or outside of work.
-- Continually learn and improve in terms of software development and personal development. Think big picture and holistically.
-- It's about progress, not perfection. Enjoy the journey!
 
 #### Featured User Stories
 The 6 Featured User Stories are some highlights of user stories I completed during the internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
