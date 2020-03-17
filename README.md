@@ -1,6 +1,6 @@
 # Prosper I.T. Consulting - Internship
 ## Table of Contents
-- [General Information](#live-project-sprint-general-information)
+- [General Information](#general-information)
   - [Prosper I.T. Consulting](#prosper-it-consulting)
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
