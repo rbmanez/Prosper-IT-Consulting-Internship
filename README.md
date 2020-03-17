@@ -4,7 +4,6 @@
   - [Prosper I.T. Consulting](#prosper-it-consulting)
   - [Technologies Used](#technologies-used)
   - [Accomplishment Highlights](#accomplishment-highlights)
-  - [Sprint Weekly Process](#sprint-weekly-process)
   - [My Take Away Lessons](#my-take-away-lessons)
   - [Featured User Stories](#featured-user-stories)
 - [The Four Live Project Sprints](#the-four-live-project-sprints)
@@ -37,17 +36,8 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - Agile/Scrum
 
 #### Accomplishment Highlights
-- Created a map, implemented API data, and designed responsive and interactive web pages for a Python and Django based space research application.
-- Implement CRUD functionalities and sorting, filtering, and paging features for a C# and ASP.NET MVC based job management software.
-- Utilized HTML, CSS/Bootstrap, JavaScript, Python/Django, C#/ASP.NET, SQL Server.
-- Engaged in daily Agile/Scrum team communication and collaboration discussing project status, roadblocks, and solutions for improvement.
-
-#### Sprint Weekly Process
-- Mondays were dedicated to onboarding and sprint planning. We defined user stories, divided them into tasks, and set goals for what will be accomplished by the end of the week.
-
-- We had daily stand up meetings from Monday through Friday via Google Meet. Each developer discussed what we did the day before, what we will be working on for the current day, and any roadblocks we may be experiencing. Outside of the stand up, we also communicated via Slack.
-
-- Each Friday we had Sprint Retrospective, which is a quick discussion during the daily stand up that explains what was helpful and what was detrimental to productivity and team work flow. These meetings were meant to improve communication and coordination within the team, including the project manager.
+- Space Research Application: Implemented OpenWeatherMap API to display user’s local weather information, OpenStreetMap API and Leaflet.js to create a map, and designed responsive web pages. (HTML, CSS/Bootstrap, JavaScript, Python/Django)
+- Job Management Software: Implemented CRUD features for user's weekly schedules, profile pictures, and calendar events, and sorting, filtering, and paging features for chat messages and users tables. (HTML, CSS/Bootstrap, C#/ASP.NET MVC, SQL Server)
 
 #### My Take Away Lessons
 - I gained the experience of working with a dev team to develop software on the front-end and back-end.
