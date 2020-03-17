@@ -39,13 +39,13 @@ Prosper I.T. Consulting is a software development company that provides a wide v
 - Job Management Software: Implemented CRUD features for user's weekly schedules, profile pictures, and calendar events, and sorting, filtering, and paging features for chat messages and users tables. (HTML, CSS/Bootstrap, C#/ASP.NET MVC, SQL Server)
 
 #### Featured User Stories
-The 6 Featured User Stories are some highlights of user stories I completed during the internship. To see the full details and all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
-
-For each user story, I answer the following questions:
+The Featured User Stories are highlights of user stories I completed during the internship. For each user story, I answer the following questions:
 1. What is the issue?
 2. Why is this an issue? (If applicable)
 3. How is the issue resolved?
 4. What is the end result?
+
+To see all 16 user stories I completed, please see the section below, [The Four Live Project Sprints](#the-four-live-project-sprints), and its sub-heading hyperlinks.
 
 
 
